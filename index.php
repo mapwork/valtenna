@@ -48,6 +48,7 @@ get_header();
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif;
+		echo do_shortcode('[products_cat_slideshow]');
 		?>
 
 	</main><!-- #main -->

@@ -50,7 +50,8 @@ if ( ! function_exists( 'valtenna_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'valtenna' ),
+				'main-menu' => esc_html__( 'Primary', 'valtenna' ),
+				'footer-menu' => esc_html__( 'Footer', 'valtenna' ),
 			)
 		);
 
@@ -144,20 +145,54 @@ add_action( 'widgets_init', 'valtenna_widgets_init' );
  */
 function valtenna_scripts() {
 	wp_enqueue_style( 'valtenna-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'valtenna-style', 'rtl', 'replace' );
-
-	wp_enqueue_script( 'valtenna-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	$valtenna = [
+		'ajaxurl' => admin_url('admin-ajax.php'),
+		'strings' => [
+			'subscribe' => [
+				'success' => [
+					'message' => __('Thank you for subscribing our Mailing List.','valtenna')
+				],
+				'error' => [
+					'already_subscribed' => __('This e-mail address is already on our mailing list','valtenna')
+				]
+			]
+		]
+	];
+	wp_enqueue_script( 'valtenna-main-js', get_template_directory_uri() . '/assets/js/custom.min.js', array('jquery'), _S_VERSION, true );
+	wp_localize_script( 'valtenna-main-js', 'valtenna', $valtenna );
 }
-add_action( 'wp_enqueue_scripts', 'valtenna_scripts' );
+add_action( 'wp_enqueue_scripts', 'valtenna_scripts', 999 );
 
 /**
- * Implement the Custom Header feature.
+ * [get_company_info_data description]
+ * @return [type] [description]
  */
-require get_template_directory() . '/inc/custom-header.php';
+function get_company_info_data(){
+	$output = '';
+	if( $businessName = get_theme_mod('business_name') ){
+		$output .= sprintf( '<strong>%s</strong>', $businessName );
+	}
+	if( $companyAddress = get_theme_mod('company_address') ){
+		$output .= '<br/>' . nl2br($companyAddress);
+	}
+	if( $vat = get_theme_mod('company_vat') ){
+		$output .= '<br/>' . sprintf( __('VAT: %s'), $vat );
+	}
+	if( $mail = get_theme_mod('company_email') ){
+		$output .= '<br/>' . $mail;
+	}
+	if( $tel = get_theme_mod('company_tel') ){
+		$output .= '<br/>' . $tel;
+	}
+	return $output;
+}
+
+function get_string_last_word_bold( $string ){
+	$string = explode( ' ', $string );
+	$lastword = array_pop( $string );
+	return join( ' ', $string ) . ' <span class="strong">' . $lastword . '</span>';
+}
+
 
 /**
  * Custom template tags for this theme.
@@ -175,9 +210,6 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * Shortcodes.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
+require get_template_directory() . '/inc/shortcodes.php';
