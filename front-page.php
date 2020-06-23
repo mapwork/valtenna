@@ -10,7 +10,7 @@
          <a class="d-flex flex-column justify-content-end flex-grow-1" href="<?php echo get_term_link( $hardBoxes ); ?>" title="<?php echo esc_attr( $hardBoxes->name ); ?>">
             <div class="detail">
                <h2 class="text-uppercase"><?php echo get_string_last_word_bold( $hardBoxes->name ); ?></h2>
-               <button class="line-through-but"><span><?php echo __('Get more info','valtenna'); ?></span></button>
+               <button class="line-through-but"><span><?php echo __('Scopri di più','valtenna'); ?></span></button>
             </div>
          </a>
       </div>
@@ -18,7 +18,7 @@
          <a class="d-flex flex-column justify-content-end flex-grow-1" href="<?php echo get_term_link( $foldableBoxes ); ?>" title="<?php echo esc_attr( $foldableBoxes->name ); ?>">
             <div class="detail">
                <h2 class="text-uppercase"><?php echo get_string_last_word_bold( $foldableBoxes->name ); ?></h2>
-               <button class="line-through-but reverse"><span><?php echo __('Get more info','valtenna'); ?></span></button>
+               <button class="line-through-but reverse"><span><?php echo __('Scopri di più','valtenna'); ?></span></button>
             </div>
          </a>
       </div>
@@ -69,9 +69,9 @@
 </section>
 <section id="our-clients">
    <div class="container">
-      <h3 class="text-uppercase text-center area-title"><?php echo get_string_last_word_bold( __('Our clients','valtenna') ); ?></h3>
-      <div class="row no-gutters flex-column">
-         <div class="col">
+      <h3 class="text-uppercase text-center area-title"><?php echo get_string_last_word_bold( __('I nostri clienti','valtenna') ); ?></h3>
+      <div class="row no-gutters flex-column flex-md-row flex-md-nowrap">
+         <div class="col first d-md-flex flex-md-column justify-content-md-center">
             <figure class="mb-0">
                <img data-src="<?php echo get_theme_file_uri( 'assets/images/our-clients.jpg' ); ?>" class="img-fluid lazyload"/>
                <noscript>
@@ -79,7 +79,7 @@
                </noscript>
             </figure>
          </div>
-         <div class="col">
+         <div class="col second">
             <ul class="reset-list text-center clients-list">
                <li>John Stone</li>
                <li>Ponnappa Priya</li>
@@ -93,7 +93,7 @@
                <li>Trevor Virtue</li>
             </ul>
          </div>
-         <div class="col">
+         <div class="col third">
             <ul class="reset-list text-center clients-list">
                <li>Tarryn Campbell-Gillies</li>
                <li>Eugenia Anders</li>
@@ -106,6 +106,53 @@
                <li>Hayman Andrews</li>
                <li>Ruveni Ellawala</li>
             </ul>
+         </div>
+      </div>
+   </div>
+</section>
+<section id="special-projects-preview">
+   <div class="container">
+      <div class="row no-gutters flex-column">
+         <div class="col-left">
+            <?php
+            echo mapcomm_get_special_projects_slideshow(get_theme_mod('special_projects_slides_num', 5));
+            ?>
+         </div>
+         <div class="col-right">
+            <div class="intro text-center">
+               <h3 class="text-uppercase text-center area-title mb-4">
+                  <?php echo get_string_last_word_bold( get_theme_mod('special_projects_title', ''), 3 ); ?>
+               </h3>
+               <p class="mb-4">
+                  <?php echo nl2br( get_theme_mod('special_projects_text', '') ); ?>
+               </p>
+               <p class="mb-0">
+                  <a href="<?php echo get_term_link( get_msls_term_id(14), 'products_tag' ); ?>" class="line-through-but"><span><?php echo __('Scopri di più','valtenna'); ?></span></a>
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section id="news-preview">
+   <div class="container">
+      <div class="intro text-center">
+         <h3 class="text-uppercase text-center area-title mb-4"><?php echo get_string_last_word_bold( __('Le novità valtenna','valtenna') ); ?></h3>
+         <p class="mb-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+         </p>
+      </div>
+      <?php
+      echo mapcomm_get_latest_news_slideshow(4);
+      ?>
+   </div>
+</section>
+<section id="instagram">
+   <div class="container">
+      <h3 class="text-uppercase text-center area-title mb-4"><?php echo get_string_last_word_bold( __('Instagram @valtenna','valtenna') ); ?></h3>
+      <div id="instagram-wall">
+         <div class="spinner-border mx-auto" role="status">
+           <span class="sr-only">Loading...</span>
          </div>
       </div>
    </div>

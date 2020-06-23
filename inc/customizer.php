@@ -186,5 +186,42 @@ function valtenna_customize_register( $wp_customize ) {
 			]
 		]
 	] );
+
+	Kirki::add_section( 'special_projects', array(
+		'title'          => esc_html__( 'Progetti speciali' ),
+		'description'    => esc_html__( 'Gestisci l&rsquo;anteprima dei progetti speciali in homepage' ),
+		'priority'       => 20,
+		'panel'          => 'homepage',
+	) );
+
+	Kirki::add_field( 'valtenna', [
+		'type'     => 'text',
+		'settings' => 'special_projects_title',
+		'label'    => esc_html__( 'Titolo' ),
+		'section'  => 'special_projects',
+		'priority' => 10,
+	] );
+
+	Kirki::add_field( 'valtenna', [
+		'type'     => 'textarea',
+		'settings' => 'special_projects_text',
+		'label'    => esc_html__( 'Testo introduttivo', ),
+		'section'  => 'special_projects',
+		'priority' => 20,
+	] );
+
+	Kirki::add_field( 'valtenna', [
+		'type'        => 'number',
+		'settings'    => 'special_projects_slides_num',
+		'label'       => esc_html__( 'Numero di slides da visualizzare' ),
+		'section'     => 'special_projects',
+		'default'     => 5,
+		'choices'     => [
+			'min'  => 0,
+			'max'  => 10,
+			'step' => 1,
+		],
+		'priority' => 30,
+	] );
 }
 add_action( 'customize_register', 'valtenna_customize_register' );

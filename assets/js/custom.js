@@ -55,7 +55,66 @@ jQuery(document).ready(function ($) {
       nextArrow: '<button class="next"><span></span></button>'
     });
   }
+
+  var specialProjectsSlideshow = $('#special-projects-slideshow');
+
+  if (specialProjectsSlideshow.length) {
+    specialProjectsSlideshow.slick({
+      mobileFirst: true,
+      arrows: true,
+      dots: false,
+      slidesToShow: 1,
+      rows: 0,
+      prevArrow: '<button class="prev"><span></span></button>',
+      nextArrow: '<button class="next"><span></span></button>',
+      lazyLoad: 'progressive'
+    });
+  }
+
+  var newsPreview = $('#latest-news');
+
+  if (newsPreview.length) {
+    newsPreview.slick({
+      mobileFirst: true,
+      arrows: false,
+      dots: true,
+      slidesToShow: 1,
+      rows: 0,
+      speed: 1000,
+      lazyLoad: 'progressive',
+      customPaging: function customPaging() {
+        return '<span></span>';
+      },
+      responsive: [{
+        breakpoint: 767.98,
+        settings: {
+          slidesToShow: 2
+        }
+      }, {
+        breakpoint: 991.98,
+        settings: {
+          slidesToShow: 3
+        }
+      }, {
+        breakpoint: 1199.98,
+        settings: {
+          slidesToShow: 4
+        }
+      }]
+    });
+  }
 });
+var instagramWall = document.getElementById('instagram-wall');
+
+if (instagramWall) {
+  var opts = {
+    tag: 'packaging',
+    user_id: false,
+    count: '15'
+  };
+  var feed = new instagramFeed('#instagram-wall', opts);
+  feed.init();
+}
 "use strict";
 
 /**

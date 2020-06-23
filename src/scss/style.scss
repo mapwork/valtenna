@@ -68,6 +68,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/forms";
+@import "bootstrap/scss/spinners";
 $brown: #C1AF99;
 
 :root {
@@ -625,38 +626,38 @@ html.js {
 			}
 		}
 	}
+}
 
-	ul.slick-dots {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: nowrap;
-		justify-content: center;
-		margin-top: 2rem;
+ul.slick-dots {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	margin-top: 2rem;
 
-		li {
-			&:not(:last-child) {
-				margin-right: 1rem;
-			}
+	li {
+		&:not(:last-child) {
+			margin-right: 1rem;
+		}
 
-			&.slick-active {
-				span {
-					background-color: #000;
-				}
-			}
-
+		&.slick-active {
 			span {
-				display: block;
-				width: 16px;
-				height: 16px;
-				border-radius: 50%/50%;
-				border: solid 2px #000;
-				@include media-breakpoint-up(xl) {
-					width: 12px;
-					height: 12px;
-				}
+				background-color: #000;
+			}
+		}
+
+		span {
+			display: block;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%/50%;
+			border: solid 2px #000;
+			@include media-breakpoint-up(xl) {
+				width: 12px;
+				height: 12px;
 			}
 		}
 	}
@@ -790,18 +791,42 @@ html.js {
 }
 
 html.no-js {
-	.lazyload {
+	.lazyload,
+	.slick-lazy {
 		display: none !important;
 	}
 }
 
 #our-clients {
+	background-color: rgba(255,255,255,.8);
+	padding: var(--spacer) 0;
+	box-shadow: 0 6px 20px rgba(0,0,0,.1), 0 -6px 20px rgba(0,0,0,.1);
+
 	h3 {
 		margin-bottom: var(--spacer);
 	}
 
 	ul.clients-list {
 		line-height: 2;
+	}
+
+	.col {
+		flex-basis: 0;
+		flex-grow: 1;
+		max-width: 100%;
+		@include media-breakpoint-up(md) {
+			&.first {
+				order: 2;
+			}
+
+			&.second {
+				order: 1;
+			}
+
+			&.third {
+				order: 3;
+			}
+		}
 	}
 }
 
@@ -824,4 +849,146 @@ label.error {
 
 .field {
 	position: relative;
+}
+
+#special-projects-preview {
+	background-color: #C1AF99;
+	color: #fff;
+	padding: 1.5rem 0;
+	margin-bottom: var(--spacer);
+
+	.col-left {
+		max-width: 100%;
+		margin-bottom: var(--spacer);
+	}
+}
+
+html.js {
+	#special-projects-slideshow {
+		&.slick-initialized {
+			figure {
+				display: block;
+			}
+		}
+
+		figure {
+			display: none;
+		}
+
+		.slick-arrow {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			width: 40px;
+			height: 40px;
+			top: 50%;
+			margin-top: -20px;
+			background-color: #fff;
+			z-index: 10;
+			box-shadow: 0 0 5px rgba(0,0,0,.2);
+
+			&.prev {
+				left: 0;
+
+				span {
+					display: block;
+					width: 10px;
+					height: 10px;
+					border-top: solid 2px #000;
+					border-left: solid 2px #000;
+					transform: rotate(-45deg);
+					margin-right: -5px;
+				}
+			}
+
+			&.next {
+				right: 0;
+
+				span {
+					display: block;
+					width: 10px;
+					height: 10px;
+					border-top: solid 2px #000;
+					border-right: solid 2px #000;
+					transform: rotate(45deg);
+					margin-left: -5px;
+				}
+			}
+		}
+	}
+}
+
+#news-preview {
+	background-color: rgba(255,255,255,.8);
+	margin-bottom: var(--spacer);
+
+	.intro {
+		margin-bottom: var(--spacer);
+	}
+}
+
+.post-preview-item {
+	a {
+		position: relative;
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: 10;
+		padding: 1.25rem;
+		background-color: rgba(0,0,0,.5);
+	}
+
+	.category-name {
+		position: absolute;
+		font-size: 0.8125rem;
+		line-height: 1;
+		white-space: nowrap;
+		font-weight: 800;
+		transform-origin: right top;
+		top: 1.25rem;
+		right: calc(100% - 1.25rem);
+		transform: rotate(-90deg);
+	}
+
+	h4 {
+		font-size: 1.25rem;
+		font-weight: 400;
+	}
+}
+
+#instagram-wall {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left: -2px;
+	margin-right: -2px;
+	margin-bottom: var(--spacer);
+
+	.instagram-feed-item {
+		width: calc(100% / 3);
+
+		a {
+			padding: 2px;
+
+			figure {
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+
+				&:before {
+					content: '';
+					display: block;
+					padding-bottom: 100%;
+				}
+			}
+		}
+	}
 }

@@ -32,13 +32,13 @@
 				</div>
 				<div class="col text-center flex-lg-grow-1 text-lg-left">
 					<div class="col-header">
-						<span><?php echo __('Get in touch', 'valtenna'); ?></span>
+						<span><?php echo __('Resta in contatto', 'valtenna'); ?></span>
 					</div>
 					<div class="col-content text-left">
 						<form method="post" enctype="multipart/form-data" id="subscribe-form" onsubmit="return false;">
 							<div class="input-wrap d-flex flex-row flex-nowrap mb-4">
 								<div class="field flex-grow-1">
-									<input type="email" name="email" class="form-control" id="subscribe-email" placeholder="<?php echo __('Your email address', 'valtenna'); ?>" />
+									<input autocomplete="off" type="email" name="subscribe_email" class="form-control" id="subscribe_email" placeholder="<?php echo __('Your email address', 'valtenna'); ?>" />
 								</div>
 								<button type="submit" id="subscribe-submit"><i class="fas fa-chevron-right"></i></button>
 							</div>

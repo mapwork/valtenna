@@ -72,35 +72,26 @@ if ( ! function_exists( 'valtenna_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background',
-			apply_filters(
-				'valtenna_custom_background_args',
-				array(
-					'default-color' => 'ffffff',
-					'default-image' => '',
-				)
-			)
-		);
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
+		 * [add_theme_support post-formats]
+		 * @var [type]
 		 */
-		add_theme_support(
-			'custom-logo',
+		add_theme_support( 'post-formats',
 			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
+				'gallery',
+				'video'
 			)
 		);
+		add_post_type_support( 'post', 'post-formats' );
+
+		/**
+		 * [add_image_size description]
+		 * @var [type]
+		 */
+		add_image_size( 'post_preview', 400, 500, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'valtenna_setup' );
@@ -145,6 +136,7 @@ add_action( 'widgets_init', 'valtenna_widgets_init' );
  */
 function valtenna_scripts() {
 	wp_enqueue_style( 'valtenna-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_script( 'valtenna-vendor-js', get_template_directory_uri() . '/assets/js/vendor.min.js', array('jquery'), _S_VERSION, true );
 	$valtenna = [
 		'ajaxurl' => admin_url('admin-ajax.php'),
 		'strings' => [
@@ -160,6 +152,35 @@ function valtenna_scripts() {
 	];
 	wp_enqueue_script( 'valtenna-main-js', get_template_directory_uri() . '/assets/js/custom.min.js', array('jquery'), _S_VERSION, true );
 	wp_localize_script( 'valtenna-main-js', 'valtenna', $valtenna );
+
+	$__ = '__';
+	$subscribeJs = <<<HTML
+	<script>
+	/*<![CDATA[*/
+	jQuery(document).ready(function($){
+		var subscribeForm = $('form#subscribe-form');
+		subscribeForm.validate({
+			rules: {
+				subscribe_email: {
+					required: true,
+					email: true
+				}
+			},
+			messages: {
+				subscribe_email: {
+					required: "{$__('Questo campo è obbligatorio','valtenna')}",
+					email: "{$__('Inserisci un indirizzo e-mail valido','valtenna')}",
+				}
+			},
+			submitHandler: function(form){
+				console.log(form);
+			}
+		});
+	});
+	/*]]>*/
+	</script>
+	HTML;
+	wp_add_inline_script( 'valtenna-main-js', $subscribeJs );
 }
 add_action( 'wp_enqueue_scripts', 'valtenna_scripts', 999 );
 
@@ -187,23 +208,114 @@ function get_company_info_data(){
 	return $output;
 }
 
-function get_string_last_word_bold( $string ){
+function get_string_last_word_bold( $string, $numwords = 1 ){
 	$string = explode( ' ', $string );
-	$lastword = array_pop( $string );
-	return join( ' ', $string ) . ' <span class="strong">' . $lastword . '</span>';
+	$boldedArray = array_splice($string, count($string) - $numwords, $numwords);
+	return join( ' ', $string ) . ' <span class="strong">' . join( ' ', $boldedArray ) . '</span>';
 }
 
+//add_action( 'mapcomm_importer_after_insert_post', 'mapcomm_gallery_import', 10, 3 );
+function mapcomm_gallery_import( $post_id, $args, $postdata ){
+	$togallery = get_post_meta($post_id, '__tmp_gallery');
+	$tmp = [];
+	foreach( $togallery as $item ){
+		$tmp[] = $item;
+	}
+	if( count( $tmp ) > 0 ){
+		update_field('product_gallery', $tmp[0], $post_id);
+	}
+	delete_post_meta( $post_id, '__tmp_gallery' );
+}
 
 /**
- * Custom template tags for this theme.
+ * [get_special_projects_slideshow description]
+ * @param  [type] $limit [description]
+ * @return [type]        [description]
  */
-require get_template_directory() . '/inc/template-tags.php';
+function mapcomm_get_special_projects_slideshow($limit)
+{
+	$query = new WP_Query([
+		'post_type' => 'product',
+		'post_status' => 'publish',
+		'posts_per_page' => $limit,
+		'tax_query' => [
+			[
+				'taxonomy' => 'products_tag',
+				'field'    => 'term_id',
+				'terms'    => get_msls_term_id(14),
+			]
+		]
+	]);
+	if( $query->have_posts() ){
+		$html = <<<HTML
+		<div id="special-projects-slideshow">
+		HTML;
+		while( $query->have_posts() ){
+			$query->the_post();
+			ob_start();
+			get_template_part( 'template-parts/special-product-slide' );
+			$html .= ob_get_clean();
+		}
+		$html .= <<<HTML
+		</div>
+		HTML;
+		return $html;
+	}
+	wp_reset_query();
+	return;
+}
 
 /**
- * Functions which enhance the theme by hooking into WordPress.
+ * [mapcomm_get_latest_news_slideshow description]
+ * @param  [type] $count [description]
+ * @return [type]        [description]
  */
-require get_template_directory() . '/inc/template-functions.php';
+function mapcomm_get_latest_news_slideshow( $count ){
+	$latestNews = new WP_Query([
+		'post_type' => 'post',
+		'post_status' => 'publish',
+		'posts_per_page' => $count
+	]);
+	if( $latestNews->have_posts() ){
+		$html = <<<HTML
+		<div id="latest-news">
+		HTML;
+		while( $latestNews->have_posts() ){
+			$latestNews->the_post();
+			ob_start();
+			get_template_part( 'template-parts/post-preview' );
+			$html .= ob_get_clean();
+		}
+		$html .= <<<HTML
+		</div>
+		HTML;
+		return $html;
+	}
+	wp_reset_query();
+	return;
+}
 
+/**
+ * [mapcomm_add_lazyload_to_attachment_image description]
+ * @param [type] $attr       [description]
+ * @param [type] $attachment [description]
+ */
+function mapcomm_add_lazyload_to_attachment_image( $attr, $attachment ){
+	$classes = $attr['class'];
+	$current_src = $attr['src'];
+	$current_srcset = $attr['srcset'];
+	if( strpos( $classes, 'slick-lazy' ) !== false ){
+		$attr['data-lazy'] = $current_src;
+		unset( $attr['src'] );
+	}elseif( strpos( $classes, 'lazyload' ) !== false ){
+		$attr['data-src'] = $current_src;
+		$attr['data-srcset'] = $current_srcset;
+		unset( $attr['src'] );
+		unset( $attr['srcset'] );
+	}
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'mapcomm_add_lazyload_to_attachment_image', 10, 2 );
 /**
  * Customizer additions.
  */
