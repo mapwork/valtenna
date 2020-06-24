@@ -38,21 +38,21 @@
 						<form method="post" enctype="multipart/form-data" id="subscribe-form" onsubmit="return false;">
 							<div class="input-wrap d-flex flex-row flex-nowrap mb-4">
 								<div class="field flex-grow-1">
-									<input autocomplete="off" type="email" name="subscribe_email" class="form-control" id="subscribe_email" placeholder="<?php echo __('Your email address', 'valtenna'); ?>" />
+									<input data-cons-subject="email" autocomplete="off" type="email" name="email" class="form-control" id="subscribe-email" placeholder="<?php echo __('Il tuo indirizzo e-mail', 'valtenna'); ?>" />
 								</div>
-								<button type="submit" id="subscribe-submit"><i class="fas fa-chevron-right"></i></button>
+								<button disabled type="submit" id="subscribe-submit"><span><i class="fas fa-chevron-right"></i><i class="fas fa-circle-notch"></i></span></button>
 							</div>
 							<div class="_checkbox">
-								<input type="checkbox" name="privacy_policy" id="subscribe_policy"/>
+								<input data-cons-preference="privacy_policyy" type="checkbox" name="privacy_policy" id="subscribe_policy"/>
 								<label for="subscribe_policy">
 									<span class="disclaimer">
-										<?php echo __('Read and understood the <a href="#">privacy policy</a>, I consent to the processing of my data for marketing purposes', 'valtenna'); ?>
+										<?php echo __('Letto e compreso l&rsquo;<a href="#">Informativa sulla privacy</a>, acconsento al trattamento dei miei dati per finalità di marketing', 'valtenna'); ?>
 									</span>
 								</label>
 							</div>
-							<input type="hidden" name="action" value="subscribe"/>
-							<input type="hidden" name="user_id" id="nl_user_id" value=""/>
-							<?php wp_nonce_field( 'subscribe' ); ?>
+							<input data-cons-exclude type="hidden" name="action" value="subscribe"/>
+							<input data-cons-subject="id" type="hidden" name="user_id" id="nl_user_id" value=""/>
+							<input data-cons-exclude type="hidden" name="_wpnonce" value="<?php echo wp_create_nonce('subscribe'); ?>"/>
 						</form>
 					</div>
 				</div>

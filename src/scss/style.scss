@@ -78,7 +78,6 @@ $brown: #C1AF99;
 body,
 html {
 	font-family: 'Muli', sans-serif;
-	font-size: 100%;
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -93,6 +92,10 @@ html {
  */
 body {
 	overflow-x: hidden;
+	font-size: 100%;
+	@include media-breakpoint-up(xxl) {
+		font-size: 1.125rem;
+	}
 }
 /**
  * Render the `main` element consistently in IE.
@@ -408,6 +411,32 @@ input:focus {
 	width: 45px;
 	margin-left: -45px;
 	z-index: 10;
+
+	i.fa-circle-notch {
+		display: none;
+	}
+}
+@keyframes spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+#subscribe-form.submitting {
+	#subscribe-submit {
+		.fa-chevron-right {
+			display: none;
+		}
+
+		.fa-circle-notch {
+			display: inline;
+		}
+
+		span {
+			display: block;
+			animation: spinner 0.6s linear infinite;
+		}
+	}
 }
 
 #subscribe-email {
@@ -655,7 +684,7 @@ ul.slick-dots {
 			height: 16px;
 			border-radius: 50%/50%;
 			border: solid 2px #000;
-			@include media-breakpoint-up(xl) {
+			@include media-breakpoint-up(lg) {
 				width: 12px;
 				height: 12px;
 			}
@@ -788,6 +817,9 @@ html.js {
 	font-weight: 400;
 	letter-spacing: 0.1rem;
 	font-size: 1.25rem;
+	@include media-breakpoint-up(xxl) {
+		font-size: 1.75rem;
+	}
 }
 
 html.no-js {
@@ -801,9 +833,15 @@ html.no-js {
 	background-color: rgba(255,255,255,.8);
 	padding: var(--spacer) 0;
 	box-shadow: 0 6px 20px rgba(0,0,0,.1), 0 -6px 20px rgba(0,0,0,.1);
+	@include media-breakpoint-up(xl) {
+		padding: calc(var(--spacer) * 2) 0;
+	}
 
 	h3 {
 		margin-bottom: var(--spacer);
+		@include media-breakpoint-up(xl) {
+			margin-bottom: calc(var(--spacer) * 2);
+		}
 	}
 
 	ul.clients-list {
@@ -827,6 +865,11 @@ html.no-js {
 				order: 3;
 			}
 		}
+		@include media-breakpoint-up(xl) {
+			&.first {
+				flex: 0 0 40%;
+			}
+		}
 	}
 }
 
@@ -845,6 +888,7 @@ label.error {
 	margin-top: 0.2rem;
 	z-index: 10;
 	max-width: 100%;
+	margin-bottom: 0;
 }
 
 .field {
@@ -856,10 +900,71 @@ label.error {
 	color: #fff;
 	padding: 1.5rem 0;
 	margin-bottom: var(--spacer);
+	@include media-breakpoint-up(md) {
+		padding: 2.5rem 0;
+	}
+	@include media-breakpoint-up(lg) {
+		margin-bottom: calc(var(--spacer) * 1.5);
+		color: #000;
+		background: linear-gradient(to right, rgba(193,175,153,1) 0%,rgba(193,175,153,1) 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+		padding: calc(var(--spacer) * 2) 0;
+	}
 
 	.col-left {
 		max-width: 100%;
 		margin-bottom: var(--spacer);
+		@include media-breakpoint-up(lg) {
+			flex-grow: 1;
+			max-width: calc((100% / 12) * 7);
+			margin-bottom: 0;
+		}
+	}
+
+	.col-right {
+		@include media-breakpoint-up(lg) {
+			flex-grow: 1;
+			max-width: calc((100% / 12) * 4);
+			margin: 0 auto;
+		}
+		@include media-breakpoint-up(xl) {
+			flex-grow: 1;
+			max-width: calc((100% / 12) * 3);
+			margin-left: calc(100% / 12);
+		}
+	}
+}
+
+#special-projects-slideshow {
+	figure {
+		@include media-breakpoint-up(lg) {
+			width: 400px;
+			height: 430px;
+			overflow: hidden;
+			padding-right: 1rem;
+		}
+		@include media-breakpoint-up(xl) {
+			width: 480px;
+			height: 515px;
+		}
+		@include media-breakpoint-up(xxl) {
+			width: 600px;
+			height: 640px;
+		}
+		@include media-breakpoint-up(hd) {
+			width: 670px;
+			height: 720px;
+		}
+
+		img {
+			display: block;
+			margin: 0 auto;
+			@include media-breakpoint-up(lg) {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				font-family: 'object-fit: cover;';
+			}
+		}
 	}
 }
 
@@ -890,6 +995,9 @@ html.js {
 
 			&.prev {
 				left: 0;
+				@include media-breakpoint-up(lg) {
+					left: -10px;
+				}
 
 				span {
 					display: block;
@@ -904,6 +1012,9 @@ html.js {
 
 			&.next {
 				right: 0;
+				@include media-breakpoint-up(lg) {
+					right: -10px;
+				}
 
 				span {
 					display: block;
@@ -922,13 +1033,40 @@ html.js {
 #news-preview {
 	background-color: rgba(255,255,255,.8);
 	margin-bottom: var(--spacer);
+	@include media-breakpoint-up(lg) {
+		margin-bottom: calc(var(--spacer) * 1.5);
+		background-color: rgba(255,255,255,.8);
+		padding: var(--spacer) 0;
+		box-shadow: 0 6px 20px rgba(0,0,0,.1), 0 -6px 20px rgba(0,0,0,.1);
+	}
+	@include media-breakpoint-up(xxl) {
+		padding: calc(var(--spacer) * 2) 0;
+	}
 
 	.intro {
 		margin-bottom: var(--spacer);
+		@include media-breakpoint-up(lg) {
+			max-width: calc((100% / 12) * 8);
+			margin: 0 auto var(--spacer);
+		}
+		@include media-breakpoint-up(xl) {
+			max-width: calc((100% / 12) * 6);
+		}
+	}
+}
+
+#latest-news {
+	@include media-breakpoint-up(md) {
+		margin-left: -0.5rem;
+		margin-right: -0.5rem;
 	}
 }
 
 .post-preview-item {
+	@include media-breakpoint-up(md) {
+		padding: 0 0.5rem;
+	}
+
 	a {
 		position: relative;
 		color: #fff;
@@ -971,9 +1109,83 @@ html.js {
 	margin-left: -2px;
 	margin-right: -2px;
 	margin-bottom: var(--spacer);
+	@include media-breakpoint-up(lg) {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+		.item-2 {
+			grid-area: 1 / 1 / 3 / 3;
+		}
+
+		.item-3 {
+			grid-area: 1 / 3 / 2 / 4;
+		}
+
+		.item-4 {
+			grid-area: 1 / 4 / 2 / 5;
+		}
+
+		.item-5 {
+			grid-area: 1 / 5 / 2 / 6;
+		}
+
+		.item-6 {
+			grid-area: 1 / 6 / 3 / 8;
+		}
+
+		.item-7 {
+			grid-area: 2 / 3 / 3 / 4;
+		}
+
+		.item-8 {
+			grid-area: 2 / 4 / 3 / 5;
+		}
+
+		.item-9 {
+			grid-area: 2 / 5 / 3 / 6;
+		}
+
+		.item-10 {
+			grid-area: 3 / 1 / 4 / 2;
+		}
+
+		.item-11 {
+			grid-area: 3 / 2 / 4 / 3;
+		}
+
+		.item-12 {
+			grid-area: 3 / 3 / 4 / 4;
+		}
+
+		.item-13 {
+			grid-area: 3 / 4 / 4 / 5;
+		}
+
+		.item-14 {
+			grid-area: 3 / 5 / 4 / 6;
+		}
+
+		.item-15 {
+			grid-area: 3 / 6 / 4 / 7;
+		}
+
+		.item-16 {
+			grid-area: 3 / 7 / 4 / 8;
+		}
+
+		.item-17 {
+			grid-area: 1 / 1 / 2 / 2;
+		}
+	}
 
 	.instagram-feed-item {
 		width: calc(100% / 3);
+		@include media-breakpoint-up(md) {
+			width: 20%;
+		}
+		@include media-breakpoint-up(lg) {
+			width: 100%;
+		}
 
 		a {
 			padding: 2px;
@@ -990,5 +1202,30 @@ html.js {
 				}
 			}
 		}
+	}
+}
+
+.valtenna-alert {
+	text-align: center;
+	max-width: 90%;
+	padding: 2rem;
+	@include media-breakpoint-up(md) {
+		max-width: 500px;
+	}
+
+	&.error {
+		h3 {
+			color: #721c24;
+		}
+	}
+
+	&.success {
+		h3 {
+			color: #155724;
+		}
+	}
+
+	h3 {
+		margin-bottom: 1rem;
 	}
 }

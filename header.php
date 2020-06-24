@@ -28,12 +28,12 @@
 		?>
 		<<?php echo $tag; ?> id="site-logo" class="flex-grow-1">
 			<a href="<?php echo site_url(); ?>" title="<?php echo get_bloginfo('name'); ?>">
-				<img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" srcset="<?php echo get_theme_file_uri('assets/images/logo@2x.png'); ?> 2x" class="img-fluid" alt="<?php echo __('Valtenna Box Factory','valtenna'); ?>"/>
+				<img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" srcset="<?php echo get_theme_file_uri('assets/images/logo@2x.png'); ?> 2x" class="img-fluid" alt="<?php echo get_bloginfo( 'description' ) . ', ' . get_bloginfo( 'name' ); ?>"/>
 			</a>
 		</<?php echo $tag; ?>>
 		<div id="toolbar" class="d-flex flex-row-reverse justify-content-end flex-wrap flex-grow-1 flex-xl-row">
 			<div class="toolbar-item mr-xl-3">
-				<a href="#" title="<?php echo __('Follow us on Instagram','valtenna'); ?>"><i class="fab fa-instagram"></i></a>
+				<a href="#" title="<?php echo __('Seguici su Instagram','valtenna'); ?>"><i class="fab fa-instagram"></i></a>
 			</div>
 			<div class="toolbar-item mr-2 mr-xl-0">
 				<a href="javascript:;" id="trigger-menu"><i class="fas fa-bars"></i></a>
@@ -70,7 +70,7 @@
 			<footer>
 				<ul class="reset-list follow-us">
 					<li>
-						<a href="#" target="_blank"><?php echo sprintf( __('Follow us on <span>%s</span>','valtenna'), '<i class="fab fa-instagram"></i> Instagram' ); ?></a>
+						<a href="#" target="_blank"><?php echo sprintf( __('Seguici su <span>%s</span>','valtenna'), '<i class="fab fa-instagram"></i> Instagram' ); ?></a>
 					</li>
 				</ul>
 			</footer>

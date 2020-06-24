@@ -1,0 +1,15 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+/* Main column width */
+.wp-block {
+	max-width: 720px;
+}
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+	@include make-container-max-widths();
+}
+/* Width of "full-wide" blocks */
+.wp-block[data-align="full"] {
+	max-width: none;
+}

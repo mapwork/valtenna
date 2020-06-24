@@ -112,13 +112,13 @@
 </section>
 <section id="special-projects-preview">
    <div class="container">
-      <div class="row no-gutters flex-column">
-         <div class="col-left">
+      <div class="row no-gutters flex-column flex-lg-row special-projects-slideshow">
+         <div class="col col-left">
             <?php
             echo mapcomm_get_special_projects_slideshow(get_theme_mod('special_projects_slides_num', 5));
             ?>
          </div>
-         <div class="col-right">
+         <div class="col col-right d-lg-flex flex-lg-column justify-content-lg-center">
             <div class="intro text-center">
                <h3 class="text-uppercase text-center area-title mb-4">
                   <?php echo get_string_last_word_bold( get_theme_mod('special_projects_title', ''), 3 ); ?>
@@ -149,7 +149,7 @@
 </section>
 <section id="instagram">
    <div class="container">
-      <h3 class="text-uppercase text-center area-title mb-4"><?php echo get_string_last_word_bold( __('Instagram @valtenna','valtenna') ); ?></h3>
+      <h3 class="text-uppercase text-center area-title mb-4 mb-xxl-5"><?php echo get_string_last_word_bold( __('Instagram @valtenna','valtenna') ); ?></h3>
       <div id="instagram-wall">
          <div class="spinner-border mx-auto" role="status">
            <span class="sr-only">Loading...</span>

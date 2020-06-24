@@ -1,9 +1,16 @@
+if (typeof('objectFitImages') == 'function') {
+	objectFitImages('img.fitimage', {
+		watchMQ: true
+	});
+}
+
 document.addEventListener('lazybeforeunveil', function(e) {
 	var bg = e.target.getAttribute('data-background-image');
 	if (bg) {
 		e.target.style.backgroundImage = 'url(' + bg + ')';
 	}
 });
+
 jQuery(document).ready(function($) {
 	var categoryCarousel = $('.products-cat-carousel > .wrapper');
 	if (categoryCarousel.length) {
@@ -64,7 +71,13 @@ jQuery(document).ready(function($) {
 			rows: 0,
 			prevArrow: '<button class="prev"><span></span></button>',
 			nextArrow: '<button class="next"><span></span></button>',
-			lazyLoad: 'progressive'
+			lazyLoad: 'progressive',
+			responsive: [{
+				breakpoint: 991.98,
+				settings: {
+					variableWidth: true
+				}
+			}]
 		});
 	}
 

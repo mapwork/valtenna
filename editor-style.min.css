@@ -1,0 +1,9 @@
+.wp-block{max-width:720px}
+.wp-block[data-align="full"]{max-width:none}
+@media(min-width:576px){.wp-block[data-align="wide"]{max-width:540px}
+}@media(min-width:768px){.wp-block[data-align="wide"]{max-width:720px}
+}@media(min-width:992px){.wp-block[data-align="wide"]{max-width:960px}
+}@media(min-width:1200px){.wp-block[data-align="wide"]{max-width:1180px}
+}@media(min-width:1540px){.wp-block[data-align="wide"]{max-width:1460px}
+}@media(min-width:1780px){.wp-block[data-align="wide"]{max-width:1640px}
+}

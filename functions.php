@@ -76,6 +76,15 @@ if ( ! function_exists( 'valtenna_setup' ) ) :
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
+		 * gutenberg
+		 * @var [type]
+		 */
+		add_theme_support( 'wp-block-styles' );
+		add_theme_support( 'align-wide' );
+		add_theme_support('editor-styles');
+		add_editor_style( 'editor-style.min.css' );
+
+		/**
 		 * [add_theme_support post-formats]
 		 * @var [type]
 		 */
@@ -138,49 +147,10 @@ function valtenna_scripts() {
 	wp_enqueue_style( 'valtenna-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_enqueue_script( 'valtenna-vendor-js', get_template_directory_uri() . '/assets/js/vendor.min.js', array('jquery'), _S_VERSION, true );
 	$valtenna = [
-		'ajaxurl' => admin_url('admin-ajax.php'),
-		'strings' => [
-			'subscribe' => [
-				'success' => [
-					'message' => __('Thank you for subscribing our Mailing List.','valtenna')
-				],
-				'error' => [
-					'already_subscribed' => __('This e-mail address is already on our mailing list','valtenna')
-				]
-			]
-		]
+		'ajaxurl' => admin_url('admin-ajax.php')
 	];
-	wp_enqueue_script( 'valtenna-main-js', get_template_directory_uri() . '/assets/js/custom.min.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'valtenna-main-js', get_template_directory_uri() . '/assets/js/custom.min.js', array('jquery','wp-i18n'), _S_VERSION, true );
 	wp_localize_script( 'valtenna-main-js', 'valtenna', $valtenna );
-
-	$__ = '__';
-	$subscribeJs = <<<HTML
-	<script>
-	/*<![CDATA[*/
-	jQuery(document).ready(function($){
-		var subscribeForm = $('form#subscribe-form');
-		subscribeForm.validate({
-			rules: {
-				subscribe_email: {
-					required: true,
-					email: true
-				}
-			},
-			messages: {
-				subscribe_email: {
-					required: "{$__('Questo campo è obbligatorio','valtenna')}",
-					email: "{$__('Inserisci un indirizzo e-mail valido','valtenna')}",
-				}
-			},
-			submitHandler: function(form){
-				console.log(form);
-			}
-		});
-	});
-	/*]]>*/
-	</script>
-	HTML;
-	wp_add_inline_script( 'valtenna-main-js', $subscribeJs );
 }
 add_action( 'wp_enqueue_scripts', 'valtenna_scripts', 999 );
 
