@@ -16,7 +16,7 @@ if( !function_exists('alter_product_archive_query') ){
             $category_term = $_REQUEST['products_cat'];
          }
          $query->set('products_cat', $category_term);
-         $query->set('posts_per_page', 7);
+         $query->set('posts_per_page', 8);
       }
       return $query;
    }

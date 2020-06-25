@@ -2,8 +2,8 @@
 <header class="archive-header">
    <div class="container">
       <div class="wrapper row no-gutters flex-column justify-content-end">
-         <div class="content text-center">
-            <h1 class="mb-3"><?php post_type_archive_title(); ?></h1>
+         <div class="content text-center text-md-left">
+            <h1 class="mb-3 mb-md-4"><?php post_type_archive_title(); ?></h1>
             <div class="description">
                <p class="mb-0"><?php echo __('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”','valtenna'); ?></p>
             </div>
@@ -33,18 +33,19 @@
             );
             $current = get_query_var('products_cat') == $category->slug ? ' class="selected"':'';
             $listitems[] = sprintf(
-               '<li%1$s><a href="%2$s" title="%3$s">%3$s</a></li>',
+               '<li%1$s data-slug="%2$s"><a href="%3$s" title="%4$s">%4$s</a></li>',
                $current,
+               $category->slug,
                add_query_arg( [ 'products_cat' => $category->slug ], get_post_type_archive_link('product') ),
                $category->name
             );
          }
          $html = <<<HTML
          <nav id="categories-nav">
-            <ul class="reset-list d-none d-lg-block">
+            <ul class="reset-list d-none d-xl-flex flex-lg-row flex-lg-wrap text-uppercase justify-content-center">
                {$join($listitems)}
             </ul>
-            <div class="select-push d-lg-none">
+            <div class="select-push d-xl-none">
                <div class="fixit d-flex flex-column justify-content-stretch">
                   <select class="custom-select" id="mobile-category-selector">
                      {$join($options)}
@@ -59,38 +60,25 @@
    </div>
 </section>
 <section id="products-grid">
-   <div class="container-fluid">
-      <div class="row no-gutters flex-column" id="products-grid-container">
+   <div class="container-fluid px-xl-0">
+      <div class="row no-gutters flex-column flex-md-row" id="products-grid-container">
          <?php
          if( have_posts() ){
             while( have_posts() ){
                the_post();
                get_template_part( 'template-parts/product-grid-item' );
             }
+            get_template_part( 'template-parts/product-grid-pagination' );
+         }else{
+            get_template_part( 'template-parts/no-products-found' );
          }
          ?>
-         <div id="product-grid-pagination" class="d-flex flex-row flex-wrap justify-content-center align-items-end flex-grow-1">
-         <?php
-         add_filter( 'number_format_i18n', 'add_leading_zeros_to_pagination' );
-         global $wp_query;
-         $big = 999999999;
-         echo paginate_links( array(
-             'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-             'format' => '?paged=%#%',
-             'current' => max( 1, get_query_var('paged') ),
-             'total' => $wp_query->max_num_pages,
-             'prev_text' => '<i class="fas fa-chevron-left"></i>',
-             'next_text' => '<i class="fas fa-chevron-right"></i>',
-         ) );
-         remove_filter( 'number_format_i18n', 'add_leading_zeros_to_pagination' );
-         ?>
-         </div>
       </div>
    </div>
 </section>
 <section class="products-tag-reminder">
    <div class="container">
-      <div class="row no-gutters">
+      <div class="row no-gutters flex-column flex-md-row">
          <?php
          $tags = [
             get_msls_term_id(4), //scatole rigide
