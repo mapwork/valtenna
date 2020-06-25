@@ -45,28 +45,16 @@
 	<div class="wrapper">
 		<button type="button" id="close-navigation"><i class="fas fa-times"></i></button>
 		<div class="wrapper-in d-flex flex-column flex-wrap align-items-start">
-			<nav id="nav" class="flex-grow-1 d-flex flex-column flex-wrap justify-content-center">
-				<ul class="reset-list">
-					<li class="current-menu-item">
-						<a href="#">Chi siamo</a>
-					</li>
-					<li>
-						<a href="#">Produzione</a>
-					</li>
-					<li>
-						<a href="#">Servizi</a>
-					</li>
-					<li>
-						<a href="#">Prodotti</a>
-					</li>
-					<li>
-						<a href="#">News</a>
-					</li>
-					<li>
-						<a href="#">Contatti</a>
-					</li>
-				</ul>
-			</nav>
+			<?php
+			wp_nav_menu([
+				'theme_location' 	=> 'main-menu',
+				'menu_id' 			=> 'main-menu',
+				'menu_class'      => 'reset-list',
+				'container' 		=> 'nav',
+				'container_id' 	=> 'nav',
+				'container_class' => 'flex-grow-1 d-flex flex-column flex-wrap justify-content-center',
+			]);
+			?>
 			<footer>
 				<ul class="reset-list follow-us">
 					<li>

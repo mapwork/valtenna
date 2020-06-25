@@ -74,7 +74,6 @@ if ( ! function_exists( 'valtenna_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
 		/**
 		 * gutenberg
 		 * @var [type]
@@ -266,26 +265,28 @@ function mapcomm_get_latest_news_slideshow( $count ){
 }
 
 /**
- * [mapcomm_add_lazyload_to_attachment_image description]
- * @param [type] $attr       [description]
- * @param [type] $attachment [description]
+ * [get_products_tag_block description]
+ * @param  [type] $tag_id [description]
+ * @return [html]         [blocco html]
  */
-function mapcomm_add_lazyload_to_attachment_image( $attr, $attachment ){
-	$classes = $attr['class'];
-	$current_src = $attr['src'];
-	$current_srcset = $attr['srcset'];
-	if( strpos( $classes, 'slick-lazy' ) !== false ){
-		$attr['data-lazy'] = $current_src;
-		unset( $attr['src'] );
-	}elseif( strpos( $classes, 'lazyload' ) !== false ){
-		$attr['data-src'] = $current_src;
-		$attr['data-srcset'] = $current_srcset;
-		unset( $attr['src'] );
-		unset( $attr['srcset'] );
+function mapcomm_get_product_tags_block( $tag_id ){
+	$tag = get_term( $tag_id, 'products_tag' );
+	if( $image = get_field( 'products_cat_image', 'products_tag_' . $tag_id ) ){
+		$imagehtml = wp_get_attachment_image( $image['ID'], 'large', false, ['class' => 'img-fluid lazyload fitimage'] );
+		$imagehtml .= '<noscript>' . wp_get_attachment_image( $image['ID'], 'large', false, ['class' => 'img-fluid fitimage'] ) . '</noscript>';
+	}else{
+		$imagehtml = '<img data-src="https://via.placeholder.com/960x830/?text=' . __('tag prodotti','valtenna') . '" class="img-fluid lazyload fitimage" alt="' . get_the_title() . '"/><noscript><img src="https://via.placeholder.com/960x830/?text=' . __('tag prodotti','valtenna') . '" class="img-fluid fitimage" alt="' . get_the_title() . '"/></noscript>';
 	}
-	return $attr;
+	$output =  '<div class="products_tag_block">';
+	$output .= '	<a class="wrapper d-block" href="' . get_term_link( $tag ) . '" title="' . esc_html__($tag->name) . '">';
+	$output .= '	<figure>' . $imagehtml . '</figure>';
+	$output .= '	<h3 class="text-uppercase">' . get_string_last_word_bold( $tag->name ) . '</h3>';
+	$output .= '	<button class="line-through-but"><span>' . __('Scopri di più','valtenna') . '</span></button>';
+	$output .= '	</a>';
+	$output .= '</div>';
+	return $output;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'mapcomm_add_lazyload_to_attachment_image', 10, 2 );
+
 /**
  * Customizer additions.
  */
@@ -295,3 +296,9 @@ require get_template_directory() . '/inc/customizer.php';
  * Shortcodes.
  */
 require get_template_directory() . '/inc/shortcodes.php';
+
+/**
+ * Hooks
+ * @var [type]
+ */
+require get_template_directory() . '/inc/hooks.php';

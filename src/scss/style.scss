@@ -68,6 +68,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "bootstrap/scss/images";
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/forms";
+@import "bootstrap/scss/custom-forms";
 @import "bootstrap/scss/spinners";
 $brown: #C1AF99;
 
@@ -962,10 +963,13 @@ label.error {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				font-family: 'object-fit: cover;';
 			}
 		}
 	}
+}
+
+img.fitimage {
+	font-family: 'object-fit: cover;';
 }
 
 html.js {
@@ -1227,5 +1231,119 @@ html.js {
 
 	h3 {
 		margin-bottom: 1rem;
+	}
+}
+
+h1 {
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 1.75rem;
+}
+
+.archive-header {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	line-height: 1.4;
+	position: relative;
+
+	.wrapper {
+		height: 75vw;
+		padding-bottom: var(--spacer);
+	}
+}
+
+.archive.post-type-archive-product {
+	.archive-header {
+		background-image: linear-gradient(to right, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 100%), url("assets/images/header-archivio-prodotti.jpg");
+	}
+}
+
+#product-archive-categories {
+	padding: var(--spacer) 0;
+}
+
+#categories-nav {
+	select {
+		height: calc(1.5em + 1rem + 2px);
+		padding: 0.5rem 1.75rem 0.5rem 0.75rem;
+		line-height: 1.5;
+		background-color: #fff;
+	}
+}
+
+.product-grid-item {
+	flex-grow: 1;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	.content {
+		padding: 1rem;
+		background-color: #C1AF99;
+	}
+
+	h2 {
+		font-size: 0.8125rem;
+		font-weight: 800;
+		text-transform: uppercase;
+	}
+}
+
+#products-grid {
+	margin-bottom: var(--spacer);
+}
+
+#product-grid-pagination {
+	margin-top: calc(var(--spacer) / 2);
+
+	a,
+	span {
+		display: inline-block;
+	}
+
+	.next {
+		margin-left: 1.25rem;
+	}
+
+	.prev {
+		margin-right: 1.25rem;
+	}
+
+	.page-numbers {
+		line-height: 1;
+	}
+
+	.page-numbers:not(.prev):not(.next) {
+		margin: 0 0.5rem;
+
+		&.current {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: $brown;
+			margin-bottom: -2px;
+		}
+	}
+}
+
+.products_tag_block {
+	text-align: center;
+
+	h3 {
+		font-weight: 300;
+		letter-spacing: 0.1rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.products-tag-reminder {
+	padding: var(--spacer) 0;
+	background-color: #f1f1f1;
+
+	.products_tag_block {
+		&:not(:last-child) {
+			margin-bottom: var(--spacer);
+		}
 	}
 }
