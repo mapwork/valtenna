@@ -292,7 +292,9 @@ function mapcomm_get_product_tags_block( $tag_id ){
  * @param  [type] $post_id [description]
  * @return [type]          [description]
  */
-function mapcomm_get_product_header_image($post_id){
+function mapcomm_get_product_header_image($post_id = null){
+	global $post;
+	$post_id = !$post_id ? $post->ID : $post_id;
 	$terms = get_the_terms( $post_id, 'products_cat' );
 	if( $terms && count( $terms ) > 0 ){
 		$first = array_shift($terms);
@@ -301,6 +303,97 @@ function mapcomm_get_product_header_image($post_id){
 		}
 	}
 	return;
+}
+
+/**
+ * [mapcomm_get_tax_header_image description]
+ * @param  [type] $tern_id [description]
+ * @return [type]          [description]
+ */
+function mapcomm_get_tax_header_image(){
+	if( is_tax() ){
+		$queried_object = get_queried_object();
+		if( $queried_object ){
+			$header = get_field('products_cat_header', $queried_object->taxonomy . '_' . $queried_object->term_id);
+			if( $header ){
+				return $header['url'];
+			}
+		}
+	}
+	return '';
+}
+
+function mapcomm_get_products_tag_intro(){
+	if( is_tax('products_tag') ){
+		$queried_object = get_queried_object();
+		if( $queried_object ){
+			$intro = get_field('products_tag_intro', $queried_object->taxonomy . '_' . $queried_object->term_id);
+			if( $intro ){
+				return apply_filters('the_content', $intro);
+			}
+		}
+	}
+	return '';
+}
+
+/**
+ * [mapcomm_get_tax_thumbnail description]
+ * @param  string $size  [description]
+ * @param  array  $attrs [description]
+ * @return [type]        [description]
+ */
+function mapcomm_get_tax_thumbnail($size = 'thumbnail', $attrs = []){
+	if( is_tax() ){
+		$queried_object = get_queried_object();
+		if( $queried_object ){
+			$thumbnail = get_field('products_cat_image', $queried_object->taxonomy . '_' . $queried_object->term_id);
+			if( $thumbnail ){
+				return wp_get_attachment_image( $thumbnail['ID'], $size, false, $attrs );
+			}
+		}
+	}
+	return '';
+}
+/**
+ * [function description]
+ * @var [type]
+ */
+function mapcomm_get_similar_products( $post_id = null ){
+	global $post;
+	if ( !$post ) {
+		return '';
+   }
+	$post_id = !$post_id ? $post->ID : $post_id;
+	$terms = get_the_terms( $post_id, 'products_cat' );
+	if( $terms && count( $terms ) > 0 ){
+		$term_ids = array_map(function($v){
+			return $v->term_id;
+		}, $terms);
+		$query = new WP_Query([
+			'post_type' => 'product',
+			'post_status' => 'publish',
+			'posts_per_page' => 8,
+			'post__not_in' => [$post_id],
+			'tax_query' => [
+				[
+					'taxonomy' => 'products_cat',
+					'field' => 'term_id',
+					'terms' => $term_ids,
+					'operator' => 'IN'
+				]
+			]
+		]);
+		if( $query->have_posts() ){
+			ob_start();
+			while( $query->have_posts() ){
+				$query->the_post();
+				get_template_part('template-parts/product','similar');
+			}
+			return ob_get_clean();
+		}
+		wp_reset_query();
+	}
+	return '';
 }
 
 /**
@@ -318,3 +411,8 @@ require get_template_directory() . '/inc/shortcodes.php';
  * @var [type]
  */
 require get_template_directory() . '/inc/hooks.php';
+/**
+ * [require description]
+ * @var [type]
+ */
+require get_template_directory() . '/inc/walker.php';

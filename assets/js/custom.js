@@ -1,5 +1,26 @@
 "use strict";
 
+var endtransition, endanimation;
+
+(function ($) {
+  var transitions = {
+    'WebkitTransition': 'webkitTransitionEnd',
+    'MozTransition': 'transitionend',
+    'OTransition': 'oTransitionEnd',
+    'msTransition': 'MSTransitionEnd',
+    'transition': 'transitionend'
+  };
+  var animations = {
+    'WebkitAnimation': 'webkitAnimationEnd',
+    'MozAnimation': 'animationend',
+    'OAnimation': 'oAnimationEnd',
+    'msAnimation': 'MSAnimationEnd',
+    'animation': 'animationend'
+  };
+  endtransition = transitions[Modernizr.prefixed('transition')];
+  endanimation = animations[Modernizr.prefixed('animation')];
+})(jQuery);
+
 document.addEventListener('lazybeforeunveil', function (e) {
   var bg = e.target.getAttribute('data-background-image');
 
@@ -172,6 +193,20 @@ function enableScroll() {
     }
   });
 })();
+
+(function ($) {
+  'use strict';
+
+  $('#site-navigation > .wrapper').on(endtransition, function (evt) {
+    if (evt.originalEvent.propertyName.includes('transform') && !$('html').hasClass('menu-open')) {
+      $('#nav .submenu-wrapper').hide();
+    }
+  });
+  $('#nav li.menu-item-has-children > a[href="#"]').on('click', function (event) {
+    event.preventDefault();
+    $(this).next('.submenu-wrapper').slideToggle('800');
+  });
+})(jQuery);
 "use strict";
 
 var _wp$i18n = wp.i18n,
@@ -320,3 +355,28 @@ var _wp$i18n = wp.i18n,
     mobileCategorySelect.find('option[value*="products_cat=' + products_cat + '"]').prop("selected", "selected");
   });
 })(jQuery);
+"use strict";
+
+jQuery(document).ready(function ($) {
+  var similarProduct = $('#similar-products');
+
+  if (similarProduct.length) {
+    similarProduct.find('.slideshow').slick({
+      mobileFirst: true,
+      arrows: true,
+      dots: false,
+      slidesToShow: 1,
+      rows: 0,
+      lazyLoad: 'progressive',
+      speed: 1000,
+      prevArrow: '<button class="prev"><span></span></button>',
+      nextArrow: '<button class="next"><span></span></button>',
+      responsive: [{
+        breakpoint: 767.98,
+        settings: {
+          slidesToShow: 3
+        }
+      }]
+    });
+  }
+});

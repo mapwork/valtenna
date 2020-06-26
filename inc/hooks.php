@@ -24,6 +24,21 @@ if( !function_exists('alter_product_archive_query') ){
 add_action('pre_get_posts', 'alter_product_archive_query', 1);
 
 /**
+* [alter_taxonomies_archive_query description]
+* @param  [type] $query [description]
+* @return [type]        [description]
+*/
+if( !function_exists('alter_taxonomies_archive_query') ){
+   function alter_taxonomies_archive_query( $query ){
+      if( !is_admin() && $query->is_main_query() && ( is_tax('products_tag') || is_tax('products_cat') ) ){
+         $query->set('posts_per_page', 8);
+      }
+      return $query;
+   }
+}
+add_action('pre_get_posts', 'alter_taxonomies_archive_query', 1);
+
+/**
  * [mapcomm_add_lazyload_to_attachment_image description]
  * @param [type] $attr       [description]
  * @param [type] $attachment [description]
@@ -56,4 +71,17 @@ function add_leading_zeros_to_pagination( $format ){
 	}
 	return '0' . $format;
 }
+
+/**
+ * [remove_tax_name_from_archive_title description]
+ * @param  [type] $title [description]
+ * @return [type]        [description]
+ */
+function remove_tax_name_from_archive_title( $title ){
+   if( is_tax('products_tag') ){
+      return sprintf( __( '%1$s' ), single_term_title( '', false ) );
+   }
+   return $title;
+}
+add_filter( 'get_the_archive_title', 'remove_tax_name_from_archive_title' );
 ?>

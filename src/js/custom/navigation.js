@@ -40,3 +40,16 @@ function enableScroll() {
 		}
 	});
 }());
+
+(function($) {
+	'use strict';
+	$('#site-navigation > .wrapper').on(endtransition, function(evt) {
+		if (evt.originalEvent.propertyName.includes('transform') && !$('html').hasClass('menu-open')) {
+			$('#nav .submenu-wrapper').hide();
+		}
+	});
+	$('#nav li.menu-item-has-children > a[href="#"]').on('click', function(event) {
+		event.preventDefault();
+		$(this).next('.submenu-wrapper').slideToggle('800');
+	});
+})(jQuery);

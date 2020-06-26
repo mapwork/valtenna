@@ -44,17 +44,22 @@
 <div id="site-navigation">
 	<div class="wrapper">
 		<button type="button" id="close-navigation"><i class="fas fa-times"></i></button>
-		<div class="wrapper-in d-flex flex-column flex-wrap align-items-start">
-			<?php
-			wp_nav_menu([
-				'theme_location' 	=> 'main-menu',
-				'menu_id' 			=> 'main-menu',
-				'menu_class'      => 'reset-list',
-				'container' 		=> 'nav',
-				'container_id' 	=> 'nav',
-				'container_class' => 'flex-grow-1 d-flex flex-column flex-wrap justify-content-center',
-			]);
-			?>
+		<div class="wrapper-in d-flex flex-column flex-wrap flex-grow-1 align-items-strecth">
+			<div class="scrollable-outside flex-grow-1 d-flex flex-column position-relative">
+				<div class="scrollbale-inside">
+					<?php
+					wp_nav_menu([
+						'theme_location' 	=> 'main-menu',
+						'menu_id' 			=> 'main-menu',
+						'menu_class'      => 'reset-list',
+						'container' 		=> 'nav',
+						'container_id' 	=> 'nav',
+						'container_class' => 'flex-grow-1 d-flex flex-column flex-wrap justify-content-start',
+						'walker'				=> new Valtenna_Submenu_Walker
+					]);
+					?>
+				</div>
+			</div>
 			<footer>
 				<ul class="reset-list follow-us">
 					<li>

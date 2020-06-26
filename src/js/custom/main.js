@@ -1,3 +1,22 @@
+var endtransition, endanimation;
+(function($) {
+	var transitions = {
+		'WebkitTransition': 'webkitTransitionEnd',
+		'MozTransition': 'transitionend',
+		'OTransition': 'oTransitionEnd',
+		'msTransition': 'MSTransitionEnd',
+		'transition': 'transitionend'
+	};
+	var animations = {
+		'WebkitAnimation': 'webkitAnimationEnd',
+		'MozAnimation': 'animationend',
+		'OAnimation': 'oAnimationEnd',
+		'msAnimation': 'MSAnimationEnd',
+		'animation': 'animationend'
+	};
+	endtransition = transitions[Modernizr.prefixed('transition')];
+	endanimation = animations[Modernizr.prefixed('animation')];
+})(jQuery);
 document.addEventListener('lazybeforeunveil', function(e) {
 	var bg = e.target.getAttribute('data-background-image');
 	if (bg) {
