@@ -288,6 +288,22 @@ function mapcomm_get_product_tags_block( $tag_id ){
 }
 
 /**
+ * [mapcomm_get_product_header_image description]
+ * @param  [type] $post_id [description]
+ * @return [type]          [description]
+ */
+function mapcomm_get_product_header_image($post_id){
+	$terms = get_the_terms( $post_id, 'products_cat' );
+	if( $terms && count( $terms ) > 0 ){
+		$first = array_shift($terms);
+		if( $header = get_field('products_cat_header', 'products_cat_' . $first->term_id) ){
+			return $header['url'];
+		}
+	}
+	return;
+}
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';

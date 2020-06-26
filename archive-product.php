@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 <header class="archive-header">
-   <div class="container">
+   <figure class="mb-0 fixed-background z-index-1">
+      <div class="inside lazyload" data-background-image="<?php echo (string)get_theme_file_uri('assets/images/header-archivio-prodotti.jpg'); ?>"></div>
+   </figure>
+   <div class="container position-relative z-index-2">
       <div class="wrapper row no-gutters flex-column justify-content-end">
          <div class="content text-center text-md-left">
             <h1 class="mb-3 mb-md-4"><?php post_type_archive_title(); ?></h1>

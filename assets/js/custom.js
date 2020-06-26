@@ -1,18 +1,19 @@
 "use strict";
 
+document.addEventListener('lazybeforeunveil', function (e) {
+  var bg = e.target.getAttribute('data-background-image');
+
+  if (bg) {
+    e.target.style.cssText = 'background-image:url(' + bg + ')';
+  }
+});
+
 if (typeof 'objectFitImages' == 'function') {
   objectFitImages('img.fitimage', {
     watchMQ: true
   });
 }
 
-document.addEventListener('lazybeforeunveil', function (e) {
-  var bg = e.target.getAttribute('data-background-image');
-
-  if (bg) {
-    e.target.style.backgroundImage = 'url(' + bg + ')';
-  }
-});
 jQuery(document).ready(function ($) {
   var categoryCarousel = $('.products-cat-carousel > .wrapper');
 

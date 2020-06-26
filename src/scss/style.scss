@@ -1250,6 +1250,51 @@ h1 {
 	line-height: 1.4;
 	position: relative;
 
+	.fixed-background {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		user-select: none;
+		pointer-events: none;
+		overflow: hidden;
+		clip-path: inset(0 0 0 0);
+		/*edge*/
+		@supports (-ms-ime-align:auto) {
+			clip: rect(0, auto, auto, 0);
+		}
+		/*ie 10-11*/
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			clip: rect(0, auto, auto, 0);
+		}
+
+		.inside {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background-color: rgba(255,255,255,.5);
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
 	.wrapper {
 		height: 75vw;
 		padding-bottom: var(--spacer);
@@ -1289,14 +1334,8 @@ h1 {
 			max-width: 50%;
 		}
 		@include media-breakpoint-up(xl) {
-			max-width: calc(100% / 3);
+			max-width: 45%;
 		}
-	}
-}
-
-.archive.post-type-archive-product {
-	.archive-header {
-		background-image: linear-gradient(to right, rgba(255,255,255,0.5) 0%,rgba(255,255,255,0.5) 100%), url("assets/images/header-archivio-prodotti.jpg");
 	}
 }
 
@@ -1527,4 +1566,9 @@ h1 {
 	text-align: center;
 	font-weight: 700;
 	flex-grow: 1;
+}
+@for $i from 0 through 10 {
+	.z-index-#{$i} {
+		z-index: #{$i};
+	}
 }
