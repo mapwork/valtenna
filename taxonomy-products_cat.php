@@ -53,23 +53,19 @@
       </div>
    </div>
 </section>
-<section id="products-preview" class="products-block">
+<section class="products-tag-reminder">
    <div class="container">
-      <div class="intro text-center">
-         <h3 class="mb-4"><?php echo get_theme_mod('products_cat_title'); ?></h3>
+      <div class="row no-gutters flex-column flex-md-row">
          <?php
-         if( $intro = get_theme_mod('products_cat_intro') ){
-            echo apply_filters( 'the_content', $intro );
+         $tags = [
+            get_msls_term_id(4), //scatole rigide
+            get_msls_term_id(5) //scatole pieghevoli
+         ];
+         foreach( $tags as $tag ){
+            echo mapcomm_get_product_tags_block($tag);
          }
          ?>
       </div>
-      <?php
-      $orderby = get_theme_mod('products_cat_orderby', 'name');
-      $order = get_theme_mod('products_cat_order', 'ASC');
-      $number = get_theme_mod('products_cat_num', 0 );
-      $shortcode = sprintf('[products_cat_slideshow orderby="%s" order="%s" number="%d"]', $orderby, $order, $number);
-      echo do_shortcode($shortcode);
-      ?>
    </div>
 </section>
 <?php get_footer(); ?>

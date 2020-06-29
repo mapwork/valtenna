@@ -28,13 +28,11 @@
    <div class="container">
       <div class="intro text-center">
          <h3 class="mb-4"><?php echo get_theme_mod('products_cat_title'); ?></h3>
-         <p class="mb-0">
-            <?php
-            if( $intro = get_theme_mod('products_cat_intro') ){
-               echo apply_filters( 'the_content', $intro );
-            }
-            ?>
-         </p>
+         <?php
+         if( $intro = get_theme_mod('products_cat_intro') ){
+            echo apply_filters( 'the_content', $intro );
+         }
+         ?>
       </div>
       <?php
       $orderby = get_theme_mod('products_cat_orderby', 'name');

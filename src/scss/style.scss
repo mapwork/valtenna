@@ -1282,19 +1282,26 @@ h1 {
 	@include media-breakpoint-up(lg) {
 		font-size: 2.25rem;
 	}
+	@include media-breakpoint-up(xxl) {
+		font-size: 3rem;
+		line-height: 1.3;
+	}
 }
 
+body.tax-products_cat,
 body.tax-products_tag {
 	.products-tag-content {
 		margin-top: var(--spacer);
 		@include media-breakpoint-up(md) {
 			margin-top: 0;
+			margin-bottom: var(--spacer);
 		}
 	}
 
 	.col {
 		@include media-breakpoint-up(md) {
 			max-width: 50%;
+			flex: 0 0 50%;
 		}
 	}
 
@@ -1302,9 +1309,9 @@ body.tax-products_tag {
 		margin-bottom: var(--spacer);
 		@include media-breakpoint-up(md) {
 			margin-bottom: 0;
-		}
-		@include media-breakpoint-up(md) {
 			max-width: 50%;
+			order: 2;
+			margin-left: calc(100% / 12);
 
 			figure {
 				height: 100%;
@@ -1323,6 +1330,7 @@ body.tax-products_tag {
 		@include media-breakpoint-up(md) {
 			padding: 2rem 0 0 2rem;
 			max-width: calc((100% / 12) * 5);
+			order: 1;
 		}
 		@include media-breakpoint-up(lg) {
 			margin-left: calc(100% / 12);
@@ -1330,7 +1338,9 @@ body.tax-products_tag {
 			padding: var(--spacer) 0 0;
 		}
 		@include media-breakpoint-up(xl) {
-			padding: calc(var(--spacer) * 2) 0 0;
+			padding: 0;
+			display: flex;
+			align-items: center;
 		}
 
 		.heading-title {
@@ -1338,6 +1348,7 @@ body.tax-products_tag {
 			font-weight: 800;
 			font-size: 1.25rem;
 			color: #C1AF99;
+			letter-spacing: 0.2rem;
 		}
 	}
 }
@@ -1351,6 +1362,10 @@ body.single-product {
 			@include media-breakpoint-up(lg) {
 				font-size: 2.25rem;
 			}
+			@include media-breakpoint-up(xxl) {
+				font-size: 3rem;
+				line-height: 1.3;
+			}
 		}
 	}
 
@@ -1363,6 +1378,9 @@ body.single-product {
 		h1 {
 			font-size: 1.25rem;
 			color: $brown;
+			@include media-breakpoint-up(xxl) {
+				font-size: 1.75rem;
+			}
 		}
 
 		.col {
@@ -1397,6 +1415,9 @@ body.single-product {
 				@include media-breakpoint-up(xl) {
 					padding: calc(var(--spacer) * 2) 0 0;
 				}
+				@include media-breakpoint-up(xxl) {
+					padding: calc(var(--spacer) * 2.5) 0 0;
+				}
 			}
 		}
 	}
@@ -1412,7 +1433,7 @@ body.single-product {
 		margin-top: var(--spacer);
 
 		figure {
-			max-width: calc((100% / 3) - 10px);
+			max-width: calc(100% / 3);
 			flex-grow: 1;
 			position: relative;
 			overflow: hidden;
@@ -1435,10 +1456,6 @@ body.single-product {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-			}
-
-			&:not(:first-child) {
-				margin-left: 15px;
 			}
 		}
 	}
@@ -1783,6 +1800,16 @@ html.js {
 			}
 		}
 	}
+	@include media-breakpoint-up(xxl) {
+		figure {
+			height: calc(#{map-get($container-max-widths, 'xxl')} / 3.5);
+		}
+	}
+	@include media-breakpoint-up(hd) {
+		figure {
+			height: calc(#{map-get($container-max-widths, 'hd')} / 3.5);
+		}
+	}
 
 	&:not(:last-child) {
 		margin-bottom: 1rem;
@@ -1837,6 +1864,12 @@ html.js {
 		margin-left: auto;
 		font-size: 1.25rem;
 	}
+	@include media-breakpoint-up(xl) {
+		font-size: 1.5rem;
+	}
+	@include media-breakpoint-up(xxl) {
+		font-size: 2rem;
+	}
 
 	a,
 	span {
@@ -1865,6 +1898,12 @@ html.js {
 			margin-bottom: -2px;
 			@include media-breakpoint-up(lg) {
 				font-size: 2.1875rem;
+			}
+			@include media-breakpoint-up(xl) {
+				font-size: 2.5rem;
+			}
+			@include media-breakpoint-up(xxl) {
+				font-size: 3rem;
 			}
 		}
 	}
