@@ -94,6 +94,8 @@ if( !function_exists('mapcomm_add_page_body_class') ){
    function mapcomm_add_page_body_class($classes){
       if( is_page( get_msls_post_id(187) ) ){
          $classes[] = 'page-azienda';
+      }elseif( is_page( get_msls_post_id(2) ) ){
+         $classes[] = 'archivio-news';
       }
       return $classes;
    }

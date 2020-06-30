@@ -819,6 +819,13 @@ html.js #similar-products .slideshow .slick-arrow.next span{display:block;width:
 #product-grid-pagination .page-numbers{line-height:1}
 #product-grid-pagination .page-numbers:not(.prev):not(.next){margin:0 .5rem}
 #product-grid-pagination .page-numbers:not(.prev):not(.next).current{font-size:1.5rem;font-weight:700;color:#c1af99;margin-bottom:-2px}
+#news-archive-pagination{margin-top:calc(var(--spacer) / 2)}
+#news-archive-pagination a,#news-archive-pagination span{display:inline-block}
+#news-archive-pagination .next{margin-left:1.25rem}
+#news-archive-pagination .prev{margin-right:1.25rem}
+#news-archive-pagination .page-numbers{line-height:1}
+#news-archive-pagination .page-numbers:not(.prev):not(.next){margin:0 .5rem}
+#news-archive-pagination .page-numbers:not(.prev):not(.next).current{font-size:1.5rem;font-weight:700;color:#c1af99;margin-bottom:-2px}
 .products_tag_block{text-align:center}
 .products_tag_block:not(:last-child){margin-bottom:var(--spacer)}
 .products_tag_block h3{font-weight:300;letter-spacing:.1rem;margin-bottom:1rem}
@@ -866,6 +873,23 @@ figure.wp-block-embed{margin-bottom:0}
 .clients-row .client-list{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center}
 .clients-row .client-list .kt-inside-inner-col{padding:2.5rem 1rem}
 .clients-row .client-list ul{list-style:none;margin:0;padding:0}
+body.archivio-news .archive-header{margin-bottom:var(--spacer)}
+.archive-news-item:not(:last-child){margin-bottom:var(--spacer)}
+.archive-news-item .post-content{padding:2rem;border:solid 2px #c1af99}
+.archive-news-item .post-content-wrapper:before{display:block;content:attr(data-title);text-transform:uppercase;color:#c1af99;letter-spacing:.1rem;font-weight:700;margin-bottom:1rem}
+.archive-news-item h2{font-size:1.125rem;margin-bottom:1rem}
+.archive-news-item .cta{margin-top:var(--spacer)}
+.archive-news-item .cta button{font-weight:700;letter-spacing:.2rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;line-height:1;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.archive-news-item .cta button:after{content:'';display:block;width:18px;height:18px;border-top:solid 1px #000;border-right:solid 1px #000;-webkit-transform:rotate(45deg);transform:rotate(45deg)}
+#news-archive-posts{margin-bottom:var(--spacer)}
+#contatti .left-col{position:relative}
+#contatti .left-col .kt-inside-inner-col{position:relative}
+#contatti .left-col .kt-inside-inner-col:before{content:'';display:block;padding-bottom:100%}
+#contatti .left-col .kt-inside-inner-col .leaflet-map{position:absolute;width:100%;height:100% !important;left:0;top:0}
+ul.contacts-info{list-style:none;margin:0;padding:0;font-weight:700}
+ul.contacts-info li{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap}
+ul.contacts-info li:not(:last-child){margin-bottom:2rem}
+ul.contacts-info li .icon{margin-right:1rem;color:#999}
 @media(prefers-reduced-motion:reduce){.form-control{-webkit-transition:none;transition:none}
 .custom-switch .custom-control-label::after{-webkit-transition:none;transition:none}
 .custom-range::-webkit-slider-thumb{-webkit-transition:none;transition:none}
@@ -1513,8 +1537,10 @@ body.page-azienda .wp-block-columns.first-row .right-column .text-block:before{c
 body.page-azienda .wp-block-columns.second-row .left-column{padding:0 1.75rem}
 body.page-azienda .wp-block-columns.second-row .left-column .text-block{margin-right:calc(var(--spacer) * 2);position:relative}
 body.page-azienda .wp-block-columns.second-row .left-column .text-block:before{content:'';display:block;position:absolute;left:100%;top:14px;width:60px;height:1px;background-color:#000;margin-left:1rem}
+#contatti .right-col{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-left:3rem}
 }@media(min-width:768px) and (max-width:991.98px){#footer .col{max-width:calc((100% / 12) * 7);margin:0 auto}
 }@media(min-width:768px) and (min-width:1200px){.archive-header .content .description:before{width:60px}
+#contatti .right-col{padding-left:4rem}
 }@media(min-width:992px){.d-lg-none{display:none !important}
 .d-lg-inline{display:inline !important}
 .d-lg-inline-block{display:inline-block !important}
@@ -1867,6 +1893,8 @@ html.js #similar-products .slideshow .slick-arrow.next{margin-right:calc(((960px
 .product-grid-item .content{padding:.5rem 1rem}
 #product-grid-pagination{margin-top:0;margin-bottom:1rem;max-width:calc(50% - 1rem);margin-left:auto;font-size:1.25rem}
 #product-grid-pagination .page-numbers:not(.prev):not(.next).current{font-size:2.1875rem}
+#news-archive-pagination{margin-top:0;margin-bottom:1rem;font-size:1.25rem}
+#news-archive-pagination .page-numbers:not(.prev):not(.next).current{font-size:2.1875rem}
 .alignwide{max-width:960px}
 body.page-azienda .wp-block-columns .wp-block-column{max-width:50%;-webkit-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;min-height:400px}
 body.page-azienda .wp-block-columns .wp-block-column figure.fitimage{height:100%}
@@ -1879,7 +1907,17 @@ body.page-azienda .wp-block-columns.second-row .left-column .column-content{padd
 #produzione .text-block{max-width:calc((100% / 12) * 10);margin:0 auto}
 #servizi .text-block{max-width:calc((100% / 12) * 8);margin-left:auto;margin-right:auto}
 #certificazioni .text-block{max-width:calc((100% / 12) * 8);margin-left:auto;margin-right:auto}
+.archive-news-item{padding-bottom:3.25rem}
+.archive-news-item .col-left{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:calc((100% / 12) * 5);margin-right:calc((var(--spacer) * 3) * -1)}
+.archive-news-item .col-right{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;position:relative}
+.archive-news-item .post-content{padding:3rem 4rem 3rem calc(var(--spacer) * 5);margin-bottom:-3.25rem}
+.archive-news-item:nth-child(even) a.wrapper{-webkit-box-orient:horizontal !important;-webkit-box-direction:reverse !important;-ms-flex-direction:row-reverse !important;flex-direction:row-reverse !important}
+.archive-news-item:nth-child(even) .col-left{margin-right:0;margin-left:calc((var(--spacer) * 3) * -1)}
+.archive-news-item:nth-child(even) .post-content{padding:3rem calc(var(--spacer) * 5) 3rem 4rem}
 }@media(min-width:992px) and (min-width:1540px){#categories-nav ul{font-size:1.125rem}
+}@media(min-width:992px) and (min-width:1200px){.archive-news-item{padding-bottom:5.25rem}
+.archive-news-item .post-content{padding:5rem 6rem 5rem calc(var(--spacer) * 5);margin-bottom:-5.25rem}
+.archive-news-item:nth-child(even) .post-content{padding:5rem calc(var(--spacer) * 5) 5rem 6rem}
 }@media(min-width:1200px){.d-xl-none{display:none !important}
 .d-xl-inline{display:inline !important}
 .d-xl-inline-block{display:inline-block !important}
@@ -2206,6 +2244,8 @@ body.single-product .single-product-content .col.col-right{padding:calc(var(--sp
 #products-grid{margin-bottom:calc(var(--spacer) * 1.5)}
 #product-grid-pagination{font-size:1.5rem}
 #product-grid-pagination .page-numbers:not(.prev):not(.next).current{font-size:2.5rem}
+#news-archive-pagination{font-size:1.5rem}
+#news-archive-pagination .page-numbers:not(.prev):not(.next).current{font-size:2.5rem}
 .products-tag-reminder{background-color:transparent}
 .products-tag-reminder .products_tag_block{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}
 .products-tag-reminder .products_tag_block figure img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
@@ -2219,6 +2259,7 @@ body.page-azienda .wp-block-columns.second-row .left-column{padding:0 var(--spac
 #certificazioni .text-block{max-width:calc((100% / 12) * 6)}
 .clients-row .client-list{text-align:left;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .clients-row .client-list .kt-inside-inner-col{padding:2rem}
+.archive-news-item .post-content-wrapper:before{font-size:1.25rem}
 }@media(min-width:1200px) and (hover:hover){#product-area .area-item:hover{width:75%}
 }@media(min-width:1540px){.d-xxl-none{display:none !important}
 .d-xxl-inline{display:inline !important}
@@ -2524,6 +2565,8 @@ body.single-product .single-product-content .col.col-right{padding:calc(var(--sp
 #products-grid{margin-bottom:calc(var(--spacer) * 2)}
 #product-grid-pagination{font-size:2rem}
 #product-grid-pagination .page-numbers:not(.prev):not(.next).current{font-size:3rem}
+#news-archive-pagination{font-size:2rem}
+#news-archive-pagination .page-numbers:not(.prev):not(.next).current{font-size:3rem}
 .alignwide{max-width:1460px}
 body.page-azienda .wp-block-columns.first-row h2,body.page-azienda .wp-block-columns.second-row h2{margin-bottom:2rem}
 body.page-azienda .wp-block-columns.first-row .right-column{padding:0 calc(var(--spacer) * 2)}
