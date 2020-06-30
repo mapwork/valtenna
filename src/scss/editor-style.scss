@@ -7,6 +7,7 @@
 }
 /* Width of "wide" blocks */
 .wp-block[data-align="wide"] {
+	@include make-container();
 	@include make-container-max-widths();
 }
 /* Width of "full-wide" blocks */

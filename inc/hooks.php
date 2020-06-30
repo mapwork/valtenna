@@ -84,4 +84,19 @@ function remove_tax_name_from_archive_title( $title ){
    return $title;
 }
 add_filter( 'get_the_archive_title', 'remove_tax_name_from_archive_title' );
+
+
+if( !function_exists('mapcomm_add_page_body_class') ){
+   /**
+    * [mapcomm_add_page_body_class description]
+    * @param [type] $classes [description]
+    */
+   function mapcomm_add_page_body_class($classes){
+      if( is_page( get_msls_post_id(187) ) ){
+         $classes[] = 'page-azienda';
+      }
+      return $classes;
+   }
+}
+add_filter('body_class', 'mapcomm_add_page_body_class');
 ?>

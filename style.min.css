@@ -746,7 +746,7 @@ label.error{position:absolute;line-height:1;white-space:nowrap;overflow:hidden;t
 #special-projects-preview{background-color:#c1af99;color:#fff;padding:1.5rem 0;margin-bottom:var(--spacer)}
 #special-projects-preview .col-left{max-width:100%;margin-bottom:var(--spacer)}
 #special-projects-slideshow figure img{display:block;margin:0 auto}
-img.fitimage{font-family:'object-fit: cover;'}
+.fitimage img,img.fitimage{font-family:'object-fit: cover;'}
 html.js #special-projects-slideshow.slick-initialized figure{display:block}
 html.js #special-projects-slideshow figure{display:none}
 html.js #special-projects-slideshow .slick-arrow{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;position:absolute;width:40px;height:40px;top:50%;margin-top:-20px;background-color:#fff;z-index:10;-webkit-box-shadow:0 0 5px rgba(0,0,0,0.2);box-shadow:0 0 5px rgba(0,0,0,0.2)}
@@ -836,6 +836,36 @@ html.js #similar-products .slideshow .slick-arrow.next span{display:block;width:
 .z-index-8{z-index:8}
 .z-index-9{z-index:9}
 .z-index-10{z-index:10}
+img[class*="wp-image-"]{width:auto;height:auto;max-width:100%}
+.wp-block-columns{display:-webkit-box;display:-ms-flexbox;display:flex}
+.alignfull{width:100%;padding-right:16px;padding-left:16px;margin-right:auto;margin-left:auto}
+.alignwide{width:100%;padding-right:16px;padding-left:16px;margin-right:auto;margin-left:auto}
+.wp-block-column{max-width:100%;-webkit-box-flex:1;-ms-flex:1 0 0;flex:1 0 0}
+body.page-azienda p:last-child{margin-bottom:0}
+body.page-azienda .wp-block-columns.first-row h2,body.page-azienda .wp-block-columns.second-row h2{margin-bottom:1.25rem;letter-spacing:.1rem;font-weight:800}
+body.page-azienda .wp-block-columns.first-row .text-block ul,body.page-azienda .wp-block-columns.second-row .text-block ul{list-style:none;margin:0;padding:0}
+body.page-azienda .wp-block-columns.first-row{margin-bottom:var(--spacer)}
+body.page-azienda .wp-block-columns.second-row{margin-bottom:var(--spacer)}
+#produzione h2{margin-bottom:1.25rem;letter-spacing:.1rem;font-weight:800}
+#produzione .text-block p:last-child{margin-bottom:0}
+#servizi h2{margin-bottom:1.25rem;letter-spacing:.1rem;font-weight:800}
+.wp-block-embed__wrapper{position:relative}
+.wp-block-embed__wrapper:before{content:'';display:block;padding-bottom:56.25%}
+.wp-block-embed__wrapper iframe{position:absolute;width:100%;height:100%;left:0;top:0}
+figure.wp-block-embed{margin-bottom:0}
+#servizi{background-color:#e7e0d7;padding-top:var(--spacer);padding-bottom:calc(var(--spacer) * 2)}
+#servizi .text-block{margin-bottom:var(--spacer)}
+#certificazioni{padding-top:var(--spacer);padding-bottom:var(--spacer)}
+#certificazioni p:last-child{margin-bottom:0}
+#certificazioni h2{margin-bottom:1.25rem;letter-spacing:.1rem;font-weight:800}
+#certificazioni .text-block{margin-bottom:var(--spacer)}
+#certificazioni .cert-blocks .wp-block-kadence-column{background-color:#fff;-webkit-box-shadow:0 2px 5px rgba(0,0,0,0.1);box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+#certificazioni .cert-blocks .wp-block-kadence-column .wp-block-group{padding:2rem;font-weight:800}
+.clients-row.last{margin-bottom:var(--spacer)}
+.clients-row .wp-block-kadence-column{margin-bottom:0}
+.clients-row .client-list{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center}
+.clients-row .client-list .kt-inside-inner-col{padding:2.5rem 1rem}
+.clients-row .client-list ul{list-style:none;margin:0;padding:0}
 @media(prefers-reduced-motion:reduce){.form-control{-webkit-transition:none;transition:none}
 .custom-switch .custom-control-label::after{-webkit-transition:none;transition:none}
 .custom-range::-webkit-slider-thumb{-webkit-transition:none;transition:none}
@@ -1143,6 +1173,7 @@ html.js #similar-products .slideshow .slick-arrow.next span{display:block;width:
 .form-inline .custom-control{-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .form-inline .custom-control-label{margin-bottom:0}
 .container{max-width:540px}
+.alignwide{max-width:540px}
 }@media(min-width:768px){.d-md-none{display:none !important}
 .d-md-inline{display:inline !important}
 .d-md-inline-block{display:inline-block !important}
@@ -1473,6 +1504,15 @@ body.single-product .single-product-content .col.col-right{padding:2rem 0 0 2rem
 .products-tag-reminder .products_tag_block{max-width:calc(50% - 0.5rem)}
 .products-tag-reminder .products_tag_block:not(:nth-child(odd)){margin-left:1rem}
 .products-tag-reminder .products_tag_block:not(:last-child){margin-bottom:0}
+.alignfull{padding-left:0;padding-right:0}
+.alignwide{max-width:720px}
+.alignwide{padding-left:0;padding-right:0}
+body.page-azienda .wp-block-columns.first-row .right-column{padding:0 1.75rem}
+body.page-azienda .wp-block-columns.first-row .right-column .text-block{margin-left:calc(var(--spacer) * 2);position:relative}
+body.page-azienda .wp-block-columns.first-row .right-column .text-block:before{content:'';display:block;position:absolute;right:100%;top:14px;width:60px;height:1px;background-color:#000;margin-right:1rem}
+body.page-azienda .wp-block-columns.second-row .left-column{padding:0 1.75rem}
+body.page-azienda .wp-block-columns.second-row .left-column .text-block{margin-right:calc(var(--spacer) * 2);position:relative}
+body.page-azienda .wp-block-columns.second-row .left-column .text-block:before{content:'';display:block;position:absolute;left:100%;top:14px;width:60px;height:1px;background-color:#000;margin-left:1rem}
 }@media(min-width:768px) and (max-width:991.98px){#footer .col{max-width:calc((100% / 12) * 7);margin:0 auto}
 }@media(min-width:768px) and (min-width:1200px){.archive-header .content .description:before{width:60px}
 }@media(min-width:992px){.d-lg-none{display:none !important}
@@ -1827,6 +1867,18 @@ html.js #similar-products .slideshow .slick-arrow.next{margin-right:calc(((960px
 .product-grid-item .content{padding:.5rem 1rem}
 #product-grid-pagination{margin-top:0;margin-bottom:1rem;max-width:calc(50% - 1rem);margin-left:auto;font-size:1.25rem}
 #product-grid-pagination .page-numbers:not(.prev):not(.next).current{font-size:2.1875rem}
+.alignwide{max-width:960px}
+body.page-azienda .wp-block-columns .wp-block-column{max-width:50%;-webkit-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;min-height:400px}
+body.page-azienda .wp-block-columns .wp-block-column figure.fitimage{height:100%}
+body.page-azienda .wp-block-columns .wp-block-column .fitimage img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
+body.page-azienda .wp-block-columns.first-row{margin-bottom:0}
+body.page-azienda .wp-block-columns.first-row .right-column{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+body.page-azienda .wp-block-columns.first-row .right-column .column-content{padding:var(--spacer) 0}
+body.page-azienda .wp-block-columns.second-row .left-column{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:right}
+body.page-azienda .wp-block-columns.second-row .left-column .column-content{padding:var(--spacer) 0}
+#produzione .text-block{max-width:calc((100% / 12) * 10);margin:0 auto}
+#servizi .text-block{max-width:calc((100% / 12) * 8);margin-left:auto;margin-right:auto}
+#certificazioni .text-block{max-width:calc((100% / 12) * 8);margin-left:auto;margin-right:auto}
 }@media(min-width:992px) and (min-width:1540px){#categories-nav ul{font-size:1.125rem}
 }@media(min-width:1200px){.d-xl-none{display:none !important}
 .d-xl-inline{display:inline !important}
@@ -2157,6 +2209,16 @@ body.single-product .single-product-content .col.col-right{padding:calc(var(--sp
 .products-tag-reminder{background-color:transparent}
 .products-tag-reminder .products_tag_block{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}
 .products-tag-reminder .products_tag_block figure img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
+.alignwide{max-width:1180px}
+body.page-azienda .wp-block-columns .wp-block-column{min-height:calc((100vw / 2) * 0.75)}
+body.page-azienda .wp-block-columns.first-row .right-column{padding:0 var(--spacer)}
+body.page-azienda .wp-block-columns.second-row .left-column{padding:0 var(--spacer)}
+#produzione .text-block{max-width:calc((100% / 12) * 8)}
+#produzione .kt-row-column-wrap{padding-top:var(--spacer)}
+#servizi .text-block{max-width:calc((100% / 12) * 6)}
+#certificazioni .text-block{max-width:calc((100% / 12) * 6)}
+.clients-row .client-list{text-align:left;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
+.clients-row .client-list .kt-inside-inner-col{padding:2rem}
 }@media(min-width:1200px) and (hover:hover){#product-area .area-item:hover{width:75%}
 }@media(min-width:1540px){.d-xxl-none{display:none !important}
 .d-xxl-inline{display:inline !important}
@@ -2462,6 +2524,13 @@ body.single-product .single-product-content .col.col-right{padding:calc(var(--sp
 #products-grid{margin-bottom:calc(var(--spacer) * 2)}
 #product-grid-pagination{font-size:2rem}
 #product-grid-pagination .page-numbers:not(.prev):not(.next).current{font-size:3rem}
+.alignwide{max-width:1460px}
+body.page-azienda .wp-block-columns.first-row h2,body.page-azienda .wp-block-columns.second-row h2{margin-bottom:2rem}
+body.page-azienda .wp-block-columns.first-row .right-column{padding:0 calc(var(--spacer) * 2)}
+body.page-azienda .wp-block-columns.first-row .right-column .column-content{padding:calc(var(--spacer) * 2) 0}
+body.page-azienda .wp-block-columns.second-row .left-column{padding:0 calc(var(--spacer) * 2)}
+body.page-azienda .wp-block-columns.second-row .left-column .column-content{padding:calc(var(--spacer) * 2) 0}
+#certificazioni .cert-blocks .wp-block-kadence-column .wp-block-group{padding:3rem 2rem}
 }@media(min-width:1780px){.d-hd-none{display:none !important}
 .d-hd-inline{display:inline !important}
 .d-hd-inline-block{display:inline-block !important}
@@ -2757,6 +2826,7 @@ body.single-product .single-product-content .col.col-right{padding:calc(var(--sp
 #homepage-claim .claim-text{font-size:1.875rem}
 #special-projects-slideshow figure{width:670px;height:720px}
 .product-grid-item figure{height:calc(1640px / 3.5)}
+.alignwide{max-width:1640px}
 }@media print{.d-print-none{display:none !important}
 .d-print-inline{display:inline !important}
 .d-print-inline-block{display:inline-block !important}

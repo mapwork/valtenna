@@ -25,7 +25,8 @@ document.addEventListener('lazybeforeunveil', function(e) {
 });
 
 if (typeof('objectFitImages') == 'function') {
-	objectFitImages('img.fitimage', {
+	var someImages = document.querySelectorAll('img.fitimage, .fitimage img');
+	objectFitImages(someImages, {
 		watchMQ: true
 	});
 }
