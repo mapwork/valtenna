@@ -882,6 +882,7 @@ body.archivio-news .archive-header{margin-bottom:var(--spacer)}
 .archive-news-item .cta button{font-weight:700;letter-spacing:.2rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap;line-height:1;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .archive-news-item .cta button:after{content:'';display:block;width:18px;height:18px;border-top:solid 1px #000;border-right:solid 1px #000;-webkit-transform:rotate(45deg);transform:rotate(45deg)}
 #news-archive-posts{margin-bottom:var(--spacer)}
+#contatti{margin-bottom:var(--spacer)}
 #contatti .left-col{position:relative}
 #contatti .left-col .kt-inside-inner-col{position:relative}
 #contatti .left-col .kt-inside-inner-col:before{content:'';display:block;padding-bottom:100%}
@@ -890,6 +891,27 @@ ul.contacts-info{list-style:none;margin:0;padding:0;font-weight:700}
 ul.contacts-info li{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:nowrap;flex-wrap:nowrap}
 ul.contacts-info li:not(:last-child){margin-bottom:2rem}
 ul.contacts-info li .icon{margin-right:1rem;color:#999}
+#contact-form-block label.hidden-label{width:0;height:0;margin:0;padding:0;overflow:hidden;position:absolute;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+#contact-form-block .fields{padding:2rem 2rem 3rem;border:solid 2px #c1af99}
+#contact-form-block .fields .fieldwrapper:not(:last-child){margin-bottom:1.5rem}
+#contact-form-block .fields .fieldwrapper .field .form-control{border-left-color:transparent;border-right-color:transparent;border-top-color:transparent;border-bottom-color:#c1af99;text-align:center}
+#contact-form-block .fields .fieldwrapper .field .form-control::-webkit-input-placeholder{color:#c1af99}
+#contact-form-block .fields .fieldwrapper .field .form-control::-moz-placeholder{color:#c1af99}
+#contact-form-block .fields .fieldwrapper .field .form-control:-ms-input-placeholder{color:#c1af99}
+#contact-form-block .fields .fieldwrapper .field .form-control::-ms-input-placeholder{color:#c1af99}
+#contact-form-block .fields .fieldwrapper .field .form-control::placeholder{color:#c1af99}
+#contact-form-block .fields .fieldwrapper .field .wpcf7-form-control-wrap{position:relative;display:block}
+#contact-form-block .fields .fieldwrapper .field .wpcf7-not-valid-tip{font-size:.75rem;color:#fff;background-color:red;line-height:1;font-weight:700;padding:.2rem .3rem;left:0;top:100%;margin-top:3px;text-transform:uppercase;position:absolute;white-space:nowrap;width:100%;text-align:center}
+#contact-form-block .fields .fieldwrapper .wpcf7-form-control-wrap.privacy_policy .wpcf7-list-item{margin:0;padding:0;font-size:.8125rem}
+#contact-form-block .fields .fieldwrapper .wpcf7-form-control-wrap.privacy_policy label{margin-bottom:0}
+#contact-form-block .fields .fieldwrapper .wpcf7-form-control-wrap.privacy_policy label:after{content:'';display:table;clear:both}
+#contact-form-block .fields .fieldwrapper .wpcf7-form-control-wrap.privacy_policy input[type="checkbox"]{display:block;float:left}
+#contact-form-block .fields .fieldwrapper .wpcf7-form-control-wrap.privacy_policy .wpcf7-list-item-label{display:block;padding-left:20px}
+#contact-form-block .fieldwrapper.submit{position:relative;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+#contact-form-block .fieldwrapper.submit .ajax-loader{position:absolute;top:100%;left:50%;margin-left:-8px}
+#contact-form-block #contactform-submit{-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:.875rem;height:calc(1.5em + 1.4rem + 2px);padding:.7rem 1.75rem;line-height:1.5;border:0;text-transform:uppercase;display:block;margin:0 auto;font-weight:800;color:#c1af99;background-color:#fff}
+.form-response .wpcf7-response-output{margin:0;padding:1rem;text-align:center}
+.form-response .wpcf7-response-output.wpcf7-validation-errors{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}
 @media(prefers-reduced-motion:reduce){.form-control{-webkit-transition:none;transition:none}
 .custom-switch .custom-control-label::after{-webkit-transition:none;transition:none}
 .custom-range::-webkit-slider-thumb{-webkit-transition:none;transition:none}
@@ -1538,6 +1560,7 @@ body.page-azienda .wp-block-columns.second-row .left-column{padding:0 1.75rem}
 body.page-azienda .wp-block-columns.second-row .left-column .text-block{margin-right:calc(var(--spacer) * 2);position:relative}
 body.page-azienda .wp-block-columns.second-row .left-column .text-block:before{content:'';display:block;position:absolute;left:100%;top:14px;width:60px;height:1px;background-color:#000;margin-left:1rem}
 #contatti .right-col{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-left:3rem}
+#contact-form-block .fields{padding:2rem 6rem 3rem}
 }@media(min-width:768px) and (max-width:991.98px){#footer .col{max-width:calc((100% / 12) * 7);margin:0 auto}
 }@media(min-width:768px) and (min-width:1200px){.archive-header .content .description:before{width:60px}
 #contatti .right-col{padding-left:4rem}
@@ -1914,6 +1937,8 @@ body.page-azienda .wp-block-columns.second-row .left-column .column-content{padd
 .archive-news-item:nth-child(even) a.wrapper{-webkit-box-orient:horizontal !important;-webkit-box-direction:reverse !important;-ms-flex-direction:row-reverse !important;flex-direction:row-reverse !important}
 .archive-news-item:nth-child(even) .col-left{margin-right:0;margin-left:calc((var(--spacer) * 3) * -1)}
 .archive-news-item:nth-child(even) .post-content{padding:3rem calc(var(--spacer) * 5) 3rem 4rem}
+#contact-form-block{max-width:calc((100% / 12) * 10);margin:0 auto 4rem}
+#contact-form-block .fields .fieldwrapper:not(:last-child){margin-bottom:2.5rem}
 }@media(min-width:992px) and (min-width:1540px){#categories-nav ul{font-size:1.125rem}
 }@media(min-width:992px) and (min-width:1200px){.archive-news-item{padding-bottom:5.25rem}
 .archive-news-item .post-content{padding:5rem 6rem 5rem calc(var(--spacer) * 5);margin-bottom:-5.25rem}
@@ -2574,6 +2599,9 @@ body.page-azienda .wp-block-columns.first-row .right-column .column-content{padd
 body.page-azienda .wp-block-columns.second-row .left-column{padding:0 calc(var(--spacer) * 2)}
 body.page-azienda .wp-block-columns.second-row .left-column .column-content{padding:calc(var(--spacer) * 2) 0}
 #certificazioni .cert-blocks .wp-block-kadence-column .wp-block-group{padding:3rem 2rem}
+#contact-form-block .fields{padding:4rem 12rem 6rem}
+#contact-form-block .fields .fieldwrapper .field .form-control{font-size:1rem;font-weight:700}
+#contact-form-block #contactform-submit{font-size:1.125rem;letter-spacing:.1rem;padding:.7rem 6rem}
 }@media(min-width:1780px){.d-hd-none{display:none !important}
 .d-hd-inline{display:inline !important}
 .d-hd-inline-block{display:inline-block !important}
