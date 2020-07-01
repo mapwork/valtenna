@@ -2511,6 +2511,9 @@ ul.contacts-info {
 	margin: 0;
 	padding: 0;
 	font-weight: 700;
+	@include media-breakpoint-up(xxl) {
+		font-size: 1.5rem;
+	}
 
 	li {
 		display: flex;
@@ -2628,6 +2631,10 @@ ul.contacts-info {
 				.wpcf7-list-item-label {
 					display: block;
 					padding-left: 20px;
+
+					a {
+						text-decoration: underline;
+					}
 				}
 			}
 		}

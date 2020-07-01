@@ -907,6 +907,7 @@ ul.contacts-info li .icon{margin-right:1rem;color:#999}
 #contact-form-block .fields .fieldwrapper .wpcf7-form-control-wrap.privacy_policy label:after{content:'';display:table;clear:both}
 #contact-form-block .fields .fieldwrapper .wpcf7-form-control-wrap.privacy_policy input[type="checkbox"]{display:block;float:left}
 #contact-form-block .fields .fieldwrapper .wpcf7-form-control-wrap.privacy_policy .wpcf7-list-item-label{display:block;padding-left:20px}
+#contact-form-block .fields .fieldwrapper .wpcf7-form-control-wrap.privacy_policy .wpcf7-list-item-label a{text-decoration:underline}
 #contact-form-block .fieldwrapper.submit{position:relative;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 #contact-form-block .fieldwrapper.submit .ajax-loader{position:absolute;top:100%;left:50%;margin-left:-8px}
 #contact-form-block #contactform-submit{-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:.875rem;height:calc(1.5em + 1.4rem + 2px);padding:.7rem 1.75rem;line-height:1.5;border:0;text-transform:uppercase;display:block;margin:0 auto;font-weight:800;color:#c1af99;background-color:#fff}
@@ -2599,6 +2600,7 @@ body.page-azienda .wp-block-columns.first-row .right-column .column-content{padd
 body.page-azienda .wp-block-columns.second-row .left-column{padding:0 calc(var(--spacer) * 2)}
 body.page-azienda .wp-block-columns.second-row .left-column .column-content{padding:calc(var(--spacer) * 2) 0}
 #certificazioni .cert-blocks .wp-block-kadence-column .wp-block-group{padding:3rem 2rem}
+ul.contacts-info{font-size:1.5rem}
 #contact-form-block .fields{padding:4rem 12rem 6rem}
 #contact-form-block .fields .fieldwrapper .field .form-control{font-size:1rem;font-weight:700}
 #contact-form-block #contactform-submit{font-size:1.125rem;letter-spacing:.1rem;padding:.7rem 6rem}
