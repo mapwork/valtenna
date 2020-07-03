@@ -381,6 +381,8 @@ input:focus {
 
 #main {
 	padding-top: 80px;
+	position: relative;
+	z-index: 2;
 	@include media-breakpoint-up(xl) {
 		padding-top: 0;
 	}
@@ -388,6 +390,8 @@ input:focus {
 
 #footer {
 	background-color: #fff;
+	position: relative;
+	z-index: 3;
 	@include media-breakpoint-up(lg) {
 		font-size: 0.875rem;
 	}
@@ -872,7 +876,7 @@ html.no-js {
 }
 
 #our-clients {
-	background-color: rgba(255,255,255,.8);
+	background-color: rgba(255,255,255,.6);
 	padding: var(--spacer) 0;
 	box-shadow: 0 6px 20px rgba(0,0,0,.1), 0 -6px 20px rgba(0,0,0,.1);
 	@include media-breakpoint-up(xl) {
@@ -2684,5 +2688,39 @@ ul.contacts-info {
 			background-color: #f8d7da;
 			border-color: #f5c6cb;
 		}
+	}
+}
+
+.gsap-item {
+	pointer-events: none;
+	user-select: none;
+
+	img {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		display: block;
+	}
+}
+
+#gsap-item-1 {
+	position: fixed;
+	width: 280px;
+	left: -170px;
+	top: 100%;
+	z-index: 1;
+	transform: rotate(0deg);
+	@include media-breakpoint-up(md) {
+		width: 350px;
+	}
+	@include media-breakpoint-up(xl) {
+		width: 400px;
+		left: -200px;
+	}
+	@include media-breakpoint-up(xxl) {
+		width: 450px;
+	}
+	@include media-breakpoint-up(hd) {
+		width: 500px;
 	}
 }

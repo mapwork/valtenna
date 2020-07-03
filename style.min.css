@@ -676,8 +676,8 @@ html.menu-open #site-navigation>.wrapper{-webkit-transform:translateX(75px);tran
 #site-navigation .follow-us li span{font-weight:700}
 #close-navigation{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:block;position:absolute;margin:0;padding:0;border:0;background:0;line-height:1;font-size:1.5rem;left:3rem;top:2rem;color:#948470;z-index:10}
 a:focus,button:focus,input:focus{outline-style:none !important;-webkit-box-shadow:none !important;box-shadow:none !important}
-#main{padding-top:80px}
-#footer{background-color:#fff}
+#main{padding-top:80px;position:relative;z-index:2}
+#footer{background-color:#fff;position:relative;z-index:3}
 #footer .col:not(:last-child){margin-bottom:2.75rem}
 #footer .col .col-header{margin-bottom:1.5rem}
 #footer .col .col-header span{font-weight:800;letter-spacing:.1rem;font-size:.875rem;text-transform:uppercase}
@@ -737,7 +737,7 @@ html.js #claim-slideshow .prev{left:0;right:auto;margin-left:1rem}
 html.js #claim-slideshow .prev span{border-top:solid 2px #fff;border-left:solid 2px #fff;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}
 .area-title{font-weight:400;letter-spacing:.1rem;font-size:1.25rem}
 html.no-js .lazyload,html.no-js .slick-lazy{display:none !important}
-#our-clients{background-color:rgba(255,255,255,0.8);padding:var(--spacer) 0;-webkit-box-shadow:0 6px 20px rgba(0,0,0,0.1),0 -6px 20px rgba(0,0,0,0.1);box-shadow:0 6px 20px rgba(0,0,0,0.1),0 -6px 20px rgba(0,0,0,0.1)}
+#our-clients{background-color:rgba(255,255,255,0.6);padding:var(--spacer) 0;-webkit-box-shadow:0 6px 20px rgba(0,0,0,0.1),0 -6px 20px rgba(0,0,0,0.1);box-shadow:0 6px 20px rgba(0,0,0,0.1),0 -6px 20px rgba(0,0,0,0.1)}
 #our-clients h3{margin-bottom:var(--spacer)}
 #our-clients ul.clients-list{line-height:2}
 #our-clients .col{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
@@ -913,6 +913,9 @@ ul.contacts-info li .icon{margin-right:1rem;color:#999}
 #contact-form-block #contactform-submit{-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:.875rem;height:calc(1.5em + 1.4rem + 2px);padding:.7rem 1.75rem;line-height:1.5;border:0;text-transform:uppercase;display:block;margin:0 auto;font-weight:800;color:#c1af99;background-color:#fff}
 .form-response .wpcf7-response-output{margin:0;padding:1rem;text-align:center}
 .form-response .wpcf7-response-output.wpcf7-validation-errors{color:#721c24;background-color:#f8d7da;border-color:#f5c6cb}
+.gsap-item{pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.gsap-item img{width:auto;height:auto;max-width:100%;display:block}
+#gsap-item-1{position:fixed;width:280px;left:-170px;top:100%;z-index:1;-webkit-transform:rotate(0);transform:rotate(0)}
 @media(prefers-reduced-motion:reduce){.form-control{-webkit-transition:none;transition:none}
 .custom-switch .custom-control-label::after{-webkit-transition:none;transition:none}
 .custom-range::-webkit-slider-thumb{-webkit-transition:none;transition:none}
@@ -1562,6 +1565,7 @@ body.page-azienda .wp-block-columns.second-row .left-column .text-block{margin-r
 body.page-azienda .wp-block-columns.second-row .left-column .text-block:before{content:'';display:block;position:absolute;left:100%;top:14px;width:60px;height:1px;background-color:#000;margin-left:1rem}
 #contatti .right-col{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-left:3rem}
 #contact-form-block .fields{padding:2rem 6rem 3rem}
+#gsap-item-1{width:350px}
 }@media(min-width:768px) and (max-width:991.98px){#footer .col{max-width:calc((100% / 12) * 7);margin:0 auto}
 }@media(min-width:768px) and (min-width:1200px){.archive-header .content .description:before{width:60px}
 #contatti .right-col{padding-left:4rem}
@@ -2286,6 +2290,7 @@ body.page-azienda .wp-block-columns.second-row .left-column{padding:0 var(--spac
 .clients-row .client-list{text-align:left;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .clients-row .client-list .kt-inside-inner-col{padding:2rem}
 .archive-news-item .post-content-wrapper:before{font-size:1.25rem}
+#gsap-item-1{width:400px;left:-200px}
 }@media(min-width:1200px) and (hover:hover){#product-area .area-item:hover{width:75%}
 }@media(min-width:1540px){.d-xxl-none{display:none !important}
 .d-xxl-inline{display:inline !important}
@@ -2604,6 +2609,7 @@ ul.contacts-info{font-size:1.5rem}
 #contact-form-block .fields{padding:4rem 12rem 6rem}
 #contact-form-block .fields .fieldwrapper .field .form-control{font-size:1rem;font-weight:700}
 #contact-form-block #contactform-submit{font-size:1.125rem;letter-spacing:.1rem;padding:.7rem 6rem}
+#gsap-item-1{width:450px}
 }@media(min-width:1780px){.d-hd-none{display:none !important}
 .d-hd-inline{display:inline !important}
 .d-hd-inline-block{display:inline-block !important}
@@ -2900,6 +2906,7 @@ ul.contacts-info{font-size:1.5rem}
 #special-projects-slideshow figure{width:670px;height:720px}
 .product-grid-item figure{height:calc(1640px / 3.5)}
 .alignwide{max-width:1640px}
+#gsap-item-1{width:500px}
 }@media print{.d-print-none{display:none !important}
 .d-print-inline{display:inline !important}
 .d-print-inline-block{display:inline-block !important}
