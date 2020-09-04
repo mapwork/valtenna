@@ -432,6 +432,84 @@ function content($limit) {
 	return $content;
 }
 
+if( !function_exists('get_queried_posts_terms') ){
+	/**
+	 * [get_queried_post_terms description]
+	 * @return [type] [description]
+	 */
+	function get_queried_post_terms($taxonomy, $exclude = []){
+		$current_term = get_queried_object();
+		global $wp_query;
+		$taxonomy_ids = [];
+		if( $wp_query->have_posts() ){
+			while( $wp_query->have_posts() ){
+				$wp_query->the_post();
+				$products_cat = wp_get_post_terms(get_the_ID(), $taxonomy, array('exclude' => $exclude));
+				if( $products_cat && count( $products_cat ) > 0 ){
+					foreach( $products_cat as $pc ){
+						if( !in_array( $pc->term_id, $taxonomy_ids ) ){
+							$taxonomy_ids[] = $pc->term_id;
+						}
+					}
+				}
+			}
+		}
+		wp_reset_query();
+		$list_items = [];
+		$options = [
+			sprintf(
+				'<option value="%s">%s</option>',
+				get_term_link($current_term),
+				__('Select filter','valtenna')
+			)
+		];
+
+		$filterableTerms = get_terms([
+		  'taxonomy' => $taxonomy,
+		  'include' => $taxonomy_ids
+		]);
+		$output = '';
+		if( $filterableTerms && count($filterableTerms) > 0 ){
+			$queryvar = 'filter_' . $taxonomy;
+			foreach( $filterableTerms as $fi ){
+				$current = $_GET[$queryvar] == $fi->slug ? ' class="selected"':'';
+				$list_items[] = sprintf(
+					'<li%s><a href="%s" title="%s">%s</a></li>',
+					$current,
+					add_query_arg([$queryvar => $fi->slug], get_term_link($current_term)),
+					esc_html( $fi->name ),
+					$fi->name
+				);
+				$options[] = sprintf(
+               '<option %s value="%s">%s</option>',
+               selected( $_GET[$queryvar], $fi->slug, false ),
+               add_query_arg([$queryvar => $fi->slug], get_term_link($current_term)),
+               $fi->name
+            );
+			}
+			$list_items[] = sprintf(
+				'<li class="reset-all-filters"><a href="%s" title="%s">%s</a></li>',
+				get_term_link($current_term),
+				__('Reset all filters','valtenna'),
+				__('Reset','valtenna')
+			);
+			$output .= '<nav id="categories-nav" class="filters-' . $taxonomy . '">';
+			$output .= '<ul class="reset-list d-none d-xl-flex flex-lg-row flex-lg-wrap text-uppercase justify-content-center">';
+			$output .= join('', $list_items);
+			$output .= '</ul>';
+			$output .= '<div class="select-push d-xl-none">';
+			$output .= '<div class="fixit d-flex flex-column justify-content-stretch">';
+			$output .= '<select class="custom-select" id="mobile-category-selector">';
+			$output .= join('', $options);
+			$output .= '</select>';
+			$output .= '</div>';
+			$output .= '</div>';
+			$output .= '</nav>';
+		}
+		return $output;
+	}
+}
+
 /**
  * Customizer additions.
  */

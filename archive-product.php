@@ -25,7 +25,13 @@
       <?php
       $join = 'join';
       if( $categories && count( $categories ) > 0 ){
-         $options = [];
+         $options = [
+            sprintf(
+               '<option value="%s">%s</option>',
+               get_post_type_archive_link('product'),
+               __('Select filter','valtenna')
+            )
+         ];
          $listitems = [];
          foreach( $categories as $category ){
             $options[] = sprintf(

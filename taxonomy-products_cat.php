@@ -36,6 +36,13 @@
       </div>
    </div>
 </div>
+<section id="filters-by-categories">
+   <div class="container">
+      <nav id="filters">
+         <?php echo get_queried_post_terms('products_tag',[get_msls_term_id(14)]); ?>
+      </nav>
+   </div>
+</section>
 <section id="products-grid">
    <div class="container-fluid px-xl-0">
       <div class="row no-gutters flex-column flex-md-row" id="products-grid-container">

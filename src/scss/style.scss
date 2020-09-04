@@ -81,14 +81,14 @@ $brown: #C1AF99;
 
 body,
 html {
-	font-family: 'Muli', sans-serif;
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
+	font-family            : 'Muli', sans-serif;
+	font-weight            : 400;
+	font-style             : normal;
+	font-display           : swap;
+	line-height            : 1.5;
+	-webkit-font-smoothing : antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow-x: hidden;
+	overflow-x             : hidden;
 }
 /* Sections
 	 ========================================================================== */
@@ -128,29 +128,29 @@ main {
 
 .no-gutters {
 	margin-right: 0;
-	margin-left: 0;
+	margin-left : 0;
 
 	> [class*="col-"],
 	 > .col {
 		padding-right: 0;
-		padding-left: 0;
+		padding-left : 0;
 	}
 }
 
 .form-control {
-	font-size: 0.875rem;
-	height: calc(1.5em + 1.4rem + 2px);
-	padding: 0.7rem 0.75rem;
+	font-size  : 0.875rem;
+	height     : calc(1.5em + 1.4rem + 2px);
+	padding    : 0.7rem 0.75rem;
 	line-height: 1.5;
 }
 
 button {
-	margin: 0;
-	padding: 0;
+	margin     : 0;
+	padding    : 0;
 	line-height: 1;
-	background: none;
-	border: none;
-	appearance: none;
+	background : none;
+	border     : none;
+	appearance : none;
 }
 
 h1,
@@ -163,26 +163,26 @@ h5 {
 
 #header {
 	background-color: #fff;
-	position: fixed;
-	width: 100%;
-	left: 0;
-	top: 0;
-	z-index: 760;
-	box-shadow: 0 0 65px rgba(0, 0, 0, 0.1);
+	position        : fixed;
+	width           : 100%;
+	left            : 0;
+	top             : 0;
+	z-index         : 760;
+	box-shadow      : 0 0 65px rgba(0, 0, 0, 0.1);
 	@include media-breakpoint-up(xl) {
 		background-color: transparent;
-		box-shadow: none;
+		box-shadow      : none;
 	}
 
 	.wrapper {
-		height: 80px;
+		height : 80px;
 		padding: 0 20px 19px;
 		@include media-breakpoint-up(xl) {
-			height: 100px;
+			height : 100px;
 			padding: 0 40px calc((100px - 48.3px) / 2);
 		}
 		@include media-breakpoint-up(hd) {
-			height: 120px;
+			height : 120px;
 			padding: 0 40px calc((120px - 61.31px) / 2);
 		}
 	}
@@ -204,34 +204,34 @@ h5 {
 
 a,
 a:hover {
-	color: inherit;
+	color          : inherit;
 	text-decoration: none;
 }
 
 .toolbar-item {
 	a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		line-height: 1;
-		width: 40px;
-		height: 40px;
-		border-radius: 50%/50%;
+		display         : flex;
+		justify-content : center;
+		align-items     : center;
+		line-height     : 1;
+		width           : 40px;
+		height          : 40px;
+		border-radius   : 50%/50%;
 		background-color: #F5F4F4;
-		color: #C1AF99;
+		color           : #C1AF99;
 		@include media-breakpoint-up(xl) {
 			background-color: #fff;
-			box-shadow: 0 2px 5px rgba(0,0,0,.2);
-			font-size: 1.25rem;
+			box-shadow      : 0 2px 5px rgba(0,0,0,.2);
+			font-size       : 1.25rem;
 		}
 		@include media-breakpoint-up(xxl) {
-			width: 54px;
+			width : 54px;
 			height: 54px;
 		}
 		@media (hover: hover) {
 			&:hover {
 				background-color: #C1AF99;
-				color: #fff;
+				color           : #fff;
 			}
 		}
 	}
@@ -239,64 +239,64 @@ a:hover {
 
 .reset-list {
 	list-style: none;
-	margin: 0;
-	padding: 0;
+	margin    : 0;
+	padding   : 0;
 }
 
 #site-navigation {
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	left: -99999px;
-	top: 0;
-	z-index: 775;
-	display: flex;
-	align-items: stretch;
-	justify-content: flex-end;
+	position        : fixed;
+	width           : 100%;
+	height          : 100vh;
+	left            : -99999px;
+	top             : 0;
+	z-index         : 775;
+	display         : flex;
+	align-items     : stretch;
+	justify-content : flex-end;
 	background-color: rgba(255,255,255,0);
-	transition: left 0s linear 0.6s, background-color 0.6s ease 0s;
-	overflow: hidden;
+	transition      : left 0s linear 0.6s, background-color 0.6s ease 0s;
+	overflow        : hidden;
 
 	> .wrapper {
 		background-color: #C1AF99;
-		width: 100%;
-		display: flex;
-		align-items: stretch;
-		transform: translateX(100%);
-		position: relative;
-		box-shadow: -10px 0 0 0 rgba(0,0,0,0);
-		transition: transform 0.6s ease 0s, box-shadow 0.6s ease 0s;
+		width           : 100%;
+		display         : flex;
+		align-items     : stretch;
+		transform       : translateX(100%);
+		position        : relative;
+		box-shadow      : -10px 0 0 0 rgba(0,0,0,0);
+		transition      : transform 0.6s ease 0s, box-shadow 0.6s ease 0s;
 		@include media-breakpoint-up(md) {
 			width: 320px;
 		}
 	}
 
 	.scrollable-outside {
-		position: relative;
-		width: calc(100% + 30px);
+		position  : relative;
+		width     : calc(100% + 30px);
 		margin-top: 6rem;
 	}
 
 	.scrollbale-inside {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
+		position  : absolute;
+		left      : 0;
+		top       : 0;
+		width     : 100%;
+		height    : 100%;
 		overflow-y: auto;
 	}
 }
 
 html.menu-open {
 	#site-navigation {
-		left: 0;
+		left            : 0;
 		background-color: rgba(255,255,255,.8);
-		transition: left 0s linear 0s, background-color 0.6s ease 0s;
+		transition      : left 0s linear 0s, background-color 0.6s ease 0s;
 
 		> .wrapper {
-			transform: translateX(75px);
+			transform : translateX(75px);
 			box-shadow: -10px 0 50px 1px rgba(0,0,0,.3);
-			overflow: hidden;
+			overflow  : hidden;
 			@include media-breakpoint-up(md) {
 				transform: translateX(0px);
 			}
@@ -306,11 +306,11 @@ html.menu-open {
 
 #nav {
 	text-transform: uppercase;
-	font-size: 0.875rem;
-	font-weight: 300;
+	font-size     : 0.875rem;
+	font-weight   : 300;
 	letter-spacing: 0.2rem;
-	padding-left: 3rem;
-	line-height: 3;
+	padding-left  : 3rem;
+	line-height   : 3;
 
 	li {
 		&.current-menu-ancestor,
@@ -326,13 +326,13 @@ html.menu-open {
 			}
 
 			ul.sub-menu {
-				margin: 1rem 0;
-				padding: 0 0 0 1rem;
-				font-size: 0.875rem;
-				line-height: 2.25;
+				margin        : 1rem 0;
+				padding       : 0 0 0 1rem;
+				font-size     : 0.875rem;
+				line-height   : 2.25;
 				letter-spacing: normal;
-				list-style: none;
-				font-weight: 500;
+				list-style    : none;
+				font-weight   : 500;
 				text-transform: none;
 			}
 		}
@@ -345,7 +345,7 @@ html.menu-open {
 	}
 
 	.follow-us {
-		font-size: 0.8125rem;
+		font-size   : 0.8125rem;
 		padding-left: 3rem;
 
 		li {
@@ -357,32 +357,32 @@ html.menu-open {
 }
 
 #close-navigation {
-	appearance: none;
-	display: block;
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	border: none;
-	background: none;
+	appearance : none;
+	display    : block;
+	position   : absolute;
+	margin     : 0;
+	padding    : 0;
+	border     : none;
+	background : none;
 	line-height: 1;
-	font-size: 1.5rem;
-	left: 3rem;
-	top: 2rem;
-	color: #948470;
-	z-index: 10;
+	font-size  : 1.5rem;
+	left       : 3rem;
+	top        : 2rem;
+	color      : #948470;
+	z-index    : 10;
 }
 
 a:focus,
 button:focus,
 input:focus {
 	outline-style: none !important;
-	box-shadow: none !important;
+	box-shadow   : none !important;
 }
 
 #main {
 	padding-top: 80px;
-	position: relative;
-	z-index: 2;
+	position   : relative;
+	z-index    : 2;
 	@include media-breakpoint-up(xl) {
 		padding-top: 0;
 	}
@@ -390,8 +390,8 @@ input:focus {
 
 #footer {
 	background-color: #fff;
-	position: relative;
-	z-index: 3;
+	position        : relative;
+	z-index         : 3;
 	@include media-breakpoint-up(lg) {
 		font-size: 0.875rem;
 	}
@@ -399,7 +399,7 @@ input:focus {
 	.col {
 		@include media-breakpoint-only(md) {
 			max-width: calc((100% / 12) * 7);
-			margin: 0 auto;
+			margin   : 0 auto;
 		}
 		@include media-breakpoint-up(lg) {
 			max-width: calc(100% / 3);
@@ -415,30 +415,30 @@ input:focus {
 		.col-header {
 			margin-bottom: 1.5rem;
 			@include media-breakpoint-up(lg) {
-				margin-bottom: 2rem;
-				height: 31.5px;
-				display: flex;
-				flex-direction: column;
+				margin-bottom  : 2rem;
+				height         : 31.5px;
+				display        : flex;
+				flex-direction : column;
 				justify-content: flex-end;
-				line-height: 1;
+				line-height    : 1;
 			}
 
 			span {
-				font-weight: 800;
+				font-weight   : 800;
 				letter-spacing: 0.1rem;
-				font-size: 0.875rem;
+				font-size     : 0.875rem;
 				text-transform: uppercase;
 			}
 		}
 	}
 
 	#footer-logo {
-		display: block;
+		display  : block;
 		max-width: 200px;
-		margin: 0 auto;
+		margin   : 0 auto;
 		@include media-breakpoint-up(lg) {
 			margin-right: 0;
-			max-width: 150px;
+			max-width   : 150px;
 		}
 	}
 }
@@ -449,14 +449,14 @@ input:focus {
 
 .footer-bottom {
 	background-color: $brown;
-	font-size: 0.75rem;
-	padding: 1rem 0;
+	font-size       : 0.75rem;
+	padding         : 1rem 0;
 }
 
 #subscribe-submit {
-	width: 45px;
+	width      : 45px;
 	margin-left: -45px;
-	z-index: 10;
+	z-index    : 10;
 
 	i.fa-circle-notch {
 		display: none;
@@ -479,7 +479,7 @@ input:focus {
 		}
 
 		span {
-			display: block;
+			display  : block;
 			animation: spinner 0.6s linear infinite;
 		}
 	}
@@ -498,34 +498,34 @@ input:focus {
 ._checkbox {
 	label {
 		margin-bottom: 0;
-		font-size: 0.75rem;
-		position: relative;
-		color: #666;
-		text-align: left;
+		font-size    : 0.75rem;
+		position     : relative;
+		color        : #666;
+		text-align   : left;
 
 		&:before {
-			content: '';
-			display: block;
-			width: 16px;
-			height: 16px;
-			border: solid 1px #999;
-			position: absolute;
-			left: 0;
-			top: 0;
+			content      : '';
+			display      : block;
+			width        : 16px;
+			height       : 16px;
+			border       : solid 1px #999;
+			position     : absolute;
+			left         : 0;
+			top          : 0;
 			border-radius: 3px;
 		}
 
 		&:after {
-			content: '';
-			display: none;
-			width: 6px;
-			height: 12px;
-			border: solid green;
+			content     : '';
+			display     : none;
+			width       : 6px;
+			height      : 12px;
+			border      : solid green;
 			border-width: 0 3px 3px 0;
-			position: absolute;
-			left: 6px;
-			top: 0;
-			transform: rotate(45deg);
+			position    : absolute;
+			left        : 6px;
+			top         : 0;
+			transform   : rotate(45deg);
 		}
 	}
 
@@ -543,11 +543,11 @@ input:focus {
 	}
 
 	span.disclaimer {
-		display: block;
+		display     : block;
 		padding-left: 1.75rem;
 
 		a {
-			color: green;
+			color          : green;
 			text-decoration: underline;
 		}
 	}
@@ -557,8 +557,8 @@ input:focus {
 	.area-item {
 		height: calc((100vw / 4) * 3);
 		@include media-breakpoint-up(lg) {
-			height: calc((100vh - 80px) * 0.75);
-			width: 50%;
+			height    : calc((100vh - 80px) * 0.75);
+			width     : 50%;
 			transition: width 1s ease;
 		}
 		@include media-breakpoint-up(xl) {
@@ -571,23 +571,23 @@ input:focus {
 		}
 
 		a {
-			background-repeat: no-repeat;
-			background-size: cover;
+			background-repeat  : no-repeat;
+			background-size    : cover;
 			background-position: center center;
 		}
 
 		.detail {
-			text-align: center;
+			text-align   : center;
 			margin-bottom: 1.25rem;
-			padding: 0 2rem;
-			color: #6D6767;
+			padding      : 0 2rem;
+			color        : #6D6767;
 		}
 
 		h2 {
-			font-weight: 300;
-			font-size: 1.25rem;
+			font-weight   : 300;
+			font-size     : 1.25rem;
 			letter-spacing: 0.1rem;
-			margin-bottom: 1rem;
+			margin-bottom : 1rem;
 		}
 	}
 }
@@ -613,15 +613,15 @@ span.strong {
 }
 
 .line-through-but {
-	display: inline-block;
+	display       : inline-block;
 	text-transform: uppercase;
 	letter-spacing: 0.1rem;
-	font-size: 0.875rem;
-	font-weight: 600;
-	position: relative;
-	line-height: 1;
-	padding: 0 1.25rem;
-	color: #6D6767;
+	font-size     : 0.875rem;
+	font-weight   : 600;
+	position      : relative;
+	line-height   : 1;
+	padding       : 0 1.25rem;
+	color         : #6D6767;
 
 	&.reverse {
 		color: #fff;
@@ -632,14 +632,14 @@ span.strong {
 	}
 
 	&:after {
-		content: '';
-		display: block;
-		width: 100%;
-		left: 0;
-		bottom: calc(50% - 1px);
-		height: 1px;
+		content         : '';
+		display         : block;
+		width           : 100%;
+		left            : 0;
+		bottom          : calc(50% - 1px);
+		height          : 1px;
 		background-color: #6D6767;
-		position: absolute;
+		position        : absolute;
 	}
 }
 
@@ -655,7 +655,7 @@ span.strong {
 		margin-bottom: 3rem;
 		@include media-breakpoint-up(lg) {
 			max-width: calc((100% / 12) * 8);
-			margin: 0 auto 3rem;
+			margin   : 0 auto 3rem;
 		}
 		@include media-breakpoint-up(lg) {
 			max-width: 50%;
@@ -681,21 +681,21 @@ html.js {
 }
 
 .products-cat-carousel {
-	margin-left: -.5rem;
+	margin-left : -.5rem;
 	margin-right: -.5rem;
 
 	.category-box-item {
 		padding: 0.5rem;
 
 		a {
-			border: solid 1px #eee;
+			border    : solid 1px #eee;
 			box-shadow: 0 2px 4px rgba(0,0,0,.1);
 		}
 
 		.name {
 			letter-spacing: 0.1rem;
-			height: 4.25rem;
-			padding: 0.75rem 1rem 0;
+			height        : 4.25rem;
+			padding       : 0.75rem 1rem 0;
 			@include media-breakpoint-up(xl) {
 				font-size: 0.875rem;
 			}
@@ -704,14 +704,14 @@ html.js {
 }
 
 ul.slick-dots {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	list-style     : none;
+	margin         : 0;
+	padding        : 0;
+	display        : flex;
+	flex-direction : row;
+	flex-wrap      : nowrap;
 	justify-content: center;
-	margin-top: 2rem;
+	margin-top     : 2rem;
 
 	li {
 		&:not(:last-child) {
@@ -725,13 +725,13 @@ ul.slick-dots {
 		}
 
 		span {
-			display: block;
-			width: 16px;
-			height: 16px;
+			display      : block;
+			width        : 16px;
+			height       : 16px;
 			border-radius: 50%/50%;
-			border: solid 2px #000;
+			border       : solid 2px #000;
 			@include media-breakpoint-up(lg) {
-				width: 12px;
+				width : 12px;
 				height: 12px;
 			}
 		}
@@ -752,17 +752,17 @@ ul.slick-dots {
 	}
 
 	.claim-text {
-		color: #C1AF99;
-		font-size: 1.25rem;
+		color        : #C1AF99;
+		font-size    : 1.25rem;
 		margin-bottom: var(--spacer);
 		@include media-breakpoint-up(md) {
 			font-size: 1.5rem;
 			max-width: calc((100% / 12) * 8);
-			margin: 0 auto var(--spacer);
+			margin   : 0 auto var(--spacer);
 		}
 		@include media-breakpoint-up(xl) {
 			max-width: 50%;
-			margin: 0 auto calc(var(--spacer) * 1.75);
+			margin   : 0 auto calc(var(--spacer) * 1.75);
 		}
 		@include media-breakpoint-up(hd) {
 			font-size: 1.875rem;
@@ -773,7 +773,7 @@ ul.slick-dots {
 #claim-slideshow {
 	@include media-breakpoint-up(lg) {
 		max-width: calc((100% / 12) * 10);
-		margin: 0 auto;
+		margin   : 0 auto;
 	}
 	@include media-breakpoint-up(xl) {
 		max-width: calc((100% / 12) * 8);
@@ -794,64 +794,64 @@ html.js {
 
 		.next,
 		.prev {
-			display: block;
-			position: absolute;
-			top: 50%;
+			display  : block;
+			position : absolute;
+			top      : 50%;
 			transform: translateY(-50%);
-			z-index: 30;
+			z-index  : 30;
 
 			span {
 				display: block;
-				width: 24px;
-				height: 24px;
+				width  : 24px;
+				height : 24px;
 			}
 		}
 
 		.next {
-			left: auto;
-			right: 0;
+			left        : auto;
+			right       : 0;
 			margin-right: 1rem;
 			@include media-breakpoint-up(lg) {
-				left: 100%;
-				right: auto;
+				left        : 100%;
+				right       : auto;
 				margin-right: 0;
-				margin-left: 1.25rem;
+				margin-left : 1.25rem;
 			}
 			@include media-breakpoint-up(xl) {
 				margin-left: calc(100% / 6);
 			}
 
 			span {
-				border-top: solid 2px #fff;
+				border-top  : solid 2px #fff;
 				border-right: solid 2px #fff;
-				transform: rotate(45deg);
+				transform   : rotate(45deg);
 				@include media-breakpoint-up(lg) {
-					border-top: solid 2px #000;
+					border-top  : solid 2px #000;
 					border-right: solid 2px #000;
 				}
 			}
 		}
 
 		.prev {
-			left: 0;
-			right: auto;
+			left       : 0;
+			right      : auto;
 			margin-left: 1rem;
 			@include media-breakpoint-up(lg) {
-				left: auto;
-				right: 100%;
+				left        : auto;
+				right       : 100%;
 				margin-right: 1.25rem;
-				margin-left: 0;
+				margin-left : 0;
 			}
 			@include media-breakpoint-up(xl) {
 				margin-right: calc(100% / 6);
 			}
 
 			span {
-				border-top: solid 2px #fff;
+				border-top : solid 2px #fff;
 				border-left: solid 2px #fff;
-				transform: rotate(-45deg);
+				transform  : rotate(-45deg);
 				@include media-breakpoint-up(lg) {
-					border-top: solid 2px #000;
+					border-top : solid 2px #000;
 					border-left: solid 2px #000;
 				}
 			}
@@ -860,9 +860,9 @@ html.js {
 }
 
 .area-title {
-	font-weight: 400;
+	font-weight   : 400;
 	letter-spacing: 0.1rem;
-	font-size: 1.25rem;
+	font-size     : 1.25rem;
 	@include media-breakpoint-up(xxl) {
 		font-size: 1.75rem;
 	}
@@ -877,8 +877,8 @@ html.no-js {
 
 #our-clients {
 	background-color: rgba(255,255,255,.6);
-	padding: var(--spacer) 0;
-	box-shadow: 0 6px 20px rgba(0,0,0,.1), 0 -6px 20px rgba(0,0,0,.1);
+	padding         : var(--spacer) 0;
+	box-shadow      : 0 6px 20px rgba(0,0,0,.1), 0 -6px 20px rgba(0,0,0,.1);
 	@include media-breakpoint-up(xl) {
 		padding: calc(var(--spacer) * 2) 0;
 	}
@@ -896,8 +896,8 @@ html.no-js {
 
 	.col {
 		flex-basis: 0;
-		flex-grow: 1;
-		max-width: 100%;
+		flex-grow : 1;
+		max-width : 100%;
 		@include media-breakpoint-up(md) {
 			&.first {
 				order: 2;
@@ -920,21 +920,21 @@ html.no-js {
 }
 
 label.error {
-	position: absolute;
-	line-height: 1;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	font-size: 0.75rem;
+	position      : absolute;
+	line-height   : 1;
+	white-space   : nowrap;
+	overflow      : hidden;
+	text-overflow : ellipsis;
+	font-size     : 0.75rem;
 	text-transform: uppercase;
-	font-weight: 700;
-	color: #fff;
-	background: red;
-	padding: 0.2rem 0.3rem;
-	margin-top: 0.2rem;
-	z-index: 10;
-	max-width: 100%;
-	margin-bottom: 0;
+	font-weight   : 700;
+	color         : #fff;
+	background    : red;
+	padding       : 0.2rem 0.3rem;
+	margin-top    : 0.2rem;
+	z-index       : 10;
+	max-width     : 100%;
+	margin-bottom : 0;
 }
 
 .field {
@@ -943,25 +943,25 @@ label.error {
 
 #special-projects-preview {
 	background-color: #C1AF99;
-	color: #fff;
-	padding: 1.5rem 0;
-	margin-bottom: var(--spacer);
+	color           : #fff;
+	padding         : 1.5rem 0;
+	margin-bottom   : var(--spacer);
 	@include media-breakpoint-up(md) {
 		padding: 2.5rem 0;
 	}
 	@include media-breakpoint-up(lg) {
 		margin-bottom: calc(var(--spacer) * 1.5);
-		color: #000;
-		background: linear-gradient(to right, rgba(193,175,153,1) 0%,rgba(193,175,153,1) 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
-		padding: calc(var(--spacer) * 2) 0;
+		color        : #000;
+		background   : linear-gradient(to right, rgba(193,175,153,1) 0%,rgba(193,175,153,1) 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+		padding      : calc(var(--spacer) * 2) 0;
 	}
 
 	.col-left {
-		max-width: 100%;
+		max-width    : 100%;
 		margin-bottom: var(--spacer);
 		@include media-breakpoint-up(lg) {
-			flex-grow: 1;
-			max-width: calc((100% / 12) * 7);
+			flex-grow    : 1;
+			max-width    : calc((100% / 12) * 7);
 			margin-bottom: 0;
 		}
 	}
@@ -970,11 +970,11 @@ label.error {
 		@include media-breakpoint-up(lg) {
 			flex-grow: 1;
 			max-width: calc((100% / 12) * 4);
-			margin: 0 auto;
+			margin   : 0 auto;
 		}
 		@include media-breakpoint-up(xl) {
-			flex-grow: 1;
-			max-width: calc((100% / 12) * 3);
+			flex-grow  : 1;
+			max-width  : calc((100% / 12) * 3);
 			margin-left: calc(100% / 12);
 		}
 	}
@@ -983,30 +983,30 @@ label.error {
 #special-projects-slideshow {
 	figure {
 		@include media-breakpoint-up(lg) {
-			width: 400px;
-			height: 430px;
-			overflow: hidden;
+			width        : 400px;
+			height       : 430px;
+			overflow     : hidden;
 			padding-right: 1rem;
 		}
 		@include media-breakpoint-up(xl) {
-			width: 480px;
+			width : 480px;
 			height: 515px;
 		}
 		@include media-breakpoint-up(xxl) {
-			width: 600px;
+			width : 600px;
 			height: 640px;
 		}
 		@include media-breakpoint-up(hd) {
-			width: 670px;
+			width : 670px;
 			height: 720px;
 		}
 
 		img {
 			display: block;
-			margin: 0 auto;
+			margin : 0 auto;
 			@include media-breakpoint-up(lg) {
-				width: 100%;
-				height: 100%;
+				width     : 100%;
+				height    : 100%;
 				object-fit: cover;
 			}
 		}
@@ -1031,17 +1031,17 @@ html.js {
 		}
 
 		.slick-arrow {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: absolute;
-			width: 40px;
-			height: 40px;
-			top: 50%;
-			margin-top: -20px;
+			display         : flex;
+			align-items     : center;
+			justify-content : center;
+			position        : absolute;
+			width           : 40px;
+			height          : 40px;
+			top             : 50%;
+			margin-top      : -20px;
 			background-color: #fff;
-			z-index: 10;
-			box-shadow: 0 0 5px rgba(0,0,0,.2);
+			z-index         : 10;
+			box-shadow      : 0 0 5px rgba(0,0,0,.2);
 
 			&.prev {
 				left: 0;
@@ -1050,12 +1050,12 @@ html.js {
 				}
 
 				span {
-					display: block;
-					width: 10px;
-					height: 10px;
-					border-top: solid 2px #000;
-					border-left: solid 2px #000;
-					transform: rotate(-45deg);
+					display     : block;
+					width       : 10px;
+					height      : 10px;
+					border-top  : solid 2px #000;
+					border-left : solid 2px #000;
+					transform   : rotate(-45deg);
 					margin-right: -5px;
 				}
 			}
@@ -1067,13 +1067,13 @@ html.js {
 				}
 
 				span {
-					display: block;
-					width: 10px;
-					height: 10px;
-					border-top: solid 2px #000;
+					display     : block;
+					width       : 10px;
+					height      : 10px;
+					border-top  : solid 2px #000;
 					border-right: solid 2px #000;
-					transform: rotate(45deg);
-					margin-left: -5px;
+					transform   : rotate(45deg);
+					margin-left : -5px;
 				}
 			}
 		}
@@ -1082,12 +1082,12 @@ html.js {
 
 #news-preview {
 	background-color: rgba(255,255,255,.8);
-	margin-bottom: var(--spacer);
+	margin-bottom   : var(--spacer);
 	@include media-breakpoint-up(lg) {
-		margin-bottom: calc(var(--spacer) * 1.5);
+		margin-bottom   : calc(var(--spacer) * 1.5);
 		background-color: rgba(255,255,255,.8);
-		padding: var(--spacer) 0;
-		box-shadow: 0 6px 20px rgba(0,0,0,.1), 0 -6px 20px rgba(0,0,0,.1);
+		padding         : var(--spacer) 0;
+		box-shadow      : 0 6px 20px rgba(0,0,0,.1), 0 -6px 20px rgba(0,0,0,.1);
 	}
 	@include media-breakpoint-up(xxl) {
 		padding: calc(var(--spacer) * 2) 0;
@@ -1097,7 +1097,7 @@ html.js {
 		margin-bottom: var(--spacer);
 		@include media-breakpoint-up(lg) {
 			max-width: calc((100% / 12) * 8);
-			margin: 0 auto var(--spacer);
+			margin   : 0 auto var(--spacer);
 		}
 		@include media-breakpoint-up(xl) {
 			max-width: calc((100% / 12) * 6);
@@ -1107,7 +1107,7 @@ html.js {
 
 #latest-news {
 	@include media-breakpoint-up(md) {
-		margin-left: -0.5rem;
+		margin-left : -0.5rem;
 		margin-right: -0.5rem;
 	}
 }
@@ -1118,49 +1118,49 @@ html.js {
 	}
 
 	a {
-		position: relative;
-		color: #fff;
+		position       : relative;
+		color          : #fff;
 		text-decoration: none;
 	}
 
 	.overlay {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		z-index: 10;
-		padding: 1.25rem;
+		position        : absolute;
+		width           : 100%;
+		height          : 100%;
+		left            : 0;
+		top             : 0;
+		z-index         : 10;
+		padding         : 1.25rem;
 		background-color: rgba(0,0,0,.5);
 	}
 
 	.category-name {
-		position: absolute;
-		font-size: 0.8125rem;
-		line-height: 1;
-		white-space: nowrap;
-		font-weight: 800;
+		position        : absolute;
+		font-size       : 0.8125rem;
+		line-height     : 1;
+		white-space     : nowrap;
+		font-weight     : 800;
 		transform-origin: right top;
-		top: 1.25rem;
-		right: calc(100% - 1.25rem);
-		transform: rotate(-90deg);
+		top             : 1.25rem;
+		right           : calc(100% - 1.25rem);
+		transform       : rotate(-90deg);
 	}
 
 	h4 {
-		font-size: 1.25rem;
+		font-size  : 1.25rem;
 		font-weight: 400;
 	}
 }
 
 #instagram-wall {
-	display: flex;
+	display       : flex;
 	flex-direction: row;
-	flex-wrap: wrap;
-	margin-left: -2px;
-	margin-right: -2px;
-	margin-bottom: var(--spacer);
+	flex-wrap     : wrap;
+	margin-left   : -2px;
+	margin-right  : -2px;
+	margin-bottom : var(--spacer);
 	@include media-breakpoint-up(lg) {
-		display: grid;
+		display              : grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
 		.item-2 {
@@ -1241,13 +1241,13 @@ html.js {
 			padding: 2px;
 
 			figure {
-				background-repeat: no-repeat;
-				background-size: cover;
+				background-repeat  : no-repeat;
+				background-size    : cover;
 				background-position: center;
 
 				&:before {
-					content: '';
-					display: block;
+					content       : '';
+					display       : block;
 					padding-bottom: 100%;
 				}
 			}
@@ -1257,8 +1257,8 @@ html.js {
 
 .valtenna-alert {
 	text-align: center;
-	max-width: 90%;
-	padding: 2rem;
+	max-width : 90%;
+	padding   : 2rem;
 	@include media-breakpoint-up(md) {
 		max-width: 500px;
 	}
@@ -1282,13 +1282,13 @@ html.js {
 
 h1 {
 	text-transform: uppercase;
-	font-weight: 800;
-	font-size: 1.75rem;
+	font-weight   : 800;
+	font-size     : 1.75rem;
 	@include media-breakpoint-up(lg) {
 		font-size: 2.25rem;
 	}
 	@include media-breakpoint-up(xxl) {
-		font-size: 3rem;
+		font-size  : 3rem;
 		line-height: 1.3;
 	}
 }
@@ -1298,7 +1298,7 @@ body.tax-products_tag {
 	.products-tag-content {
 		margin-top: var(--spacer);
 		@include media-breakpoint-up(md) {
-			margin-top: 0;
+			margin-top   : 0;
 			margin-bottom: var(--spacer);
 		}
 	}
@@ -1306,7 +1306,7 @@ body.tax-products_tag {
 	.col {
 		@include media-breakpoint-up(md) {
 			max-width: 50%;
-			flex: 0 0 50%;
+			flex     : 0 0 50%;
 		}
 	}
 
@@ -1314,17 +1314,17 @@ body.tax-products_tag {
 		margin-bottom: var(--spacer);
 		@include media-breakpoint-up(md) {
 			margin-bottom: 0;
-			max-width: 50%;
-			order: 2;
-			margin-left: calc(100% / 12);
+			max-width    : 50%;
+			order        : 2;
+			margin-left  : calc(100% / 12);
 
 			figure {
 				height: 100%;
 			}
 
 			img {
-				width: 100%;
-				height: 100%;
+				width     : 100%;
+				height    : 100%;
 				object-fit: cover;
 			}
 		}
@@ -1333,26 +1333,26 @@ body.tax-products_tag {
 	.col-right {
 		margin-bottom: var(--spacer);
 		@include media-breakpoint-up(md) {
-			padding: 2rem 0 0 2rem;
+			padding  : 2rem 0 0 2rem;
 			max-width: calc((100% / 12) * 5);
-			order: 1;
+			order    : 1;
 		}
 		@include media-breakpoint-up(lg) {
 			margin-left: calc(100% / 12);
-			max-width: calc((100% / 12) * 4);
-			padding: var(--spacer) 0 0;
+			max-width  : calc((100% / 12) * 4);
+			padding    : var(--spacer) 0 0;
 		}
 		@include media-breakpoint-up(xl) {
-			padding: 0;
-			display: flex;
+			padding    : 0;
+			display    : flex;
 			align-items: center;
 		}
 
 		.heading-title {
 			text-transform: uppercase;
-			font-weight: 800;
-			font-size: 1.25rem;
-			color: #C1AF99;
+			font-weight   : 800;
+			font-size     : 1.25rem;
+			color         : #C1AF99;
 			letter-spacing: 0.2rem;
 		}
 	}
@@ -1362,13 +1362,13 @@ body.single-product {
 	.archive-header {
 		h2 {
 			text-transform: uppercase;
-			font-weight: 800;
-			font-size: 1.75rem;
+			font-weight   : 800;
+			font-size     : 1.75rem;
 			@include media-breakpoint-up(lg) {
 				font-size: 2.25rem;
 			}
 			@include media-breakpoint-up(xxl) {
-				font-size: 3rem;
+				font-size  : 3rem;
 				line-height: 1.3;
 			}
 		}
@@ -1382,7 +1382,7 @@ body.single-product {
 
 		h1 {
 			font-size: 1.25rem;
-			color: $brown;
+			color    : $brown;
 			@include media-breakpoint-up(xxl) {
 				font-size: 1.75rem;
 			}
@@ -1390,8 +1390,8 @@ body.single-product {
 
 		.col {
 			flex-basis: 0;
-			flex-grow: 1;
-			max-width: 100%;
+			flex-grow : 1;
+			max-width : 100%;
 
 			&.col-left {
 				margin-bottom: var(--spacer);
@@ -1409,13 +1409,13 @@ body.single-product {
 
 			&.col-right {
 				@include media-breakpoint-up(md) {
-					padding: 2rem 0 0 2rem;
+					padding  : 2rem 0 0 2rem;
 					max-width: calc((100% / 12) * 5);
 				}
 				@include media-breakpoint-up(lg) {
 					margin-left: calc(100% / 12);
-					max-width: calc((100% / 12) * 4);
-					padding: var(--spacer) 0 0;
+					max-width  : calc((100% / 12) * 4);
+					padding    : var(--spacer) 0 0;
 				}
 				@include media-breakpoint-up(xl) {
 					padding: calc(var(--spacer) * 2) 0 0;
@@ -1430,7 +1430,7 @@ body.single-product {
 	.single-product-gallery-wrapper {
 		@include media-breakpoint-up(lg) {
 			max-width: calc((100% / 12) * 10);
-			margin: 0 auto;
+			margin   : 0 auto;
 		}
 	}
 
@@ -1440,26 +1440,26 @@ body.single-product {
 		figure {
 			max-width: calc(100% / 3);
 			flex-grow: 1;
-			position: relative;
-			overflow: hidden;
+			position : relative;
+			overflow : hidden;
 
 			&:before {
-				content: '';
-				display: block;
+				content       : '';
+				display       : block;
 				padding-bottom: 100%;
 			}
 
 			a {
 				position: absolute;
-				width: 100%;
-				height: 100%;
-				left: 0;
-				top: 0;
+				width   : 100%;
+				height  : 100%;
+				left    : 0;
+				top     : 0;
 			}
 
 			img {
-				width: 100%;
-				height: 100%;
+				width     : 100%;
+				height    : 100%;
 				object-fit: cover;
 			}
 		}
@@ -1468,8 +1468,8 @@ body.single-product {
 
 #similar-products {
 	background-color: #E7E0D7;
-	padding: var(--spacer) 0;
-	margin: var(--spacer) 0;
+	padding         : var(--spacer) 0;
+	margin          : var(--spacer) 0;
 	@include media-breakpoint-up(xl) {
 		margin: calc(var(--spacer) * 2) 0;
 	}
@@ -1505,35 +1505,35 @@ body.single-product {
 				position: relative;
 
 				&:before {
-					content: '';
-					display: block;
+					content       : '';
+					display       : block;
 					padding-bottom: 100%;
 				}
 
 				img {
-					display: block;
-					position: absolute;
-					width: 100%;
-					height: 100%;
+					display   : block;
+					position  : absolute;
+					width     : 100%;
+					height    : 100%;
 					object-fit: cover;
-					left: 0;
-					top: 0;
+					left      : 0;
+					top       : 0;
 				}
 			}
 		}
 
 		h4 {
-			max-width: 100%;
-			overflow: hidden;
-			white-space: nowrap;
+			max-width    : 100%;
+			overflow     : hidden;
+			white-space  : nowrap;
 			text-overflow: ellipsis;
 		}
 	}
 
 	h3 {
-		font-weight: 700;
+		font-weight   : 700;
 		letter-spacing: 0.1rem;
-		font-size: 1.25rem;
+		font-size     : 1.25rem;
 	}
 }
 
@@ -1551,17 +1551,17 @@ html.js {
 			}
 
 			.slick-arrow {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: absolute;
-				width: 40px;
-				height: 40px;
-				top: calc((100% - 2.5rem) / 2);
-				margin-top: -20px;
+				display         : flex;
+				align-items     : center;
+				justify-content : center;
+				position        : absolute;
+				width           : 40px;
+				height          : 40px;
+				top             : calc((100% - 2.5rem) / 2);
+				margin-top      : -20px;
 				background-color: #fff;
-				z-index: 10;
-				box-shadow: 0 0 5px rgba(0,0,0,.2);
+				z-index         : 10;
+				box-shadow      : 0 0 5px rgba(0,0,0,.2);
 
 				&.prev {
 					left: 0;
@@ -1570,12 +1570,12 @@ html.js {
 					}
 
 					span {
-						display: block;
-						width: 10px;
-						height: 10px;
-						border-top: solid 2px #000;
-						border-left: solid 2px #000;
-						transform: rotate(-45deg);
+						display     : block;
+						width       : 10px;
+						height      : 10px;
+						border-top  : solid 2px #000;
+						border-left : solid 2px #000;
+						transform   : rotate(-45deg);
 						margin-right: -5px;
 					}
 				}
@@ -1587,13 +1587,13 @@ html.js {
 					}
 
 					span {
-						display: block;
-						width: 10px;
-						height: 10px;
-						border-top: solid 2px #000;
+						display     : block;
+						width       : 10px;
+						height      : 10px;
+						border-top  : solid 2px #000;
 						border-right: solid 2px #000;
-						transform: rotate(45deg);
-						margin-left: -5px;
+						transform   : rotate(45deg);
+						margin-left : -5px;
 					}
 				}
 			}
@@ -1603,18 +1603,18 @@ html.js {
 
 .archive-header {
 	line-height: 1.4;
-	position: relative;
+	position   : relative;
 
 	.fixed-background {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		user-select: none;
+		position      : absolute;
+		width         : 100%;
+		height        : 100%;
+		left          : 0;
+		top           : 0;
+		user-select   : none;
 		pointer-events: none;
-		overflow: hidden;
-		clip-path: inset(0 0 0 0);
+		overflow      : hidden;
+		clip-path     : inset(0 0 0 0);
 		/*edge*/
 		@supports (-ms-ime-align:auto) {
 			clip: rect(0, auto, auto, 0);
@@ -1625,14 +1625,14 @@ html.js {
 		}
 
 		.inside {
-			position: fixed;
-			width: 100%;
-			height: calc(75vw + var(--spacer));
-			left: 0;
-			top: 80px;
-			background-repeat: no-repeat;
+			position           : fixed;
+			width              : 100%;
+			height             : calc(75vw + var(--spacer));
+			left               : 0;
+			top                : 80px;
+			background-repeat  : no-repeat;
 			background-position: center center;
-			background-size: cover;
+			background-size    : cover;
 			@include media-breakpoint-up(md) {
 				height: calc(100vw / 2.6);
 			}
@@ -1641,26 +1641,26 @@ html.js {
 			}
 
 			&:before {
-				content: '';
-				display: block;
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				left: 0;
-				top: 0;
+				content         : '';
+				display         : block;
+				position        : absolute;
+				width           : 100%;
+				height          : 100%;
+				left            : 0;
+				top             : 0;
 				background-color: rgba(255,255,255,.5);
 			}
 
 			img {
-				width: 100%;
-				height: 100%;
+				width     : 100%;
+				height    : 100%;
 				object-fit: cover;
 			}
 		}
 	}
 
 	.wrapper {
-		height: calc(75vw + var(--spacer));
+		height        : calc(75vw + var(--spacer));
 		padding-bottom: var(--spacer);
 		@include media-breakpoint-up(md) {
 			height: calc(100vw / 2.6);
@@ -1676,18 +1676,18 @@ html.js {
 
 			.description {
 				margin-left: var(--spacer);
-				position: relative;
+				position   : relative;
 
 				&:before {
-					content: '';
-					display: block;
-					position: absolute;
-					right: 100%;
-					top: 14px;
-					width: 30px;
-					height: 1px;
+					content         : '';
+					display         : block;
+					position        : absolute;
+					right           : 100%;
+					top             : 14px;
+					width           : 30px;
+					height          : 1px;
 					background-color: #000;
-					margin-right: 1rem;
+					margin-right    : 1rem;
 					@include media-breakpoint-up(xl) {
 						width: 60px;
 					}
@@ -1711,10 +1711,15 @@ html.js {
 }
 
 #categories-nav {
+	&.filters-products_cat,
+	&.filters-products_tag {
+		margin-bottom: var(--spacer);
+	}
+
 	select {
-		height: calc(1.5em + 1rem + 2px);
-		padding: 0.5rem 1.75rem 0.5rem 0.75rem;
-		line-height: 1.5;
+		height          : calc(1.5em + 1rem + 2px);
+		padding         : 0.5rem 1.75rem 0.5rem 0.75rem;
+		line-height     : 1.5;
 		background-color: #fff;
 		@include media-breakpoint-up(lg) {
 			max-width: calc(100% / 3);
@@ -1722,15 +1727,27 @@ html.js {
 	}
 	@include media-breakpoint-up(lg) {
 		ul {
-			margin: 0 auto;
-			font-size: 0.8125rem;
+			margin     : 0 auto;
+			font-size  : 0.8125rem;
 			font-weight: 900;
 			@include media-breakpoint-up(xxl) {
-				font-size: 1.125rem;
+				font-size: 1rem;
 			}
 
 			li {
 				padding: 0 1rem;
+
+				&.selected {
+					a {
+						text-decoration: underline;
+					}
+				}
+
+				&.reset-all-filters {
+					a {
+						color: #C1AF99;
+					}
+				}
 			}
 		}
 	}
@@ -1738,11 +1755,11 @@ html.js {
 
 #products-grid-container {
 	@include media-breakpoint-up(md) {
-		margin-left: -.5rem;
+		margin-left : -.5rem;
 		margin-right: -.5rem;
 	}
 	@include media-breakpoint-up(xl) {
-		margin-left: 0;
+		margin-left : 0;
 		margin-right: 0;
 	}
 }
@@ -1762,32 +1779,32 @@ html.js {
 			&:hover {
 				.content {
 					transform: translateY(0px);
-					opacity: 1;
+					opacity  : 1;
 				}
 			}
 		}
 	}
 	@include media-breakpoint-up(md) {
 		max-width: 50%;
-		padding: 0 0.5rem;
+		padding  : 0 0.5rem;
 	}
 	@include media-breakpoint-up(lg) {
 		width: 25%;
-		flex: 0 0 25%;
+		flex : 0 0 25%;
 
 		&:nth-child(5n+4),
 		&:nth-child(6n+3) {
 			width: 50%;
-			flex: 50%;
+			flex : 50%;
 		}
 
 		figure {
-			height: 230px;
+			height  : 230px;
 			overflow: hidden;
 
 			img {
-				width: 100%;
-				height: 100%;
+				width     : 100%;
+				height    : 100%;
 				object-fit: cover;
 			}
 		}
@@ -1796,11 +1813,11 @@ html.js {
 		padding: 0;
 
 		figure {
-			height: calc(#{map-get($container-max-widths, 'xl')} / 3.5);
+			height  : calc(#{map-get($container-max-widths, 'xl')} / 3.5);
 			position: relative;
 
 			img {
-				display: block;
+				display : block;
 				position: absolute;
 			}
 		}
@@ -1824,28 +1841,28 @@ html.js {
 	}
 
 	.content {
-		padding: 1rem;
+		padding         : 1rem;
 		background-color: #C1AF99;
 		@include media-breakpoint-up(lg) {
 			padding: 0.5rem 1rem;
 		}
 		@include media-breakpoint-up(xl) {
-			position: absolute;
-			display: flex;
-			width: 100%;
-			height: 30%;
-			left: 0;
-			bottom: 0;
-			padding: 1rem 1.5rem;
-			transform: translateY(100%);
-			opacity: 0;
+			position  : absolute;
+			display   : flex;
+			width     : 100%;
+			height    : 30%;
+			left      : 0;
+			bottom    : 0;
+			padding   : 1rem 1.5rem;
+			transform : translateY(100%);
+			opacity   : 0;
 			transition: transform 0.6s ease, opacity 0.6s ease;
 		}
 	}
 
 	h2 {
-		font-size: 0.8125rem;
-		font-weight: 800;
+		font-size     : 0.8125rem;
+		font-weight   : 800;
 		text-transform: uppercase;
 	}
 }
@@ -1863,11 +1880,11 @@ html.js {
 #product-grid-pagination {
 	margin-top: calc(var(--spacer) / 2);
 	@include media-breakpoint-up(lg) {
-		margin-top: 0;
+		margin-top   : 0;
 		margin-bottom: 1rem;
-		max-width: calc(50% - 1rem);
-		margin-left: auto;
-		font-size: 1.25rem;
+		max-width    : calc(50% - 1rem);
+		margin-left  : auto;
+		font-size    : 1.25rem;
 	}
 	@include media-breakpoint-up(xl) {
 		font-size: 1.5rem;
@@ -1897,9 +1914,9 @@ html.js {
 		margin: 0 0.5rem;
 
 		&.current {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: $brown;
+			font-size    : 1.5rem;
+			font-weight  : 700;
+			color        : $brown;
 			margin-bottom: -2px;
 			@include media-breakpoint-up(lg) {
 				font-size: 2.1875rem;
@@ -1917,9 +1934,9 @@ html.js {
 #news-archive-pagination {
 	margin-top: calc(var(--spacer) / 2);
 	@include media-breakpoint-up(lg) {
-		margin-top: 0;
+		margin-top   : 0;
 		margin-bottom: 1rem;
-		font-size: 1.25rem;
+		font-size    : 1.25rem;
 	}
 	@include media-breakpoint-up(xl) {
 		font-size: 1.5rem;
@@ -1949,9 +1966,9 @@ html.js {
 		margin: 0 0.5rem;
 
 		&.current {
-			font-size: 1.5rem;
-			font-weight: 700;
-			color: $brown;
+			font-size    : 1.5rem;
+			font-weight  : 700;
+			color        : $brown;
 			margin-bottom: -2px;
 			@include media-breakpoint-up(lg) {
 				font-size: 2.1875rem;
@@ -1981,9 +1998,9 @@ html.js {
 	}
 
 	h3 {
-		font-weight: 300;
+		font-weight   : 300;
 		letter-spacing: 0.1rem;
-		margin-bottom: 1rem;
+		margin-bottom : 1rem;
 	}
 }
 
@@ -2013,8 +2030,8 @@ html.js {
 
 			figure {
 				img {
-					width: 100%;
-					height: 100%;
+					width     : 100%;
+					height    : 100%;
 					object-fit: cover;
 				}
 			}
@@ -2023,9 +2040,9 @@ html.js {
 }
 
 .no-product-found {
-	text-align: center;
+	text-align : center;
 	font-weight: 700;
-	flex-grow: 1;
+	flex-grow  : 1;
 }
 @for $i from 0 through 10 {
 	.z-index-#{$i} {
@@ -2034,8 +2051,8 @@ html.js {
 }
 
 img[class*="wp-image-"] {
-	width: auto;
-	height: auto;
+	width    : auto;
+	height   : auto;
 	max-width: 100%;
 }
 
@@ -2046,7 +2063,7 @@ img[class*="wp-image-"] {
 .alignfull {
 	@include make-container();
 	@include media-breakpoint-up(md) {
-		padding-left: 0;
+		padding-left : 0;
 		padding-right: 0;
 	}
 }
@@ -2055,14 +2072,14 @@ img[class*="wp-image-"] {
 	@include make-container();
 	@include make-container-max-widths();
 	@include media-breakpoint-up(md) {
-		padding-left: 0;
+		padding-left : 0;
 		padding-right: 0;
 	}
 }
 
 .wp-block-column {
 	max-width: 100%;
-	flex: 1 0 0;
+	flex     : 1 0 0;
 }
 
 body.page-azienda {
@@ -2073,8 +2090,8 @@ body.page-azienda {
 	.wp-block-columns {
 		.wp-block-column {
 			@include media-breakpoint-up(lg) {
-				max-width: 50%;
-				flex: 0 0 50%;
+				max-width : 50%;
+				flex      : 0 0 50%;
 				min-height: 400px;
 
 				figure.fitimage {
@@ -2082,8 +2099,8 @@ body.page-azienda {
 				}
 
 				.fitimage img {
-					width: 100%;
-					height: 100%;
+					width     : 100%;
+					height    : 100%;
 					object-fit: cover;
 				}
 			}
@@ -2095,9 +2112,9 @@ body.page-azienda {
 		&.first-row,
 		&.second-row {
 			h2 {
-				margin-bottom: 1.25rem;
+				margin-bottom : 1.25rem;
 				letter-spacing: 0.1rem;
-				font-weight: 800;
+				font-weight   : 800;
 				@include media-breakpoint-up(xxl) {
 					margin-bottom: 2rem;
 				}
@@ -2106,8 +2123,8 @@ body.page-azienda {
 			.text-block {
 				ul {
 					list-style: none;
-					margin: 0;
-					padding: 0;
+					margin    : 0;
+					padding   : 0;
 				}
 			}
 		}
@@ -2124,24 +2141,24 @@ body.page-azienda {
 
 					.text-block {
 						margin-left: calc(var(--spacer) * 2);
-						position: relative;
+						position   : relative;
 
 						&:before {
-							content: '';
-							display: block;
-							position: absolute;
-							right: 100%;
-							top: 14px;
-							width: 60px;
-							height: 1px;
+							content         : '';
+							display         : block;
+							position        : absolute;
+							right           : 100%;
+							top             : 14px;
+							width           : 60px;
+							height          : 1px;
 							background-color: #000;
-							margin-right: 1rem;
+							margin-right    : 1rem;
 						}
 					}
 				}
 				@include media-breakpoint-up(lg) {
-					display: flex;
-					flex-direction: column;
+					display        : flex;
+					flex-direction : column;
 					justify-content: flex-end;
 
 					.column-content {
@@ -2170,26 +2187,26 @@ body.page-azienda {
 
 					.text-block {
 						margin-right: calc(var(--spacer) * 2);
-						position: relative;
+						position    : relative;
 
 						&:before {
-							content: '';
-							display: block;
-							position: absolute;
-							left: 100%;
-							top: 14px;
-							width: 60px;
-							height: 1px;
+							content         : '';
+							display         : block;
+							position        : absolute;
+							left            : 100%;
+							top             : 14px;
+							width           : 60px;
+							height          : 1px;
 							background-color: #000;
-							margin-left: 1rem;
+							margin-left     : 1rem;
 						}
 					}
 				}
 				@include media-breakpoint-up(lg) {
-					display: flex;
-					flex-direction: column;
+					display        : flex;
+					flex-direction : column;
 					justify-content: flex-end;
-					text-align: right;
+					text-align     : right;
 
 					.column-content {
 						padding: var(--spacer) 0;
@@ -2212,9 +2229,9 @@ body.page-azienda {
 
 #produzione {
 	h2 {
-		margin-bottom: 1.25rem;
+		margin-bottom : 1.25rem;
 		letter-spacing: 0.1rem;
-		font-weight: 800;
+		font-weight   : 800;
 	}
 
 	.text-block {
@@ -2223,7 +2240,7 @@ body.page-azienda {
 		}
 		@include media-breakpoint-up(lg) {
 			max-width: calc((100% / 12) * 10);
-			margin: 0 auto;
+			margin   : 0 auto;
 		}
 		@include media-breakpoint-up(xl) {
 			max-width: calc((100% / 12) * 8);
@@ -2239,9 +2256,9 @@ body.page-azienda {
 
 #servizi {
 	h2 {
-		margin-bottom: 1.25rem;
+		margin-bottom : 1.25rem;
 		letter-spacing: 0.1rem;
-		font-weight: 800;
+		font-weight   : 800;
 	}
 }
 
@@ -2249,17 +2266,17 @@ body.page-azienda {
 	position: relative;
 
 	&:before {
-		content: '';
-		display: block;
+		content       : '';
+		display       : block;
 		padding-bottom: 56.25%;
 	}
 
 	iframe {
 		position: absolute;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
+		width   : 100%;
+		height  : 100%;
+		left    : 0;
+		top     : 0;
 	}
 }
 
@@ -2269,14 +2286,14 @@ figure.wp-block-embed {
 
 #servizi {
 	background-color: #E7E0D7;
-	padding-top: var(--spacer);
-	padding-bottom: calc(var(--spacer) * 2);
+	padding-top     : var(--spacer);
+	padding-bottom  : calc(var(--spacer) * 2);
 
 	.text-block {
 		margin-bottom: var(--spacer);
 		@include media-breakpoint-up(lg) {
-			max-width: calc((100% / 12) * 8);
-			margin-left: auto;
+			max-width   : calc((100% / 12) * 8);
+			margin-left : auto;
 			margin-right: auto;
 		}
 		@include media-breakpoint-up(xl) {
@@ -2286,7 +2303,7 @@ figure.wp-block-embed {
 }
 
 #certificazioni {
-	padding-top: var(--spacer);
+	padding-top   : var(--spacer);
 	padding-bottom: var(--spacer);
 
 	p:last-child {
@@ -2294,16 +2311,16 @@ figure.wp-block-embed {
 	}
 
 	h2 {
-		margin-bottom: 1.25rem;
+		margin-bottom : 1.25rem;
 		letter-spacing: 0.1rem;
-		font-weight: 800;
+		font-weight   : 800;
 	}
 
 	.text-block {
 		margin-bottom: var(--spacer);
 		@include media-breakpoint-up(lg) {
-			max-width: calc((100% / 12) * 8);
-			margin-left: auto;
+			max-width   : calc((100% / 12) * 8);
+			margin-left : auto;
 			margin-right: auto;
 		}
 		@include media-breakpoint-up(xl) {
@@ -2314,10 +2331,10 @@ figure.wp-block-embed {
 	.cert-blocks {
 		.wp-block-kadence-column {
 			background-color: #fff;
-			box-shadow: 0 2px 5px rgba(0,0,0,.1);
+			box-shadow      : 0 2px 5px rgba(0,0,0,.1);
 
 			.wp-block-group {
-				padding: 2rem;
+				padding    : 2rem;
 				font-weight: 800;
 				@include media-breakpoint-up(xxl) {
 					padding: 3rem 2rem;
@@ -2337,13 +2354,13 @@ figure.wp-block-embed {
 	}
 
 	.client-list {
-		display: flex;
-		flex-direction: column;
+		display        : flex;
+		flex-direction : column;
 		justify-content: center;
-		align-items: center;
-		text-align: center;
+		align-items    : center;
+		text-align     : center;
 		@include media-breakpoint-up(xl) {
-			text-align: left;
+			text-align : left;
 			align-items: flex-start;
 		}
 
@@ -2356,8 +2373,8 @@ figure.wp-block-embed {
 
 		ul {
 			list-style: none;
-			margin: 0;
-			padding: 0;
+			margin    : 0;
+			padding   : 0;
 		}
 	}
 }
@@ -2375,18 +2392,18 @@ body.archivio-news {
 
 	.post-content {
 		padding: 2rem;
-		border: solid 2px $brown;
+		border : solid 2px $brown;
 	}
 
 	.post-content-wrapper {
 		&:before {
-			display: block;
-			content: attr(data-title);
+			display       : block;
+			content       : attr(data-title);
 			text-transform: uppercase;
-			color: $brown;
+			color         : $brown;
 			letter-spacing: 0.1rem;
-			font-weight: 700;
-			margin-bottom: 1rem;
+			font-weight   : 700;
+			margin-bottom : 1rem;
 			@include media-breakpoint-up(xl) {
 				font-size: 1.25rem;
 			}
@@ -2394,7 +2411,7 @@ body.archivio-news {
 	}
 
 	h2 {
-		font-size: 1.125rem;
+		font-size    : 1.125rem;
 		margin-bottom: 1rem;
 	}
 
@@ -2402,22 +2419,22 @@ body.archivio-news {
 		margin-top: var(--spacer);
 
 		button {
-			font-weight: 700;
+			font-weight   : 700;
 			letter-spacing: 0.2rem;
-			display: flex;
+			display       : flex;
 			flex-direction: row;
-			flex-wrap: nowrap;
-			line-height: 1;
-			align-items: center;
+			flex-wrap     : nowrap;
+			line-height   : 1;
+			align-items   : center;
 
 			&:after {
-				content: '';
-				display: block;
-				width: 18px;
-				height: 18px;
-				border-top: solid 1px #000;
+				content     : '';
+				display     : block;
+				width       : 18px;
+				height      : 18px;
+				border-top  : solid 1px #000;
 				border-right: solid 1px #000;
-				transform: rotate(45deg);
+				transform   : rotate(45deg);
 			}
 		}
 	}
@@ -2428,23 +2445,23 @@ body.archivio-news {
 		}
 
 		.col-left {
-			flex: 0 0 100%;
-			max-width: calc((100% / 12) * 5);
+			flex        : 0 0 100%;
+			max-width   : calc((100% / 12) * 5);
 			margin-right: calc((var(--spacer) * 3) * -1);
 		}
 
 		.col-right {
-			display: flex;
-			flex-direction: column;
+			display        : flex;
+			flex-direction : column;
 			justify-content: flex-end;
-			position: relative;
+			position       : relative;
 		}
 
 		.post-content {
-			padding: 3rem 4rem 3rem calc(var(--spacer) * 5);
+			padding      : 3rem 4rem 3rem calc(var(--spacer) * 5);
 			margin-bottom: -3.25rem;
 			@include media-breakpoint-up(xl) {
-				padding: 5rem 6rem 5rem calc(var(--spacer) * 5);
+				padding      : 5rem 6rem 5rem calc(var(--spacer) * 5);
 				margin-bottom: -5.25rem;
 			}
 		}
@@ -2456,7 +2473,7 @@ body.archivio-news {
 
 			.col-left {
 				margin-right: 0;
-				margin-left: calc((var(--spacer) * 3) * -1);
+				margin-left : calc((var(--spacer) * 3) * -1);
 			}
 
 			.post-content {
@@ -2483,26 +2500,26 @@ body.archivio-news {
 			position: relative;
 
 			&:before {
-				content: '';
-				display: block;
+				content       : '';
+				display       : block;
 				padding-bottom: 100%;
 			}
 
 			.leaflet-map {
 				position: absolute;
-				width: 100%;
-				height: 100% !important;
-				left: 0;
-				top: 0;
+				width   : 100%;
+				height  : 100% !important;
+				left    : 0;
+				top     : 0;
 			}
 		}
 	}
 	@include media-breakpoint-up(md) {
 		.right-col {
-			display: flex;
-			flex-direction: column;
+			display        : flex;
+			flex-direction : column;
 			justify-content: center;
-			padding-left: 3rem;
+			padding-left   : 3rem;
 			@include media-breakpoint-up(xl) {
 				padding-left: 4rem;
 			}
@@ -2511,18 +2528,18 @@ body.archivio-news {
 }
 
 ul.contacts-info {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+	list-style : none;
+	margin     : 0;
+	padding    : 0;
 	font-weight: 700;
 	@include media-breakpoint-up(xxl) {
 		font-size: 1.5rem;
 	}
 
 	li {
-		display: flex;
+		display       : flex;
 		flex-direction: row;
-		flex-wrap: nowrap;
+		flex-wrap     : nowrap;
 
 		&:not(:last-child) {
 			margin-bottom: 2rem;
@@ -2530,7 +2547,7 @@ ul.contacts-info {
 
 		.icon {
 			margin-right: 1rem;
-			color: #999;
+			color       : #999;
 		}
 	}
 }
@@ -2538,23 +2555,23 @@ ul.contacts-info {
 #contact-form-block {
 	@include media-breakpoint-up(lg) {
 		max-width: calc((100% / 12) * 10);
-		margin: 0 auto 4rem;
+		margin   : 0 auto 4rem;
 	}
 
 	label.hidden-label {
-		width: 0;
-		height: 0;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		position: absolute;
+		width         : 0;
+		height        : 0;
+		margin        : 0;
+		padding       : 0;
+		overflow      : hidden;
+		position      : absolute;
 		pointer-events: none;
-		user-select: none;
+		user-select   : none;
 	}
 
 	.fields {
 		padding: 2rem 2rem 3rem;
-		border: solid 2px $brown;
+		border : solid 2px $brown;
 		@include media-breakpoint-up(md) {
 			padding: 2rem 6rem 3rem;
 		}
@@ -2572,13 +2589,13 @@ ul.contacts-info {
 
 			.field {
 				.form-control {
-					border-left-color: transparent;
-					border-right-color: transparent;
-					border-top-color: transparent;
+					border-left-color  : transparent;
+					border-right-color : transparent;
+					border-top-color   : transparent;
 					border-bottom-color: $brown;
-					text-align: center;
+					text-align         : center;
 					@include media-breakpoint-up(xxl) {
-						font-size: 1rem;
+						font-size  : 1rem;
 						font-weight: 700;
 					}
 
@@ -2589,31 +2606,31 @@ ul.contacts-info {
 
 				.wpcf7-form-control-wrap {
 					position: relative;
-					display: block;
+					display : block;
 				}
 
 				.wpcf7-not-valid-tip {
-					font-size: 0.75rem;
-					color: #fff;
+					font-size       : 0.75rem;
+					color           : #fff;
 					background-color: red;
-					line-height: 1;
-					font-weight: 700;
-					padding: 0.2rem 0.3rem;
-					left: 0;
-					top: 100%;
-					margin-top: 3px;
-					text-transform: uppercase;
-					position: absolute;
-					white-space: nowrap;
-					width: 100%;
-					text-align: center;
+					line-height     : 1;
+					font-weight     : 700;
+					padding         : 0.2rem 0.3rem;
+					left            : 0;
+					top             : 100%;
+					margin-top      : 3px;
+					text-transform  : uppercase;
+					position        : absolute;
+					white-space     : nowrap;
+					width           : 100%;
+					text-align      : center;
 				}
 			}
 
 			.wpcf7-form-control-wrap.privacy_policy {
 				.wpcf7-list-item {
-					margin: 0;
-					padding: 0;
+					margin   : 0;
+					padding  : 0;
 					font-size: 0.8125rem;
 				}
 
@@ -2623,17 +2640,17 @@ ul.contacts-info {
 					&:after {
 						content: '';
 						display: table;
-						clear: both;
+						clear  : both;
 					}
 				}
 
 				input[type="checkbox"] {
 					display: block;
-					float: left;
+					float  : left;
 				}
 
 				.wpcf7-list-item-label {
-					display: block;
+					display     : block;
 					padding-left: 20px;
 
 					a {
@@ -2645,77 +2662,77 @@ ul.contacts-info {
 	}
 
 	.fieldwrapper.submit {
-		position: relative;
+		position : relative;
 		transform: translateY(-50%);
 
 		.ajax-loader {
-			position: absolute;
-			top: 100%;
-			left: 50%;
+			position   : absolute;
+			top        : 100%;
+			left       : 50%;
 			margin-left: -8px;
 		}
 	}
 
 	#contactform-submit {
-		appearance: none;
-		font-size: 0.875rem;
-		height: calc(1.5em + 1.4rem + 2px);
-		padding: 0.7rem 1.75rem;
-		line-height: 1.5;
-		border: none;
-		text-transform: uppercase;
-		display: block;
-		margin: 0 auto;
-		font-weight: 800;
-		color: $brown;
+		appearance      : none;
+		font-size       : 0.875rem;
+		height          : calc(1.5em + 1.4rem + 2px);
+		padding         : 0.7rem 1.75rem;
+		line-height     : 1.5;
+		border          : none;
+		text-transform  : uppercase;
+		display         : block;
+		margin          : 0 auto;
+		font-weight     : 800;
+		color           : $brown;
 		background-color: #fff;
 		@include media-breakpoint-up(xxl) {
-			font-size: 1.125rem;
+			font-size     : 1.125rem;
 			letter-spacing: 0.1rem;
-			padding: 0.7rem 6rem;
+			padding       : 0.7rem 6rem;
 		}
 	}
 }
 
 .form-response {
 	.wpcf7-response-output {
-		margin: 0;
-		padding: 1rem;
+		margin    : 0;
+		padding   : 1rem;
 		text-align: center;
 
 		&.wpcf7-validation-errors {
-			color: #721c24;
+			color           : #721c24;
 			background-color: #f8d7da;
-			border-color: #f5c6cb;
+			border-color    : #f5c6cb;
 		}
 	}
 }
 
 .gsap-item {
 	pointer-events: none;
-	user-select: none;
+	user-select   : none;
 
 	img {
-		width: auto;
-		height: auto;
+		width    : auto;
+		height   : auto;
 		max-width: 100%;
-		display: block;
+		display  : block;
 	}
 }
 
 #gsap-item-1 {
-	position: fixed;
-	width: 280px;
-	left: -170px;
-	top: 100%;
-	z-index: 1;
+	position : fixed;
+	width    : 280px;
+	left     : -170px;
+	top      : 100%;
+	z-index  : 1;
 	transform: rotate(0deg);
 	@include media-breakpoint-up(md) {
 		width: 350px;
 	}
 	@include media-breakpoint-up(xl) {
 		width: 400px;
-		left: -200px;
+		left : -200px;
 	}
 	@include media-breakpoint-up(xxl) {
 		width: 450px;

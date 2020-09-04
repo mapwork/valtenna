@@ -14,8 +14,9 @@ if( !function_exists('alter_product_archive_query') ){
          $category_term = $categories[0]->slug;
          if( isset( $_REQUEST['products_cat'] ) && !empty( $_REQUEST['products_cat'] ) ){
             $category_term = $_REQUEST['products_cat'];
+            $query->set('products_cat', $category_term);
          }
-         $query->set('products_cat', $category_term);
+
          $query->set('posts_per_page', 8);
       }
       return $query;
@@ -32,6 +33,28 @@ if( !function_exists('alter_taxonomies_archive_query') ){
    function alter_taxonomies_archive_query( $query ){
       if( !is_admin() && $query->is_main_query() && ( is_tax('products_tag') || is_tax('products_cat') ) ){
          $query->set('posts_per_page', 8);
+      }
+      if( !is_admin() && $query->is_main_query() ){
+         if( is_tax('products_tag') && isset($_GET['filter_products_cat']) && !empty($_GET['filter_products_cat']) ){
+            $taxquery = array(
+               array(
+               'taxonomy' => 'products_cat',
+               'field' => 'slug',
+               'terms' => $_GET['filter_products_cat'],
+               )
+            );
+            $query->set( 'tax_query', $taxquery );
+         }
+         if( is_tax('products_cat') && isset($_GET['filter_products_tag']) && !empty($_GET['filter_products_tag']) ){
+            $taxquery = array(
+               array(
+               'taxonomy' => 'products_tag',
+               'field' => 'slug',
+               'terms' => $_GET['filter_products_tag'],
+               )
+            );
+            $query->set( 'tax_query', $taxquery );
+         }
       }
       return $query;
    }
