@@ -148,7 +148,7 @@
 <section id="instagram">
    <div class="container">
       <h3 class="text-uppercase text-center area-title mb-4 mb-xxl-5"><?php echo get_string_last_word_bold( __('Instagram @valtenna','valtenna') ); ?></h3>
-      <div id="instagram-wall">
+      <div id="instagram-wall" data-tag="valtennapackaging" data-user_id="7742624923" data-count="15">
          <div class="spinner-border mx-auto" role="status">
            <span class="sr-only">Loading...</span>
          </div>

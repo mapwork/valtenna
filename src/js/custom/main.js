@@ -17,13 +17,6 @@ var endtransition, endanimation;
 	endtransition = transitions[Modernizr.prefixed('transition')];
 	endanimation = animations[Modernizr.prefixed('animation')];
 })(jQuery);
-document.addEventListener('lazybeforeunveil', function(e) {
-	var bg = e.target.getAttribute('data-background-image');
-	if (bg) {
-		e.target.style.cssText = 'background-image:url(' + bg + ')';
-	}
-});
-
 if (typeof('objectFitImages') == 'function') {
 	var someImages = document.querySelectorAll('img.fitimage, .fitimage img');
 	objectFitImages(someImages, {
@@ -138,11 +131,6 @@ jQuery(document).ready(function($) {
 });
 var instagramWall = document.getElementById('instagram-wall');
 if (instagramWall) {
-	var opts = {
-		tag: 'packaging',
-		user_id: false,
-		count: '15'
-	}
-	var feed = new instagramFeed('#instagram-wall', opts);
+	var feed = new instagramFeed('#instagram-wall', instagramWall.dataset);
 	feed.init();
 }

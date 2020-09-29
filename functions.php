@@ -120,6 +120,37 @@ function valtenna_content_width() {
 }
 add_action( 'after_setup_theme', 'valtenna_content_width', 0 );
 
+if( !function_exists( 'valtenna_app_icons' ) ){
+	/**
+	 * favicon e app icons
+	 * @return html
+	 */
+	function valtenna_app_icons(){
+		$root_url = site_url();
+		$output = <<<HTML
+		<link rel="apple-touch-icon" sizes="57x57" href="{$root_url}/app-icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="{$root_url}/app-icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="{$root_url}/app-icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="{$root_url}/app-icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="{$root_url}/app-icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="{$root_url}/app-icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="{$root_url}/app-icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="{$root_url}/app-icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="{$root_url}/app-icons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="{$root_url}/app-icons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="{$root_url}/app-icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="{$root_url}/app-icons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="{$root_url}/app-icons/favicon-16x16.png">
+		<link rel="manifest" href="{$root_url}/app-icons/manifest.php">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="{$root_url}/app-icons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+		HTML;
+		echo $output;
+	}
+}
+add_action('wp_head','valtenna_app_icons');
+
 /**
  * Register widget area.
  *
@@ -184,7 +215,7 @@ function get_string_last_word_bold( $string, $numwords = 1 ){
 	return join( ' ', $string ) . ' <span class="strong">' . join( ' ', $boldedArray ) . '</span>';
 }
 
-//add_action( 'mapcomm_importer_after_insert_post', 'mapcomm_gallery_import', 10, 3 );
+add_action( 'mapcomm_importer_after_insert_post', 'mapcomm_gallery_import', 10, 3 );
 function mapcomm_gallery_import( $post_id, $args, $postdata ){
 	$togallery = get_post_meta($post_id, '__tmp_gallery');
 	$tmp = [];
@@ -439,11 +470,22 @@ if( !function_exists('get_queried_posts_terms') ){
 	 */
 	function get_queried_post_terms($taxonomy, $exclude = []){
 		$current_term = get_queried_object();
-		global $wp_query;
+		$query = new WP_Query([
+			'post_type' => 'product',
+			'post_status' => 'publish',
+			'posts_per_page' => -1,
+			'tax_query' => [
+				[
+					'taxonomy' => $current_term->taxonomy,
+					'field'    => 'term_id',
+					'terms'    => $current_term->term_id
+				]
+			]
+		]);
 		$taxonomy_ids = [];
-		if( $wp_query->have_posts() ){
-			while( $wp_query->have_posts() ){
-				$wp_query->the_post();
+		if( $query->have_posts() ){
+			while( $query->have_posts() ){
+				$query->the_post();
 				$products_cat = wp_get_post_terms(get_the_ID(), $taxonomy, array('exclude' => $exclude));
 				if( $products_cat && count( $products_cat ) > 0 ){
 					foreach( $products_cat as $pc ){

@@ -33,7 +33,7 @@
 		</<?php echo $tag; ?>>
 		<div id="toolbar" class="d-flex flex-row-reverse justify-content-end flex-wrap flex-grow-1 flex-xl-row">
 			<div class="toolbar-item mr-xl-3">
-				<a href="#" title="<?php echo __('Seguici su Instagram','valtenna'); ?>"><i class="fab fa-instagram"></i></a>
+				<a href="https://www.instagram.com/valtenna_packaging/" target="_blank" title="<?php echo __('Seguici su Instagram','valtenna'); ?>"><i class="fab fa-instagram"></i></a>
 			</div>
 			<div class="toolbar-item mr-2 mr-xl-0">
 				<a href="javascript:;" id="trigger-menu"><i class="fas fa-bars"></i></a>

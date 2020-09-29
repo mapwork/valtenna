@@ -23,9 +23,6 @@
 				duration: '400%'
 			})
 			.setTween(anm_gsap_1)
-			.addIndicators({
-				name: 'gsap_1'
-			})
 			.addTo(controller);
 	}
 })();

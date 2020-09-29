@@ -774,6 +774,13 @@ body.tax-products_cat .products-tag-content,body.tax-products_tag .products-tag-
 body.tax-products_cat .col-left,body.tax-products_tag .col-left{margin-bottom:var(--spacer)}
 body.tax-products_cat .col-right,body.tax-products_tag .col-right{margin-bottom:var(--spacer)}
 body.tax-products_cat .col-right .heading-title,body.tax-products_tag .col-right .heading-title{text-transform:uppercase;font-weight:800;font-size:1.25rem;color:#c1af99;letter-spacing:.2rem}
+body.single-post .archive-header{z-index:1;position:relative}
+body.single-post .archive-header figure{overflow:hidden;height:calc(75vw + var(--spacer));background-position:center;background-repeat:no-repeat;background-size:cover}
+body.single-post .archive-header figure img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
+body.single-post h1{line-height:1.3}
+body.single-post .post-content-wrapper{position:relative;z-index:2;margin-top:var(--spacer)}
+body.single-post .the-content{margin-top:var(--spacer)}
+body.single-post .the-content h2,body.single-post .the-content h3,body.single-post .the-content h4,body.single-post .the-content h5,body.single-post .the-content h6{margin-bottom:1rem;line-height:1.3}
 body.single-product .archive-header h2{text-transform:uppercase;font-weight:800;font-size:1.75rem}
 body.single-product .single-product-content{margin-top:var(--spacer)}
 body.single-product .single-product-content h1{font-size:1.25rem;color:#c1af99}
@@ -1533,6 +1540,8 @@ body.tax-products_cat .col-left,body.tax-products_tag .col-left{margin-bottom:0;
 body.tax-products_cat .col-left figure,body.tax-products_tag .col-left figure{height:100%}
 body.tax-products_cat .col-left img,body.tax-products_tag .col-left img{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}
 body.tax-products_cat .col-right,body.tax-products_tag .col-right{padding:2rem 0 0 2rem;max-width:calc((100% / 12) * 5);-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}
+body.single-post .archive-header figure{height:calc(100vw / 2.6)}
+body.single-post .post-content{max-width:calc((100% / 12) * 10);margin:0 auto}
 body.single-product .single-product-content{margin-top:0}
 body.single-product .single-product-content .col.col-left{margin-bottom:0}
 body.single-product .single-product-content .col.col-left{max-width:50%}
@@ -1903,6 +1912,8 @@ html.js #special-projects-slideshow .slick-arrow.next{right:-10px}
 #instagram-wall .instagram-feed-item{width:100%}
 h1{font-size:2.25rem}
 body.tax-products_cat .col-right,body.tax-products_tag .col-right{margin-left:calc(100% / 12);max-width:calc((100% / 12) * 4);padding:var(--spacer) 0 0}
+body.single-post h1{font-size:1.75rem}
+body.single-post .post-content{max-width:calc((100% / 12) * 9)}
 body.single-product .archive-header h2{font-size:2.25rem}
 body.single-product .single-product-content .col.col-right{margin-left:calc(100% / 12);max-width:calc((100% / 12) * 4);padding:var(--spacer) 0 0}
 body.single-product .single-product-gallery-wrapper{max-width:calc((100% / 12) * 10);margin:0 auto}
@@ -2262,6 +2273,9 @@ html.js #claim-slideshow .prev{margin-right:calc(100% / 6)}
 #special-projects-slideshow figure{width:480px;height:515px}
 #news-preview .intro{max-width:calc((100% / 12) * 6)}
 body.tax-products_cat .col-right,body.tax-products_tag .col-right{padding:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+body.single-post .archive-header{margin-bottom:-6rem}
+body.single-post .post-content-wrapper{margin-top:0}
+body.single-post .post-content{max-width:790px;padding:3rem;background-color:#fff}
 body.single-product .single-product-content .col.col-right{padding:calc(var(--spacer) * 2) 0 0}
 #similar-products{margin:calc(var(--spacer) * 2) 0}
 .archive-header .fixed-background .inside{top:0}
@@ -2591,6 +2605,7 @@ body{font-size:1.125rem}
 #special-projects-slideshow figure{width:600px;height:640px}
 #news-preview{padding:calc(var(--spacer) * 2) 0}
 h1{font-size:3rem;line-height:1.3}
+body.single-post .archive-header{margin-bottom:-8rem}
 body.single-product .archive-header h2{font-size:3rem;line-height:1.3}
 body.single-product .single-product-content h1{font-size:1.75rem}
 body.single-product .single-product-content .col.col-right{padding:calc(var(--spacer) * 2.5) 0 0}
@@ -2907,6 +2922,7 @@ ul.contacts-info{font-size:1.5rem}
 #site-logo{max-width:290px}
 #homepage-claim .claim-text{font-size:1.875rem}
 #special-projects-slideshow figure{width:670px;height:720px}
+body.single-post .archive-header{margin-bottom:-10rem}
 .product-grid-item figure{height:calc(1640px / 3.5)}
 .alignwide{max-width:1640px}
 #gsap-item-1{width:500px}
