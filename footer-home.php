@@ -49,7 +49,9 @@
 								<input data-cons-preference="privacy_policyy" type="checkbox" name="privacy_policy" id="subscribe_policy"/>
 								<label for="subscribe_policy">
 									<span class="disclaimer">
-										<?php echo __('Letto e compreso l&rsquo;<a href="#">Informativa sulla privacy</a>, acconsento al trattamento dei miei dati per finalità di marketing', 'valtenna'); ?>
+										<?php
+										echo do_shortcode(__('Letto e compreso la [privacy_policy_link label="Privacy Policy" privacy_policy_id="22408243"], acconsento al trattamento dei miei dati per finalità di marketing', 'valtenna'));
+										?>
 									</span>
 								</label>
 							</div>
