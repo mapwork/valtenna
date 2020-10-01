@@ -196,6 +196,23 @@ jQuery(document).ready(function ($) {
       }]
     });
   }
+
+  $(window).load(function () {
+    var products_tax_archive = $('body[class*="tax-"]');
+
+    if (products_tax_archive.length) {
+      var queryString = window.location.search;
+      var urlParams = new URLSearchParams(queryString);
+
+      if (urlParams.has('filter_products_cat')) {
+        var filterNav = $('#filters-by-categories');
+        var pos = filterNav.offset().top - $('#header').height();
+        $('html,body').animate({
+          'scrollTop': pos + 'px'
+        }, 1000);
+      }
+    }
+  });
 });
 var instagramWall = document.getElementById('instagram-wall');
 

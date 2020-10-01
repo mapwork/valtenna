@@ -49,7 +49,7 @@ instagramFeed.prototype.createElementFromHTMLString = function(htmlString) {
 
 instagramFeed.prototype.createItemHtml = function(itemdata, itemindex) {
 	var html = '<div class="instagram-feed-item item-' + itemindex + '">' +
-		'  <a class="d-block" data-fancybox href="' + itemdata.thumbnail_src + '" data-src="' + itemdata.thumbnail_src + '" data-id="' + itemdata.id + '" data-like="' + itemdata.edge_liked_by.count + '">' +
+		'  <a class="d-block" target="_blank" href="https://www.instagram.com/p/' + itemdata.shortcode + '/" data-src="' + itemdata.thumbnail_src + '" data-id="' + itemdata.id + '" data-like="' + itemdata.edge_liked_by.count + '">' +
 		'     <figure class="lazyload mb-0" data-background-image="' + itemdata.thumbnail_src + '"></figure>' +
 		'  </a>' +
 		'</div>';
@@ -89,12 +89,6 @@ instagramFeed.prototype.getJsonData = function() {
 			if (httpRequest.readyState == 4) {
 				if (httpRequest.status == 200) {
 					var obj = JSON.parse(httpRequest.responseText);
-					// var media = obj.graphql.hashtag.edge_hashtag_to_media.edges;
-					// if( $_this.options.user_id ){
-					//    media = media.filter(function(v){
-					//       return v.node.owner.id == $_this.options.user_id;
-					//    });
-					// }
 					resolve(obj);
 				} else {
 					reject(new Error(httpReq.statusText));

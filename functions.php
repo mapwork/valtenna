@@ -532,8 +532,8 @@ if( !function_exists('get_queried_posts_terms') ){
 			$list_items[] = sprintf(
 				'<li class="reset-all-filters"><a href="%s" title="%s">%s</a></li>',
 				get_term_link($current_term),
-				__('Reset all filters','valtenna'),
-				__('Reset','valtenna')
+				__('Reimposta i filtri','valtenna'),
+				__('Reimposta','valtenna')
 			);
 			$output .= '<nav id="categories-nav" class="filters-' . $taxonomy . '">';
 			$output .= '<ul class="reset-list d-none d-xl-flex flex-lg-row flex-lg-wrap text-uppercase justify-content-center">';

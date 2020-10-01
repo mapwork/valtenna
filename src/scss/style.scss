@@ -2369,12 +2369,12 @@ figure.wp-block-embed {
 	.text-block {
 		margin-bottom: var(--spacer);
 		@include media-breakpoint-up(lg) {
-			max-width: calc((100% / 12) * 8);
+			max-width: calc((100% / 12) * 10);
 			margin-left: auto;
 			margin-right: auto;
 		}
 		@include media-breakpoint-up(xl) {
-			max-width: calc((100% / 12) * 6);
+			max-width: calc((100% / 12) * 8);
 		}
 	}
 }
@@ -2816,5 +2816,19 @@ ul.contacts-info {
 	}
 	@include media-breakpoint-up(hd) {
 		width: 500px;
+	}
+}
+
+#history-wrapper {
+	background-color: #E7E0D7;
+	padding-top: var(--spacer);
+	padding-bottom: calc(var(--spacer) * 2);
+}
+
+#history {
+	h2 {
+		margin-bottom: 1.25rem;
+		letter-spacing: 0.1rem;
+		font-weight: 800;
 	}
 }

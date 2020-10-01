@@ -924,6 +924,8 @@ ul.contacts-info li .icon{margin-right:1rem;color:#999}
 .gsap-item{pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 .gsap-item img{width:auto;height:auto;max-width:100%;display:block}
 #gsap-item-1{position:fixed;width:280px;left:-170px;top:100%;z-index:1;-webkit-transform:rotate(0);transform:rotate(0)}
+#history-wrapper{background-color:#e7e0d7;padding-top:var(--spacer);padding-bottom:calc(var(--spacer) * 2)}
+#history h2{margin-bottom:1.25rem;letter-spacing:.1rem;font-weight:800}
 @media(prefers-reduced-motion:reduce){.form-control{-webkit-transition:none;transition:none}
 .custom-switch .custom-control-label::after{-webkit-transition:none;transition:none}
 .custom-range::-webkit-slider-thumb{-webkit-transition:none;transition:none}
@@ -1947,7 +1949,7 @@ body.page-azienda .wp-block-columns.first-row .right-column .column-content{padd
 body.page-azienda .wp-block-columns.second-row .left-column{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:right}
 body.page-azienda .wp-block-columns.second-row .left-column .column-content{padding:var(--spacer) 0}
 #produzione .text-block{max-width:calc((100% / 12) * 10);margin:0 auto}
-#servizi .text-block{max-width:calc((100% / 12) * 8);margin-left:auto;margin-right:auto}
+#servizi .text-block{max-width:calc((100% / 12) * 10);margin-left:auto;margin-right:auto}
 #certificazioni .text-block{max-width:calc((100% / 12) * 8);margin-left:auto;margin-right:auto}
 .archive-news-item{padding-bottom:3.25rem}
 .archive-news-item .col-left{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:calc((100% / 12) * 5);margin-right:calc((var(--spacer) * 3) * -1)}
@@ -2302,7 +2304,7 @@ body.page-azienda .wp-block-columns.first-row .right-column{padding:0 var(--spac
 body.page-azienda .wp-block-columns.second-row .left-column{padding:0 var(--spacer)}
 #produzione .text-block{max-width:calc((100% / 12) * 8)}
 #produzione .kt-row-column-wrap{padding-top:var(--spacer)}
-#servizi .text-block{max-width:calc((100% / 12) * 6)}
+#servizi .text-block{max-width:calc((100% / 12) * 8)}
 #certificazioni .text-block{max-width:calc((100% / 12) * 6)}
 .clients-row .client-list{text-align:left;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .clients-row .client-list .kt-inside-inner-col{padding:2rem}

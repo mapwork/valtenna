@@ -8,7 +8,7 @@
          <div class="content text-center text-md-left">
             <h1 class="mb-3 mb-md-4"><?php post_type_archive_title(); ?></h1>
             <div class="description">
-               <p class="mb-0"><?php echo __('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”','valtenna'); ?></p>
+               <p class="mb-0"><?php echo __('Da oltre 50 anni realizziamo e produciamo Scatole rigide, astucci e scatole pieghevoli i settore calzaturiero, alimentare, per aziende del beauty, brand di gioielli e accessori, editoria e multimedia, oggettistica ed espositori.','valtenna'); ?></p>
             </div>
          </div>
       </div>

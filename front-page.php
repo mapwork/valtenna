@@ -79,30 +79,33 @@
          </div>
          <div class="col second">
             <ul class="reset-list text-center clients-list">
-               <li>John Stone</li>
-               <li>Ponnappa Priya</li>
-               <li>Mia Wong</li>
-               <li>Peter Stanbridge</li>
-               <li>Natalie Lee-Walsh</li>
-               <li>Ang Li</li>
-               <li>Nguta Ithya</li>
-               <li>Tamzyn French</li>
-               <li>Salome Simoes</li>
-               <li>Trevor Virtue</li>
+               <li>KASPERSKY</li>
+               <li>AZIENDA AGRICOLA MANCINI</li>
+               <li>CANTINA SOCIALE TOLLO</li>
+               <li>WONDERBOX</li>
+               <li>IL SOLE 24 ORE</li>
+               <li>MONDADORI</li>
+               <li>THUN</li>
+               <li>CIRE TRUDON</li>
+               <li>BORMIOLI LUIGI</li>
+               <li>BROSWAY</li>
+               <li>BRIONI</li>
             </ul>
          </div>
          <div class="col third">
             <ul class="reset-list text-center clients-list">
-               <li>Tarryn Campbell-Gillies</li>
-               <li>Eugenia Anders</li>
-               <li>Andrew Kazantzis</li>
-               <li>Verona Blair</li>
-               <li>Jane Meldrum</li>
-               <li>Maureen M. Smith</li>
-               <li>Desiree Burch</li>
-               <li>Daly Harry</li>
-               <li>Hayman Andrews</li>
-               <li>Ruveni Ellawala</li>
+               <li>GUCCI</li>
+               <li>BALENCIAGA</li>
+               <li>LUXOTTICA</li>
+               <li>FABIANA FILIPPI</li>
+               <li>CUCINELLI</li>
+               <li>BEAUTYCOM</li>
+               <li>LONGCHAMP</li>
+               <li>MANIFATTURE SIGARO TOSCANO</li>
+               <li>DEICHMANN</li>
+               <li>BATA</li>
+               <li>ZALANDO</li>
+               <li>PRIMIGI</li>
             </ul>
          </div>
       </div>

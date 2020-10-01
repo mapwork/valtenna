@@ -128,6 +128,21 @@ jQuery(document).ready(function($) {
 			]
 		});
 	}
+
+	$(window).load(function() {
+		const products_tax_archive = $('body[class*="tax-"]');
+		if (products_tax_archive.length) {
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			if (urlParams.has('filter_products_cat')) {
+				const filterNav = $('#filters-by-categories');
+				const pos = filterNav.offset().top - $('#header').height();
+				$('html,body').animate({
+					'scrollTop': pos + 'px'
+				}, 1000);
+			}
+		}
+	});
 });
 var instagramWall = document.getElementById('instagram-wall');
 if (instagramWall) {
