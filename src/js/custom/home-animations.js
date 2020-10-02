@@ -24,5 +24,20 @@
 			})
 			.setTween(anm_gsap_1)
 			.addTo(controller);
+
+		//entrate
+		var toanimate = document.querySelectorAll('.toanimate');
+		if (toanimate.length) {
+			toanimate.forEach((item, i) => {
+				new ScrollMagic.Scene({
+						triggerElement: item,
+						triggerHook: 'onEnter'
+					})
+					.setClassToggle(item, 'is-animated')
+					.reverse(false)
+					.addTo(controller);
+			});
+
+		}
 	}
 })();

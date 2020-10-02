@@ -8,12 +8,13 @@
          <div class="content text-center text-md-left">
             <h1 class="mb-3 mb-md-4"><?php the_archive_title(); ?></h1>
             <div class="description">
-               <?php echo mapcomm_get_products_tag_intro(); ?>
+               <?php echo term_description(); ?>
             </div>
          </div>
       </div>
    </div>
 </header>
+<?php /* ?>
 <div class="products-tag-content">
    <div class="container-fluid px-md-0">
       <div class="row no-gutters flex-column flex-md-row">
@@ -36,6 +37,7 @@
       </div>
    </div>
 </div>
+<?php */ ?>
 <section id="filters-by-categories">
    <div class="container">
       <nav id="filters">
@@ -47,6 +49,7 @@
    <div class="container-fluid px-xl-0">
       <div class="row no-gutters flex-column flex-md-row" id="products-grid-container">
          <?php
+         
          if( have_posts() ){
             while( have_posts() ){
                the_post();
@@ -60,6 +63,19 @@
       </div>
    </div>
 </section>
+<section id="products-preview" class="products-block">
+   <div class="container">
+      <div class="intro text-center">
+         <h3 class="mb-4"><?php echo __('Altre categorie merceologiche','valtenna') ?></h3>
+      </div>
+      <?php
+      $exclude = get_queried_object_id();
+      $shortcode = sprintf('[products_cat_slideshow exclude="%d"]', $exclude);
+      echo do_shortcode($shortcode);
+      ?>
+   </div>
+</section>
+<?php /* ?>
 <section class="products-tag-reminder">
    <div class="container">
       <div class="row no-gutters flex-column flex-md-row">
@@ -75,4 +91,5 @@
       </div>
    </div>
 </section>
+<?php */ ?>
 <?php get_footer(); ?>

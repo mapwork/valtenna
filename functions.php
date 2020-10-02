@@ -303,7 +303,7 @@ function mapcomm_get_latest_news_slideshow( $count ){
  */
 function mapcomm_get_product_tags_block( $tag_id ){
 	$tag = get_term( $tag_id, 'products_tag' );
-	if( $image = get_field( 'products_cat_image', 'products_tag_' . $tag_id ) ){
+	if( $image = get_field( 'products_cat_header', 'products_tag_' . $tag_id ) ){
 		$imagehtml = wp_get_attachment_image( $image['ID'], 'large', false, ['class' => 'img-fluid lazyload fitimage'] );
 		$imagehtml .= '<noscript>' . wp_get_attachment_image( $image['ID'], 'large', false, ['class' => 'img-fluid fitimage'] ) . '</noscript>';
 	}else{
@@ -567,6 +567,21 @@ function create_ACF_meta_in_REST() {
      );
     }
 
+}
+add_filter('get_the_archive_title','remove_archive_title_prefix');
+function remove_archive_title_prefix($title){
+	if ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+	} elseif ( is_tax() ) { //for custom post types
+		$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+	} elseif (is_post_type_archive()) {
+		$title = post_type_archive_title( '', false );
+	}
+	return $title;
 }
 
 function expose_ACF_fields( $object ) {

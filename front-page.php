@@ -24,7 +24,7 @@
       </div>
    </div>
 </section>
-<section id="products-preview" class="products-block">
+<section id="products-preview" class="products-block toanimate">
    <div class="container">
       <div class="intro text-center">
          <h3 class="mb-4"><?php echo get_theme_mod('products_cat_title'); ?></h3>
@@ -43,7 +43,7 @@
       ?>
    </div>
 </section>
-<section id="homepage-claim">
+<section id="homepage-claim" class="toanimate">
    <div class="container">
       <div class="claim-text text-uppercase text-center">
       <?php
@@ -65,53 +65,55 @@
       </div>
    </div>
 </section>
-<section id="our-clients">
-   <div class="container">
-      <h3 class="text-uppercase text-center area-title"><?php echo get_string_last_word_bold( __('I nostri clienti','valtenna') ); ?></h3>
-      <div class="row no-gutters flex-column flex-md-row flex-md-nowrap">
-         <div class="col first d-md-flex flex-md-column justify-content-md-center">
-            <figure class="mb-0">
-               <img data-src="<?php echo get_theme_file_uri( 'assets/images/our-clients.jpg' ); ?>" class="img-fluid lazyload"/>
-               <noscript>
-                  <img src="<?php echo get_theme_file_uri( 'assets/images/our-clients.jpg' ); ?>" class="img-fluid"/>
-               </noscript>
-            </figure>
-         </div>
-         <div class="col second">
-            <ul class="reset-list text-center clients-list">
-               <li>KASPERSKY</li>
-               <li>AZIENDA AGRICOLA MANCINI</li>
-               <li>CANTINA SOCIALE TOLLO</li>
-               <li>WONDERBOX</li>
-               <li>IL SOLE 24 ORE</li>
-               <li>MONDADORI</li>
-               <li>THUN</li>
-               <li>CIRE TRUDON</li>
-               <li>BORMIOLI LUIGI</li>
-               <li>BROSWAY</li>
-               <li>BRIONI</li>
-            </ul>
-         </div>
-         <div class="col third">
-            <ul class="reset-list text-center clients-list">
-               <li>GUCCI</li>
-               <li>BALENCIAGA</li>
-               <li>LUXOTTICA</li>
-               <li>FABIANA FILIPPI</li>
-               <li>CUCINELLI</li>
-               <li>BEAUTYCOM</li>
-               <li>LONGCHAMP</li>
-               <li>MANIFATTURE SIGARO TOSCANO</li>
-               <li>DEICHMANN</li>
-               <li>BATA</li>
-               <li>ZALANDO</li>
-               <li>PRIMIGI</li>
-            </ul>
+<section id="our-clients" class="toanimate">
+   <a href="<?php echo get_permalink( get_msls_post_id( 277 ) ); ?>" class="d-block">
+      <div class="container">
+         <h3 class="text-uppercase text-center area-title"><?php echo get_string_last_word_bold( __('I nostri clienti','valtenna') ); ?></h3>
+         <div class="row no-gutters flex-column flex-md-row flex-md-nowrap">
+            <div class="col first d-md-flex flex-md-column justify-content-md-center">
+               <figure class="mb-0">
+                  <img data-src="<?php echo get_theme_file_uri( 'assets/images/our-clients.jpg' ); ?>" class="img-fluid lazyload"/>
+                  <noscript>
+                     <img src="<?php echo get_theme_file_uri( 'assets/images/our-clients.jpg' ); ?>" class="img-fluid"/>
+                  </noscript>
+               </figure>
+            </div>
+            <div class="col second">
+               <ul class="reset-list text-center clients-list">
+                  <li>KASPERSKY</li>
+                  <li>AZIENDA AGRICOLA MANCINI</li>
+                  <li>CANTINA SOCIALE TOLLO</li>
+                  <li>WONDERBOX</li>
+                  <li>IL SOLE 24 ORE</li>
+                  <li>MONDADORI</li>
+                  <li>THUN</li>
+                  <li>CIRE TRUDON</li>
+                  <li>BORMIOLI LUIGI</li>
+                  <li>BROSWAY</li>
+                  <li>BRIONI</li>
+               </ul>
+            </div>
+            <div class="col third">
+               <ul class="reset-list text-center clients-list">
+                  <li>GUCCI</li>
+                  <li>BALENCIAGA</li>
+                  <li>LUXOTTICA</li>
+                  <li>FABIANA FILIPPI</li>
+                  <li>CUCINELLI</li>
+                  <li>BEAUTYCOM</li>
+                  <li>LONGCHAMP</li>
+                  <li>MANIFATTURE SIGARO TOSCANO</li>
+                  <li>DEICHMANN</li>
+                  <li>BATA</li>
+                  <li>ZALANDO</li>
+                  <li>PRIMIGI</li>
+               </ul>
+            </div>
          </div>
       </div>
-   </div>
+   </a>
 </section>
-<section id="special-projects-preview">
+<section id="special-projects-preview" class="toanimate">
    <div class="container">
       <div class="row no-gutters flex-column flex-lg-row special-projects-slideshow">
          <div class="col col-left">
@@ -135,12 +137,12 @@
       </div>
    </div>
 </section>
-<section id="news-preview">
+<section id="news-preview" class="toanimate">
    <div class="container">
       <div class="intro text-center">
          <h3 class="text-uppercase text-center area-title mb-4"><?php echo get_string_last_word_bold( __('Le novità valtenna','valtenna') ); ?></h3>
          <p class="mb-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            <?php echo __('Non perdere le ultime novità, consigli e informazioni sui nostri prodotti e servizi. In questa sezione troverai progetti, creazioni, spunti per creare il packaging perfetto per il tuo brand.','valtenna'); ?>
          </p>
       </div>
       <?php

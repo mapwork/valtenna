@@ -29,6 +29,7 @@ jQuery(document).ready(function($) {
 	if (categoryCarousel.length) {
 		categoryCarousel.slick({
 			mobileFirst: true,
+			infinite: false,
 			arrows: false,
 			dots: true,
 			slidesToShow: 1,

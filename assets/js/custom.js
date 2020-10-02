@@ -61,7 +61,18 @@
       triggerHook: 'onEnter',
       ease: Linear.easeNone,
       duration: '400%'
-    }).setTween(anm_gsap_1).addTo(controller);
+    }).setTween(anm_gsap_1).addTo(controller); //entrate
+
+    var toanimate = document.querySelectorAll('.toanimate');
+
+    if (toanimate.length) {
+      toanimate.forEach(function (item, i) {
+        new ScrollMagic.Scene({
+          triggerElement: item,
+          triggerHook: 'onEnter'
+        }).setClassToggle(item, 'is-animated').reverse(false).addTo(controller);
+      });
+    }
   }
 })();
 "use strict";
@@ -100,6 +111,7 @@ jQuery(document).ready(function ($) {
   if (categoryCarousel.length) {
     categoryCarousel.slick({
       mobileFirst: true,
+      infinite: false,
       arrows: false,
       dots: true,
       slidesToShow: 1,

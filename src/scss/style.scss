@@ -310,7 +310,13 @@ html.menu-open {
 	font-weight: 300;
 	letter-spacing: 0.2rem;
 	padding-left: 3rem;
-	line-height: 3;
+	line-height: 1.3;
+
+	> ul {
+		> li {
+			margin-bottom: 1.3rem;
+		}
+	}
 
 	li {
 		&.current-menu-ancestor,
@@ -1001,6 +1007,10 @@ label.error {
 			height: 720px;
 		}
 
+		a {
+			height: 100%;
+		}
+
 		img {
 			display: block;
 			margin: 0 auto;
@@ -1121,6 +1131,12 @@ html.js {
 		position: relative;
 		color: #fff;
 		text-decoration: none;
+
+		&:hover {
+			.overlay {
+				opacity: 1;
+			}
+		}
 	}
 
 	.overlay {
@@ -1132,6 +1148,8 @@ html.js {
 		z-index: 10;
 		padding: 1.25rem;
 		background-color: rgba(0,0,0,.5);
+		opacity: 0;
+		transition: opacity 0.6s ease;
 	}
 
 	.category-name {
@@ -1290,6 +1308,12 @@ h1 {
 	@include media-breakpoint-up(xxl) {
 		font-size: 3rem;
 		line-height: 1.3;
+	}
+}
+
+body.tax-products_cat {
+	.archive-header {
+		margin-bottom: var(--spacer);
 	}
 }
 
@@ -2436,6 +2460,7 @@ figure.wp-block-embed {
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+
 		@include media-breakpoint-up(xl) {
 			text-align: left;
 			align-items: flex-start;
@@ -2444,7 +2469,7 @@ figure.wp-block-embed {
 		.kt-inside-inner-col {
 			padding: 2.5rem 1rem;
 			@include media-breakpoint-up(xl) {
-				padding: 2rem;
+				padding: 2rem 2rem 2rem 4rem;
 			}
 		}
 
@@ -2452,6 +2477,9 @@ figure.wp-block-embed {
 			list-style: none;
 			margin: 0;
 			padding: 0;
+			@include media-breakpoint-up(xl) {
+				line-height: 2;
+			}
 		}
 	}
 }
@@ -2830,5 +2858,18 @@ ul.contacts-info {
 		margin-bottom: 1.25rem;
 		letter-spacing: 0.1rem;
 		font-weight: 800;
+	}
+}
+
+html.js {
+	.toanimate {
+		opacity: 0;
+		transform: translateY(5rem);
+		transition: opacity 1.5s ease, transform 1.5s ease;
+
+		&.is-animated {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 }

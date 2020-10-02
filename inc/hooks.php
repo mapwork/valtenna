@@ -18,6 +18,8 @@ if( !function_exists('alter_product_archive_query') ){
          }
 
          $query->set('posts_per_page', 8);
+         $query->set('orderby', 'id');
+         $query->set('order', 'asc');
       }
       return $query;
    }
@@ -33,6 +35,8 @@ if( !function_exists('alter_taxonomies_archive_query') ){
    function alter_taxonomies_archive_query( $query ){
       if( !is_admin() && $query->is_main_query() && ( is_tax('products_tag') || is_tax('products_cat') ) ){
          $query->set('posts_per_page', 8);
+         $query->set('orderby', 'id');
+         $query->set('order', 'asc');
       }
       if( !is_admin() && $query->is_main_query() ){
          if( is_tax('products_tag') && isset($_GET['filter_products_cat']) && !empty($_GET['filter_products_cat']) ){
@@ -44,6 +48,8 @@ if( !function_exists('alter_taxonomies_archive_query') ){
                )
             );
             $query->set( 'tax_query', $taxquery );
+            $query->set('orderby', 'id');
+            $query->set('order', 'asc');
          }
          if( is_tax('products_cat') && isset($_GET['filter_products_tag']) && !empty($_GET['filter_products_tag']) ){
             $taxquery = array(
@@ -54,6 +60,8 @@ if( !function_exists('alter_taxonomies_archive_query') ){
                )
             );
             $query->set( 'tax_query', $taxquery );
+            $query->set('orderby', 'id');
+            $query->set('order', 'asc');
          }
       }
       return $query;

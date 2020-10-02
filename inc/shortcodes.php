@@ -8,7 +8,8 @@ function products_cat_slideshow_funx( $atts ){
    $a = shortcode_atts( [
       'orderby'  => 'name',
    	'order'    => 'ASC',
-      'number'   => 0
+      'number'   => 0,
+      'exclude' => 0
    ], $atts );
 
    $cats = get_terms([
@@ -16,6 +17,7 @@ function products_cat_slideshow_funx( $atts ){
       'orderby'   => $a['orderby'],
       'order'     => $a['order'],
       'number'    => $a['number'],
+      'exclude'   => explode(',',$a['exclude']),
       'hide_empty' => false
    ]);
    $output = '<div class="products-cat-carousel">';

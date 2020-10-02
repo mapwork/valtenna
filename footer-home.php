@@ -77,9 +77,9 @@
 	<div class="footer-bottom text-center text-lg-right">
 		<div class="container">
 			<div id="footer-links" class="reset-list">
-				<a href="#">Privacy Policy</a>
+				<a href="https://www.iubenda.com/privacy-policy/22408243" class="iubenda-nostyle no-brand iubenda-embed">Privacy Policy</a>
 				<span class="mx-3 mx-lg-2">|</span>
-				<a href="#">Cookie Policy</a>
+				<a href="https://www.iubenda.com/privacy-policy/22408243/cookie-policy" class="iubenda-nostyle no-brand iubenda-embed" title="Cookie Policy ">Cookie Policy</a>
 				<span class="mx-3 mx-lg-2">|</span>
 				<a href="https://www.mapcommunication.it" target="_blank" title="Map Communication - Marketing, Communication, E-Business">Credits</a>
 			</div>
