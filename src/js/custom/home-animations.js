@@ -39,5 +39,14 @@
 			});
 
 		}
+
+		//header
+		const siteHeader = document.querySelector('header#header');
+		new ScrollMagic.Scene({
+				triggerHook: 'onEnter',
+				offset: 300
+			})
+			.setClassToggle(document.documentElement, 'header-background')
+			.addTo(controller);
 	}
 })();

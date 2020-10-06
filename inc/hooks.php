@@ -75,18 +75,20 @@ add_action('pre_get_posts', 'alter_taxonomies_archive_query', 1);
  * @param [type] $attachment [description]
  */
 function mapcomm_add_lazyload_to_attachment_image( $attr, $attachment ){
-	$classes = $attr['class'];
-	$current_src = $attr['src'];
-	$current_srcset = $attr['srcset'];
-	if( strpos( $classes, 'slick-lazy' ) !== false ){
-		$attr['data-lazy'] = $current_src;
-		unset( $attr['src'] );
-	}elseif( strpos( $classes, 'lazyload' ) !== false ){
-		$attr['data-src'] = $current_src;
-		$attr['data-srcset'] = $current_srcset;
-		unset( $attr['src'] );
-		unset( $attr['srcset'] );
-	}
+   if( !is_admin() ){
+   	$classes = $attr['class'];
+   	$current_src = $attr['src'];
+   	$current_srcset = $attr['srcset'];
+   	if( strpos( $classes, 'slick-lazy' ) !== false ){
+   		$attr['data-lazy'] = $current_src;
+   		unset( $attr['src'] );
+   	}elseif( strpos( $classes, 'lazyload' ) !== false ){
+   		$attr['data-src'] = $current_src;
+   		$attr['data-srcset'] = $current_srcset;
+   		unset( $attr['src'] );
+   		unset( $attr['srcset'] );
+   	}
+   }
 	return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes', 'mapcomm_add_lazyload_to_attachment_image', 10, 2 );
@@ -132,4 +134,11 @@ if( !function_exists('mapcomm_add_page_body_class') ){
    }
 }
 add_filter('body_class', 'mapcomm_add_page_body_class');
+
+function my_lzb_block_render_allow_wrapper( $allow_wrapper, $attributes, $context ) {
+    // Disable block output for block "lazyblock/my-custom-block"
+    return false;
+}
+add_filter( 'lazyblock/content-element/allow_wrapper', 'my_lzb_block_render_allow_wrapper', 10, 3 );
+add_filter( 'lazyblock/timeline/allow_wrapper', 'my_lzb_block_render_allow_wrapper', 10, 3 );
 ?>

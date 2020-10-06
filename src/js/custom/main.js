@@ -130,6 +130,11 @@ jQuery(document).ready(function($) {
 		});
 	}
 
+	var autoSlick = $(document).find('[data-slick]');
+	if (autoSlick.length) {
+		autoSlick.slick();
+	}
+
 	$(window).load(function() {
 		const products_tax_archive = $('body[class*="tax-"]');
 		if (products_tax_archive.length) {

@@ -72,7 +72,14 @@
           triggerHook: 'onEnter'
         }).setClassToggle(item, 'is-animated').reverse(false).addTo(controller);
       });
-    }
+    } //header
+
+
+    var siteHeader = document.querySelector('header#header');
+    new ScrollMagic.Scene({
+      triggerHook: 'onEnter',
+      offset: 300
+    }).setClassToggle(document.documentElement, 'header-background').addTo(controller);
   }
 })();
 "use strict";
@@ -207,6 +214,12 @@ jQuery(document).ready(function ($) {
         }
       }]
     });
+  }
+
+  var autoSlick = $(document).find('[data-slick]');
+
+  if (autoSlick.length) {
+    autoSlick.slick();
   }
 
   $(window).load(function () {
