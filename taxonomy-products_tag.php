@@ -75,7 +75,7 @@
       $order = get_theme_mod('products_cat_order', 'ASC');
       $number = get_theme_mod('products_cat_num', 0 );
       $shortcode = sprintf('[products_cat_slideshow orderby="%s" order="%s" number="%d"]', $orderby, $order, $number);
-      echo do_shortcode($shortcode);
+         echo do_shortcode($shortcode);
       ?>
    </div>
 </section>
