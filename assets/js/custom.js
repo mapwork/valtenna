@@ -39,10 +39,10 @@
 (function () {
   'use strict';
 
+  var controller = new ScrollMagic.Controller();
   var is_front_page = document.body.classList.contains('home');
 
   if (is_front_page) {
-    var controller = new ScrollMagic.Controller();
     var gsap_1 = document.getElementById('gsap-item-1');
     var anm_gsap_1 = gsap.fromTo(gsap_1, 1, {
       'top': '100%',
@@ -72,15 +72,18 @@
           triggerHook: 'onEnter'
         }).setClassToggle(item, 'is-animated').reverse(false).addTo(controller);
       });
-    } //header
+    }
+  } //header
+  // const siteHeader = document.querySelector('header#header');
+  // if (siteHeader) {
+  // 	new ScrollMagic.Scene({
+  // 			triggerHook: 'onEnter',
+  // 			offset: 300
+  // 		})
+  // 		.setClassToggle(document.documentElement, 'header-background')
+  // 		.addTo(controller);
+  // }
 
-
-    var siteHeader = document.querySelector('header#header');
-    new ScrollMagic.Scene({
-      triggerHook: 'onEnter',
-      offset: 300
-    }).setClassToggle(document.documentElement, 'header-background').addTo(controller);
-  }
 })();
 "use strict";
 

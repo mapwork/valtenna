@@ -1,8 +1,8 @@
 (function() {
 	'use strict';
+	var controller = new ScrollMagic.Controller();
 	var is_front_page = document.body.classList.contains('home');
 	if (is_front_page) {
-		var controller = new ScrollMagic.Controller();
 		var gsap_1 = document.getElementById('gsap-item-1');
 		var anm_gsap_1 = gsap.fromTo(gsap_1, 1, {
 			'top': '100%',
@@ -39,14 +39,15 @@
 			});
 
 		}
-
-		//header
-		const siteHeader = document.querySelector('header#header');
-		new ScrollMagic.Scene({
-				triggerHook: 'onEnter',
-				offset: 300
-			})
-			.setClassToggle(document.documentElement, 'header-background')
-			.addTo(controller);
 	}
+	//header
+	// const siteHeader = document.querySelector('header#header');
+	// if (siteHeader) {
+	// 	new ScrollMagic.Scene({
+	// 			triggerHook: 'onEnter',
+	// 			offset: 300
+	// 		})
+	// 		.setClassToggle(document.documentElement, 'header-background')
+	// 		.addTo(controller);
+	// }
 })();

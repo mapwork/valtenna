@@ -32,6 +32,10 @@ module.exports = {
 	jsCustomDestination: './assets/js/', // Path to place the compiled JS custom scripts file.
 	jsCustomFile: 'custom', // Compiled JS custom file name. Default set to custom i.e. custom.js.
 
+	// JS Standalone options.
+	jsStandaloneSRC: './src/js/standalone/*.js', // Path to JS custom scripts folder.
+	jsStandaloneDestination: './assets/js/', // Path to place the compiled JS custom scripts file.
+
 	// Images options.
 	imgSRC: './src/images/**/*', // Source folder of images which should be optimized and watched. You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
 	imgDST: './assets/images/', // Destination folder of optimized images. Must be different from the imagesSRC folder.

@@ -31,43 +31,43 @@
 				<img src="<?php echo get_theme_file_uri('assets/images/logo.png'); ?>" srcset="<?php echo get_theme_file_uri('assets/images/logo@2x.png'); ?> 2x" class="img-fluid" alt="<?php echo get_bloginfo( 'description' ) . ', ' . get_bloginfo( 'name' ); ?>"/>
 			</a>
 		</<?php echo $tag; ?>>
-		<div id="toolbar" class="d-flex flex-row-reverse justify-content-end flex-wrap flex-grow-1 flex-xl-row">
+		<div id="site-navigation">
+			<div class="site-navigation-wrapper">
+				<button type="button" id="close-navigation" class="d-xl-none"><i class="fas fa-times"></i></button>
+				<div class="wrapper-in d-flex flex-column flex-wrap flex-grow-1 align-items-strecth">
+					<div class="scrollable-outside flex-grow-1 d-flex flex-column position-relative">
+						<div class="scrollbale-inside">
+							<?php
+							wp_nav_menu([
+								'theme_location' 	=> 'main-menu',
+								'menu_id' 			=> 'main-menu',
+								'menu_class'      => 'reset-list',
+								'container' 		=> 'nav',
+								'container_id' 	=> 'nav',
+								'container_class' => 'flex-grow-1 d-flex flex-column flex-wrap justify-content-start',
+								'walker'				=> new Valtenna_Submenu_Walker
+							]);
+							?>
+						</div>
+					</div>
+					<footer class="d-xl-none">
+						<ul class="reset-list follow-us">
+							<li>
+								<a href="#" target="_blank"><?php echo sprintf( __('Seguici su <span>%s</span>','valtenna'), '<i class="fab fa-instagram"></i> Instagram' ); ?></a>
+							</li>
+						</ul>
+					</footer>
+				</div>
+			</div>
+		</div>
+		<div id="toolbar" class="d-flex flex-row-reverse justify-content-end flex-wrap flex-grow-1 flex-xl-grow-0 flex-xl-row">
 			<div class="toolbar-item mr-xl-3">
 				<a href="https://www.instagram.com/valtenna_packaging/" target="_blank" title="<?php echo __('Seguici su Instagram','valtenna'); ?>"><i class="fab fa-instagram"></i></a>
 			</div>
-			<div class="toolbar-item mr-2 mr-xl-0">
+			<div class="toolbar-item mr-2 mr-xl-0 d-xl-none">
 				<a href="javascript:;" id="trigger-menu"><i class="fas fa-bars"></i></a>
 			</div>
 		</div>
 	</div>
 </header>
-<div id="site-navigation">
-	<div class="wrapper">
-		<button type="button" id="close-navigation"><i class="fas fa-times"></i></button>
-		<div class="wrapper-in d-flex flex-column flex-wrap flex-grow-1 align-items-strecth">
-			<div class="scrollable-outside flex-grow-1 d-flex flex-column position-relative">
-				<div class="scrollbale-inside">
-					<?php
-					wp_nav_menu([
-						'theme_location' 	=> 'main-menu',
-						'menu_id' 			=> 'main-menu',
-						'menu_class'      => 'reset-list',
-						'container' 		=> 'nav',
-						'container_id' 	=> 'nav',
-						'container_class' => 'flex-grow-1 d-flex flex-column flex-wrap justify-content-start',
-						'walker'				=> new Valtenna_Submenu_Walker
-					]);
-					?>
-				</div>
-			</div>
-			<footer>
-				<ul class="reset-list follow-us">
-					<li>
-						<a href="#" target="_blank"><?php echo sprintf( __('Seguici su <span>%s</span>','valtenna'), '<i class="fab fa-instagram"></i> Instagram' ); ?></a>
-					</li>
-				</ul>
-			</footer>
-		</div>
-	</div>
-</div>
 <main id="main">
