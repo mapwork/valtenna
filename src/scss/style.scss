@@ -276,7 +276,7 @@ a:hover {
 
 			@include media-breakpoint-up(xxl) {
 				font-size: 0.875rem;
-				letter-spacing: 0.1rem;
+				letter-spacing: 0.05rem;
 			}
 
 			li {
@@ -1836,7 +1836,10 @@ html.js {
 				height: calc(100vw / 2.6);
 			}
 			@include media-breakpoint-up(xl) {
-				top: 0;
+				top: 100;
+			}
+			@include media-breakpoint-up(hd) {
+				top: 120;
 			}
 
 			&:before {

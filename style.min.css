@@ -2338,7 +2338,7 @@ body.single-post .archive-header{margin-bottom:-6rem}
 body.single-post .post-content-wrapper{margin-top:0}
 body.single-post .post-content{max-width:790px;padding:3rem;background-color:#fff}
 #similar-products{margin:calc(var(--spacer) * 2) 0}
-.archive-header .fixed-background .inside{top:0}
+.archive-header .fixed-background .inside{top:100}
 .archive-header .wrapper{padding-bottom:calc(var(--spacer) * 2)}
 .archive-header .content{max-width:45%}
 #products-grid-container{margin-left:0;margin-right:0}
@@ -2370,7 +2370,7 @@ body.page-azienda .wp-block-columns.second-row .left-column{padding:0 var(--spac
 .archive-news-item .post-content-wrapper:before{font-size:1.25rem}
 #gsap-item-1{width:400px;left:-200px}
 }@media(min-width:1200px) and (min-width:1540px){#site-navigation{height:54px}
-#nav>ul{font-size:.875rem;letter-spacing:.1rem}
+#nav>ul{font-size:.875rem;letter-spacing:.05rem}
 }@media(min-width:1200px) and (hover:hover){#product-area .area-item:hover{width:75%}
 }@media(min-width:1540px){.d-xxl-none{display:none !important}
 .d-xxl-inline{display:inline !important}
@@ -2987,6 +2987,7 @@ ul.contacts-info{font-size:1.5rem}
 #homepage-claim .claim-text{font-size:1.875rem}
 #special-projects-slideshow figure{width:670px;height:720px}
 body.single-post .archive-header{margin-bottom:-10rem}
+.archive-header .fixed-background .inside{top:120}
 .product-grid-item figure{height:calc(1640px / 3.5)}
 .alignwide{max-width:1640px}
 #gsap-item-1{width:500px}
